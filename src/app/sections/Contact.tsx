@@ -27,7 +27,7 @@ const Contact = ({ ...props }: contactProps) => {
             attributes={{
                 id: "kontakt"
             }}>
-                <Wrapper className="px-12 md:px-24 py-8 md:py-16 text-white">
+                <Wrapper className="px-4 md:px-24 py-4 md:py-16 text-white">
                     <Wrapper className="flex flex-col justify-center items-center">
                         <PageLabel
                         pageLabelAdditContent={<Sparkle className="text-fuchsia-300" />}
@@ -75,7 +75,7 @@ const Contact = ({ ...props }: contactProps) => {
                                 </Wrapper>
                                 <Wrapper className="mt-2 flex flex-col gap-4">
                                     <p className="text-base">
-                                        Vaše telefonní číslo (volitelné)
+                                        Vaše telefonní číslo (volitelné, pro osobní komunikaci)
                                     </p>
                                     <input
                                     type="text"
@@ -93,7 +93,7 @@ const Contact = ({ ...props }: contactProps) => {
                                     className="h-48 max-h-auto resize-none border border-gray-500 rounded-md p-2 w-full"
                                     placeholder="Napište mi o co se jedná."></textarea>
                                 </Wrapper>
-                                <button className="bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-lg font-black uppercase">
+                                <button className="bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-base md:text-lg font-black uppercase">
                                     Odesláním, mě kontaktujete
                                 </button>
                             </Wrapper>

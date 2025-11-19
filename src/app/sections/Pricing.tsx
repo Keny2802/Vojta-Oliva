@@ -7,10 +7,14 @@ import {
 } from "react";
 import {
     Sparkle,
-    CheckCircle
+    CheckCircle,
+    MonitorCloud
 } from "lucide-react";
 import clsx from "clsx";
 import pricingOptionsSet from "../sets/pricingOptionsSet";
+import pricingCardsSet from "../sets/pricingCardsSet";
+import setLinkWithoutHash from "../functions/setLinkWithoutHash";
+import Link from "next/link";
 
 import Wrapper from "../components/Wrapper";
 import PageLabel from "../components/PageLabel";
@@ -38,9 +42,6 @@ const Pricing = ({ ...props }: pricingProps) => {
         children
     } = props;
 
-    const selectService = () => {
-    };
-
     return (
         <Fragment>
             <Wrapper
@@ -48,7 +49,7 @@ const Pricing = ({ ...props }: pricingProps) => {
             attributes={{
                 id: "cenik"
             }}>
-                <Wrapper className="px-12 md:px-24 py-8 md:py-16 text-white">
+                <Wrapper className="px-4 md:px-24 py-4 md:py-16 text-white">
                     <Wrapper className="flex flex-col justify-center items-center">
                         <PageLabel
                         pageLabelAdditContent={<Sparkle className="text-fuchsia-300" />}
@@ -64,7 +65,71 @@ const Pricing = ({ ...props }: pricingProps) => {
                     {/* udělat komponenty na form group form field form wrapper a další */}
                     {/* items-center */}
                     
-                    
+                    <Wrapper className="mt-4 flex justify-center gap-4 flex-col md:flex-row prices-wrapper">
+                        {
+                            pricingCardsSet.map((pricingCard, pricingCardIndex) => (
+                                <Fragment key={pricingCardIndex}>
+                                    <Wrapper className="p-4 w-full md:max-w-[500px] bg-black/30 border border-gray-500 rounded-md price-wrapper">
+                                        <Wrapper className="upper-content-wrapper">
+                                            <Wrapper className="flex justify-between items-center">
+                                                <p className="p-1 text-xl font-black uppercase">
+                                                    {pricingCard.cardHeading}
+                                                </p>
+                                                <span className="text-xl font-black price">
+                                                    {pricingCard.cardPrice} Kč
+                                                </span>
+                                            </Wrapper>
+                                            <p className="pb-2 mt-2 text-center text-sm text-gray-500 border-b border-gray-500">
+                                                {pricingCard.cardSubheading}
+                                            </p>
+                                        </Wrapper>
+                                        <Wrapper className="mt-4 flex justify-center items-center gap-2">
+                                            <MonitorCloud />
+                                            <p className="text-lg text-gray-200 font-black">
+                                                Co tato služba obsahuje?
+                                            </p>
+                                        </Wrapper>
+                                        <Wrapper className="mt-2 flex flex-col gap-2">
+                                            {
+                                                pricingCard.cardIncludingSet.map((cardIncluding, cardIncludingIndex) => (
+                                                    <Fragment key={cardIncludingIndex}>
+                                                        <Wrapper className="flex items-center gap-2">
+                                                            <CheckCircle className="text-green-500" />
+                                                            <p className="text-base text-gray-200">
+                                                                {cardIncluding}
+                                                            </p>
+                                                        </Wrapper>
+                                                    </Fragment>
+                                                ))
+                                            }
+                                        </Wrapper>
+                                        <Link
+                                        href={`#kontakt`}
+                                        className="block mt-4 bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-center text-base md:text-lg font-black uppercase"
+                                        onClick={(e) => {
+                                            setLinkWithoutHash(e, "kontakt");
+                                        }}>
+                                            Chci tuto službu
+                                        </Link>
+                                    </Wrapper>
+                                </Fragment>
+                            ))
+                        }
+                    </Wrapper>
+                </Wrapper>
+                <Wrapper className="mt-2 flex justify-center py-10">
+                    <p className="text-sm text-gray-500">
+                        Pokud Vaše dotazy nebyli zodpovězené nebo máte na mě, jakékoliv dotazy, neváhejte mne
+                        {" "}
+                        <Link
+                        href={`#kontakt`}
+                        className="border-b border-gray-500"
+                        onClick={(e) => {
+                            setLinkWithoutHash(e, "kontakt");
+                        }}>
+                            kontaktovat.
+                        </Link>
+                    </p>
                 </Wrapper>
             </Wrapper>
         </Fragment>

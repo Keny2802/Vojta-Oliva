@@ -7,6 +7,7 @@ import Hero from "./sections/Hero";
 import Portfolio from "./sections/Portfolio";
 import Pricing from "./sections/Pricing";
 import Contact from "./sections/Contact";
+import Footer from "./components/Footer";
 
 const HomePage = () => {
   return (
@@ -16,6 +17,7 @@ const HomePage = () => {
       <Portfolio />
       <Pricing />
       <Contact />
+      <Footer />
     </Fragment>
   );
 };

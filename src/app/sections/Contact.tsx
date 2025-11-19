@@ -1,7 +1,20 @@
+"use client";
+
 import {
+    useState,
     Fragment,
     ReactNode
 } from "react";
+import {
+    useForm
+} from "react-hook-form";
+import {
+    zodResolver
+} from "@hookform/resolvers/zod";
+import {
+    ContactFormSchema,
+    contactFormProps
+} from "../lib/validation";
 import {
     Sparkle,
     Mail,
@@ -23,6 +36,62 @@ const Contact = ({ ...props }: contactProps) => {
         className,
         children
     } = props;
+
+    const {
+        register,
+        handleSubmit,
+        formState: {
+            errors,
+            isSubmitting
+        },
+        reset
+    } = useForm<contactFormProps>({
+        resolver: zodResolver(ContactFormSchema),
+        defaultValues: {
+            name: "",
+            email: "",
+            phone: "",
+            emailSubject: "",
+            emailMessage: ""
+        }
+    });
+
+    // const handleContactForm = async (contactFormData: contactFormProps) => {
+    //     try {
+    //         const res = await fetch("/api/contact", {
+    //             method: "POST",
+    //             headers: {
+    //                 "Content-Type": "application/json"
+    //             },
+    //             body: JSON.stringify(contactFormData)
+    //         });
+
+    //         if (res.ok) {
+    //             reset();
+    //         };
+    //     } catch (catchError) {};
+    // };
+
+    const handleContactForm = async (contactFormData: contactFormProps) => {
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(contactFormData)
+            });
+
+            if (!res.ok) {
+                const errorData = await res.json();
+                console.error("Chyba při odesílání formuláře:", errorData);
+                return;
+            }
+
+            console.log("Formulář odeslán!");
+            reset();
+        } catch (error) {
+            console.error("Chyba při odesílání:", error);
+        }
+    };
 
     return (
         <Fragment>
@@ -51,12 +120,15 @@ const Contact = ({ ...props }: contactProps) => {
                             <p className="mt-2 pb-4 text-sm text-gray-300 border-b border-gray-500">
                                 Vyplněním kontaktního formuláře, Vás kontaktuji nejpozději do 24 hodin.
                             </p>
-                            <Wrapper className="flex flex-col gap-4">
+                            <form
+                            onSubmit={handleSubmit(handleContactForm)}
+                            className="flex flex-col gap-4">
                                 <Wrapper className="mt-2 flex flex-col gap-2">
                                     <p className="text-base">
                                         Vaše Jméno
                                     </p>
                                     <input
+                                    {...register("name")}
                                     type="text"
                                     autoComplete="off"
                                     spellCheck={false}
@@ -64,11 +136,21 @@ const Contact = ({ ...props }: contactProps) => {
                                     className="border border-gray-500 rounded-md p-2 w-full focus:outline-none focus:border-blue-500"
                                     />
                                 </Wrapper>
+                                {
+                                    errors.name && (
+                                        <Fragment>
+                                            <p className="text-sm text-red-400">
+                                                {errors.name.message}
+                                            </p>
+                                        </Fragment>
+                                    )
+                                }
                                 <Wrapper className="mt-2 flex flex-col gap-4">
                                     <p className="text-base">
                                         Váš mail
                                     </p>
                                     <input
+                                    {...register("email")}
                                     type="email"
                                     autoComplete="off"
                                     spellCheck={false}
@@ -76,11 +158,21 @@ const Contact = ({ ...props }: contactProps) => {
                                     className="border border-gray-500 rounded-md p-2 w-full focus:outline-none focus:border-blue-500"
                                     />
                                 </Wrapper>
+                                {
+                                    errors.email && (
+                                        <Fragment>
+                                            <p className="text-sm text-red-400">
+                                                {errors.email.message}
+                                            </p>
+                                        </Fragment>
+                                    )
+                                }
                                 <Wrapper className="mt-2 flex flex-col gap-4">
                                     <p className="text-base">
                                         Vaše telefonní číslo (volitelné, pro osobní komunikaci)
                                     </p>
                                     <input
+                                    {...register("phone")}
                                     type="text"
                                     autoComplete="off"
                                     spellCheck={false}
@@ -88,18 +180,62 @@ const Contact = ({ ...props }: contactProps) => {
                                     className="border border-gray-500 rounded-md p-2 w-full focus:outline-none focus:border-blue-500"
                                     />
                                 </Wrapper>
+                                {
+                                    errors.phone && (
+                                        <Fragment>
+                                            <p className="text-sm text-red-400">
+                                                {errors.phone.message}
+                                            </p>
+                                        </Fragment>
+                                    )
+                                }
+                                <Wrapper className="mt-2 flex flex-col gap-4">
+                                    <p className="text-base">
+                                        Předmět Zprávy (volitelné)
+                                    </p>
+                                    <input
+                                    {...register("emailSubject")}
+                                    type="text"
+                                    autoComplete="off"
+                                    spellCheck={false}
+                                    placeholder="Předmět Vaší zprávy"
+                                    className="border border-gray-500 rounded-md p-2 w-full focus:outline-none focus:border-blue-500"
+                                    />
+                                </Wrapper>
+                                {
+                                    errors.emailSubject && (
+                                        <Fragment>
+                                            <p className="text-sm text-red-400">
+                                                {errors.emailSubject.message}
+                                            </p>
+                                        </Fragment>
+                                    )
+                                }
                                 <Wrapper className="mt-2 flex flex-col gap-4">
                                     <p className="text-base">
                                         Zpráva pro mě
                                     </p>
                                     <textarea
+                                    {...register("emailMessage")}
                                     className="h-48 max-h-auto resize-none border border-gray-500 rounded-md p-2 w-full focus:outline-none focus:border-blue-500"
                                     placeholder="Napište mi o co se jedná."></textarea>
                                 </Wrapper>
-                                <button className="bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-base md:text-lg font-black uppercase">
+                                {
+                                    errors.emailMessage && (
+                                        <Fragment>
+                                            <p className="text-sm text-red-400">
+                                                {errors.emailMessage.message}
+                                            </p>
+                                        </Fragment>
+                                    )
+                                }
+                                <button
+                                type="submit"
+                                disabled={isSubmitting}
+                                className="bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-base md:text-lg font-black uppercase">
                                     Odesláním, mě kontaktujete
                                 </button>
-                            </Wrapper>
+                            </form>
                         </Wrapper>
                         <Wrapper className="p-4 bg-black/30 border border-gray-500 rounded-md">
                             <h3 className="text-xl">
@@ -113,18 +249,22 @@ const Contact = ({ ...props }: contactProps) => {
                                     <p className="text-base text-gray-300">
                                         Vojta Oliva
                                     </p>
-                                    <Link
-                                    href={`mailto:info.modernizujme@gmail.com`}
-                                    className="text-base text-gray-300 flex items-center gap-2 transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                                    <Wrapper className="text-base text-gray-300 flex items-center gap-2">
                                         <Mail />
-                                        info.modernizujme@gmail.com
-                                    </Link>
-                                    <Link
-                                    href={`tel:737007626`}
-                                    className="text-base text-gray-300 flex items-center gap-2 transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                                        <Link
+                                        href={`mailto:info.modernizujme@gmail.com`}
+                                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                                            info.modernizujme@gmail.com
+                                        </Link>
+                                    </Wrapper>
+                                    <Wrapper className="text-base text-gray-300 flex items-center gap-2">
                                         <Phone />
-                                        +420 737 007 626
-                                    </Link>
+                                        <Link
+                                        href={`tel:737007626`}
+                                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                                            +420 737 007 626
+                                        </Link>
+                                    </Wrapper>
                                 </Wrapper>
                             </Wrapper>
                             <Wrapper className="mt-4 flex items-center flex-col md:flex-row gap-4">

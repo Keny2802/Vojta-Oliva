@@ -10,7 +10,9 @@ import Wrapper from "../components/Wrapper";
 
 const WelcomeEmail = () => {
     return (
-        <Fragment></Fragment>
+        <Fragment>
+            <Wrapper className="bg-black/30"></Wrapper>
+        </Fragment>
     );
 };
 

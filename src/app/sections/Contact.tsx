@@ -3,9 +3,12 @@ import {
     ReactNode
 } from "react";
 import {
-    Sparkle
+    Sparkle,
+    Mail,
+    Phone
 } from "lucide-react";
 import clsx from "clsx";
+import Link from "next/link";
 
 import Wrapper from "../components/Wrapper";
 import PageLabel from "../components/PageLabel";
@@ -45,7 +48,7 @@ const Contact = ({ ...props }: contactProps) => {
                             <h3 className="text-xl">
                                 Vyplňte kontaktní formulář
                             </h3>
-                            <p className="mt-2 pb-4 pl-10 text-sm text-gray-300 border-b border-gray-500">
+                            <p className="mt-2 pb-4 text-sm text-gray-300 border-b border-gray-500">
                                 Vyplněním kontaktního formuláře, Vás kontaktuji nejpozději do 24 hodin.
                             </p>
                             <Wrapper className="flex flex-col gap-4">
@@ -58,7 +61,7 @@ const Contact = ({ ...props }: contactProps) => {
                                     autoComplete="off"
                                     spellCheck={false}
                                     placeholder="Jan Novák"
-                                    className="border border-gray-500 rounded-md p-2 w-full"
+                                    className="border border-gray-500 rounded-md p-2 w-full focus:outline-none focus:border-blue-500"
                                     />
                                 </Wrapper>
                                 <Wrapper className="mt-2 flex flex-col gap-4">
@@ -70,7 +73,7 @@ const Contact = ({ ...props }: contactProps) => {
                                     autoComplete="off"
                                     spellCheck={false}
                                     placeholder="Jan Novák"
-                                    className="border border-gray-500 rounded-md p-2 w-full"
+                                    className="border border-gray-500 rounded-md p-2 w-full focus:outline-none focus:border-blue-500"
                                     />
                                 </Wrapper>
                                 <Wrapper className="mt-2 flex flex-col gap-4">
@@ -82,7 +85,7 @@ const Contact = ({ ...props }: contactProps) => {
                                     autoComplete="off"
                                     spellCheck={false}
                                     placeholder="737 737 737"
-                                    className="border border-gray-500 rounded-md p-2 w-full"
+                                    className="border border-gray-500 rounded-md p-2 w-full focus:outline-none focus:border-blue-500"
                                     />
                                 </Wrapper>
                                 <Wrapper className="mt-2 flex flex-col gap-4">
@@ -90,12 +93,53 @@ const Contact = ({ ...props }: contactProps) => {
                                         Zpráva pro mě
                                     </p>
                                     <textarea
-                                    className="h-48 max-h-auto resize-none border border-gray-500 rounded-md p-2 w-full"
+                                    className="h-48 max-h-auto resize-none border border-gray-500 rounded-md p-2 w-full focus:outline-none focus:border-blue-500"
                                     placeholder="Napište mi o co se jedná."></textarea>
                                 </Wrapper>
                                 <button className="bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-base md:text-lg font-black uppercase">
                                     Odesláním, mě kontaktujete
                                 </button>
+                            </Wrapper>
+                        </Wrapper>
+                        <Wrapper className="p-4 bg-black/30 border border-gray-500 rounded-md">
+                            <h3 className="text-xl">
+                                Kontaktní informace
+                            </h3>
+                            <p className="mt-2 pb-4 text-sm text-gray-300 border-b border-gray-500">
+                                Pokud máte jakýkoliv dotaz nebo zájem, kontaktujte mě prosím.
+                            </p>
+                            <Wrapper className="mt-4">
+                                <Wrapper className="flex flex-col gap-3">
+                                    <p className="text-base text-gray-300">
+                                        Vojta Oliva
+                                    </p>
+                                    <Link
+                                    href={`mailto:info.modernizujme@gmail.com`}
+                                    className="text-base text-gray-300 flex items-center gap-2 transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                                        <Mail />
+                                        info.modernizujme@gmail.com
+                                    </Link>
+                                    <Link
+                                    href={`tel:737007626`}
+                                    className="text-base text-gray-300 flex items-center gap-2 transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                                        <Phone />
+                                        +420 737 007 626
+                                    </Link>
+                                </Wrapper>
+                            </Wrapper>
+                            <Wrapper className="mt-4 flex items-center flex-col md:flex-row gap-4">
+                                <Link
+                                href={`tel:737007626`}
+                                className="w-full text-base flex items-center gap-2 bg-blue-600 px-3 py-2 rounded-md">
+                                    <Phone />
+                                    Zavolejte mi
+                                </Link>
+                                <Link
+                                href={`mailto:info.modernizujme@gmail.com`}
+                                className="w-full text-base flex items-center gap-2 bg-blue-600 px-3 py-2 rounded-md">
+                                    <Mail />
+                                    Napište mi mail
+                                </Link>
                             </Wrapper>
                         </Wrapper>
                     </Wrapper>

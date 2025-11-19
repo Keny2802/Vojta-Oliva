@@ -31,7 +31,7 @@ const Portfolio = ({ ...props }) => {
             attributes={{
                 id: "portfolio"
             }}>
-                <Wrapper className="px-12 md:px-24 py-8 md:py-16 text-white">
+                <Wrapper className="px-4 md:px-24 py-4 md:py-16 text-white">
                     <Wrapper className="flex flex-col justify-center items-center">
                         <PageLabel
                         pageLabelAdditContent={<Sparkle className="text-fuchsia-300" />}

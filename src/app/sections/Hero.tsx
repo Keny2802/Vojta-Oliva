@@ -31,7 +31,7 @@ const Hero = ({ ...props }: heroProps) => {
 
     return (
         <Fragment>
-            <Wrapper className={clsx(`${className || ""} pt-28 md:pt-14 flex flex-col justify-center w-full min-h-screen bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a] hero-wrapper`)}>
+            <Wrapper className={clsx(`${className || ""} pt-28 md:pt-18 flex flex-col justify-center w-full min-h-screen bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a] hero-wrapper`)}>
                 <HeroOverlayWrapper className="p-4">
                     <PageLabel
                         pageLabelAdditContent={<Home />}
@@ -66,7 +66,8 @@ const Hero = ({ ...props }: heroProps) => {
                             Kontaktujte mě
                         </Link>
                     </Wrapper>
-                    <Wrapper className="mt-4 flex justify-between items-center gap-8 flex-col md:flex-row">
+                    {/* grid grid-cols-2 lg:grid-cols-6 gap-4 */}
+                    <Wrapper className="mt-4 grid grid-cols-2 md:flex md:justify-between items-center gap-8 flex-col md:flex-row">
                         <Wrapper className="flex flex-col items-center gap-1">
                             <CheckCircle className="h-12 w-12 text-green-500" />
                             <p className="text-[15.5px]">
@@ -92,6 +93,15 @@ const Hero = ({ ...props }: heroProps) => {
                             </p>
                             <p className="text-sm text-gray-200">
                                 To je samozřejmostí
+                            </p>
+                        </Wrapper>
+                        <Wrapper className="flex flex-col items-center gap-1">
+                            <CheckCircle className="h-12 w-12 text-green-500" />
+                            <p className="text-[15.5px]">
+                                Více návrhů
+                            </p>
+                            <p className="text-sm text-gray-200">
+                                Ano, více návrhů v ceně.
                             </p>
                         </Wrapper>
                     </Wrapper>

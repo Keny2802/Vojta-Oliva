@@ -118,7 +118,7 @@ const Pricing = ({ ...props }: pricingProps) => {
                     </Wrapper>
                 </Wrapper>
                 <Wrapper className="mt-2 flex justify-center py-10">
-                    <p className="text-sm text-gray-500">
+                    <p className="p-2 text-center text-sm text-gray-500">
                         Pokud Vaše dotazy nebyli zodpovězené nebo máte na mě, jakékoliv dotazy, neváhejte mne
                         {" "}
                         <Link

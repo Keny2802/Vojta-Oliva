@@ -72,10 +72,10 @@ const Pricing = ({ ...props }: pricingProps) => {
                                     <Wrapper className="p-4 w-full md:max-w-[500px] bg-black/30 border border-gray-500 rounded-md price-wrapper">
                                         <Wrapper className="upper-content-wrapper">
                                             <Wrapper className="flex justify-between items-center">
-                                                <p className="p-1 text-xl font-black uppercase">
+                                                <p className="p-1 text-base md:text-xl font-black uppercase">
                                                     {pricingCard.cardHeading}
                                                 </p>
-                                                <span className="text-xl font-black price">
+                                                <span className="text-base md:text-xl font-black price">
                                                     {pricingCard.cardPrice} Kč
                                                 </span>
                                             </Wrapper>

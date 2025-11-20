@@ -139,7 +139,7 @@ const Pricing = ({ ...props }: pricingProps) => {
                                     </Fragment>
                                 ))
                             } */}
-                            {activePricingTab === "Malý web" && (
+                            {activePricingTab === "Malý web" ? (
                                 <Fragment>
                                     <Wrapper className="p-4 w-full md:max-w-[500px] bg-black/30 border border-gray-500 rounded-md price-wrapper">
                                         <Wrapper className="upper-content-wrapper">
@@ -187,10 +187,18 @@ const Pricing = ({ ...props }: pricingProps) => {
                                                 </p>
                                             </Wrapper>
                                         </Wrapper>
+                                        <Link
+                                        href={`#kontakt`}
+                                        className="block mt-4 bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-center text-base md:text-lg font-black uppercase"
+                                        onClick={(e) => {
+                                            setLinkWithoutHash(e, "kontakt");
+                                        }}>
+                                            Chci tuto službu
+                                        </Link>
                                     </Wrapper>
                                 </Fragment>
-                            )}
-                            {activePricingTab === "Střední web" && (
+                            ) : null}
+                            {activePricingTab === "Střední web" ? (
                                 <Fragment>
                                     <Wrapper className="p-4 w-full md:max-w-[500px] bg-black/30 border border-gray-500 rounded-md price-wrapper">
                                         <Wrapper className="upper-content-wrapper">
@@ -244,10 +252,18 @@ const Pricing = ({ ...props }: pricingProps) => {
                                                 </p>
                                             </Wrapper>
                                         </Wrapper>
+                                        <Link
+                                        href={`#kontakt`}
+                                        className="block mt-4 bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-center text-base md:text-lg font-black uppercase"
+                                        onClick={(e) => {
+                                            setLinkWithoutHash(e, "kontakt");
+                                        }}>
+                                            Chci tuto službu
+                                        </Link>
                                     </Wrapper>
                                 </Fragment>
-                            )}
-                            {activePricingTab === "Velký web" && (
+                            ): null}
+                            {activePricingTab === "Velký web" ? (
                                 <Fragment>
                                     <Wrapper className="p-4 w-full md:max-w-[500px] bg-black/30 border border-gray-500 rounded-md price-wrapper">
                                         <Wrapper className="upper-content-wrapper">
@@ -301,9 +317,17 @@ const Pricing = ({ ...props }: pricingProps) => {
                                                 </p>
                                             </Wrapper>
                                         </Wrapper>
+                                        <Link
+                                        href={`#kontakt`}
+                                        className="block mt-4 bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-center text-base md:text-lg font-black uppercase"
+                                        onClick={(e) => {
+                                            setLinkWithoutHash(e, "kontakt");
+                                        }}>
+                                            Chci tuto službu
+                                        </Link>
                                     </Wrapper>
                                 </Fragment>
-                            )}
+                            ): null}
                         </Wrapper>
                     </Wrapper>
                 </Wrapper>

@@ -61,7 +61,7 @@ const AboutMe = () => {
                                         Ke dni 20/11/2025, sháním první klienty a proto nastavuji ceny tak nízko.
                                     </p>
                                     <p className="mt-2 text-sm text-gray-500">
-                                        Mým cílem nejsou peníze na prvním místě, ale získání prvních klientů a získání zkušeností a referencí, proto ceník je spíše symbolický.
+                                        Mým cílem nejsou peníze na prvním místě, ale získání prvních klientů a získání zkušeností a referencí, proto ceny jsou spíše symbolické.
                                     </p>
                                     <p className="mt-3 text-sm text-gray-500 italic">
                                         Napsal Vojta Oliva

@@ -38,6 +38,14 @@ const Footer = () => {
                                 Portfolio
                             </Link>
                             <Link
+                            href={`#reference`}
+                            className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]"
+                            onClick={(e) => {
+                                setLinkWithoutHash(e, "reference");
+                            }}>
+                                Reference
+                            </Link>
+                            <Link
                             href={`#cenik`}
                             className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]"
                             onClick={(e) => {
@@ -46,12 +54,12 @@ const Footer = () => {
                                 Ceník
                             </Link>
                             <Link
-                            href={`#reference`}
-                            className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]"
+                            href={`#faq`}
                             onClick={(e) => {
-                                setLinkWithoutHash(e, "reference");
-                            }}>
-                                Reference
+                                setLinkWithoutHash(e, "faq");
+                            }}
+                            className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                                FAQ
                             </Link>
                             <Link
                             href={`#o-mne`}

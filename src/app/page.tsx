@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Hero from "./sections/Hero";
 import Portfolio from "./sections/Portfolio";
 import Pricing from "./sections/Pricing";
+import Faq from "./sections/Faq";
 import Contact from "./sections/Contact";
 import Footer from "./components/Footer";
 
@@ -16,6 +17,7 @@ const HomePage = () => {
       <Hero />
       <Portfolio />
       <Pricing />
+      <Faq />
       <Contact />
       <Footer />
     </Fragment>

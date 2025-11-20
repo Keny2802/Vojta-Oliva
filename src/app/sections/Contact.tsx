@@ -106,7 +106,7 @@ const Contact = ({ ...props }: contactProps) => {
                         pageLabelText="Kontakt"
                         />
                         <h2 className="text-3xl md:text-5xl font-black uppercase">
-                            Kontakt
+                            6 Kontakt
                         </h2>
                         <p className="mt-4 text-base text-center text-gray-300">
                             Kontaktujte mě a domluvíme realizaci Vašeho webu.
@@ -237,7 +237,7 @@ const Contact = ({ ...props }: contactProps) => {
                                 </button>
                             </form>
                         </Wrapper>
-                        <Wrapper className="p-4 bg-black/30 border border-gray-500 rounded-md">
+                        <Wrapper className="w-full md:w-max p-4 bg-black/30 border border-gray-500 rounded-md">
                             <h3 className="text-xl">
                                 Kontaktní informace
                             </h3>

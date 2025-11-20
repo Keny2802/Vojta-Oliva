@@ -44,31 +44,39 @@ const Header = ({ ...props }: headerProps) => {
                         onClick={(e) => {
                             setLinkWithoutHash(e, "portfolio");
                         }}
-                        className="transition-colors duration-300 ease-in-out hover:text-slate-700 dark:hover:text-[#f8aa0e]">
+                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
                             Portfolio
-                        </Link>
-                        <Link
-                        href={`#cenik`}
-                        onClick={(e) => {
-                            setLinkWithoutHash(e, "cenik");
-                        }}
-                        className="transition-colors duration-300 ease-in-out hover:text-slate-700 dark:hover:text-[#f8aa0e]">
-                            Ceník
                         </Link>
                         <Link
                         href={`#reference`}
                         onClick={(e) => {
                             setLinkWithoutHash(e, "reference");
                         }}
-                        className="transition-colors duration-300 ease-in-out hover:text-slate-700 dark:hover:text-[#f8aa0e]">
+                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
                             Reference
+                        </Link>
+                        <Link
+                        href={`#cenik`}
+                        onClick={(e) => {
+                            setLinkWithoutHash(e, "cenik");
+                        }}
+                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                            Ceník
+                        </Link>
+                        <Link
+                        href={`#faq`}
+                        onClick={(e) => {
+                            setLinkWithoutHash(e, "faq");
+                        }}
+                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                            FAQ
                         </Link>
                         <Link
                         href={`#o-mne`}
                         onClick={(e) => {
                             setLinkWithoutHash(e, "o-mne");
                         }}
-                        className="transition-colors duration-300 ease-in-out hover:text-slate-700 dark:hover:text-[#f8aa0e]">
+                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
                             O mně
                         </Link>
                         <Link
@@ -76,7 +84,7 @@ const Header = ({ ...props }: headerProps) => {
                         onClick={(e) => {
                             setLinkWithoutHash(e, "kontakt");
                         }}
-                        className="transition-colors duration-300 ease-in-out hover:text-slate-700 dark:hover:text-[#f8aa0e]">
+                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
                             Kontakt
                         </Link>
                     </ul>

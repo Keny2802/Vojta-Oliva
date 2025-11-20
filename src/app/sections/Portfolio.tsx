@@ -38,7 +38,7 @@ const Portfolio = ({ ...props }) => {
                         pageLabelText="Portfolio"
                         />
                         <h2 className="text-3xl md:text-5xl font-black uppercase">
-                            Moje portfolio
+                            1 Moje portfolio
                         </h2>
                         <p className="mt-4 text-base text-gray-300">
                             Moje portfolio je důkazem, že nelžu.

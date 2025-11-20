@@ -19,7 +19,8 @@ const Footer = () => {
                 <Wrapper className="flex justify-between items-center flex-col md:flex-row gap-4 pb-2 border-b border-gray-500">
                     <Logo />
                     <p className="text-sm md:text-base">
-                        New Web - Cenově dostupný webový vývoj.
+                        {/* New Web - Cenově dostupný webový vývoj. */}
+                        Vojta Oliva - Cenově dostupný webový vývoj.
                     </p>
                 </Wrapper>
                 {/* items-center flex-col */}

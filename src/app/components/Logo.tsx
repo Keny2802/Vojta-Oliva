@@ -32,7 +32,8 @@ const Logo = ({ ...props }: logoProps) => {
                 <Link
                 href={`${isHome ? "" : "/"}`}
                 className="text-xl md:text-2xl font-black cursor-pointer">
-                    newWeb
+                    {/* newWeb */}
+                    Vojta Oliva
                 </Link>
             </Wrapper>
         </Fragment>

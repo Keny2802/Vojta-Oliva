@@ -5,8 +5,10 @@ import {
 import Header from "./components/Header";
 import Hero from "./sections/Hero";
 import Portfolio from "./sections/Portfolio";
+import References from "./sections/References";
 import Pricing from "./sections/Pricing";
 import Faq from "./sections/Faq";
+import AboutMe from "./sections/AboutMe";
 import Contact from "./sections/Contact";
 import Footer from "./components/Footer";
 
@@ -16,8 +18,10 @@ const HomePage = () => {
       <Header />
       <Hero />
       <Portfolio />
+      <References />
       <Pricing />
       <Faq />
+      <AboutMe />
       <Contact />
       <Footer />
     </Fragment>

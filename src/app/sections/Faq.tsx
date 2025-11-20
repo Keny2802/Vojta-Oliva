@@ -43,7 +43,7 @@ const Faq = () => {
                             <Accordion
                             type="single"
                             collapsible
-                            className="mx-auto bg-black/20 rounded-md w-full md:w-1/2">
+                            className="mx-auto bg-black/20 rounded-md w-full">
                                 {
                                 faqSet.map((faq, faqIndex) => (
                                     <Fragment key={faqIndex}>

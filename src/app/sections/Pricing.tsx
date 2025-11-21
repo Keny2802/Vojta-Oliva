@@ -143,7 +143,7 @@ const Pricing = ({ ...props }: pricingProps) => {
                                 <Fragment>
                                     <Wrapper className="p-4 w-full md:max-w-[500px] bg-black/30 border border-gray-500 rounded-md price-wrapper">
                                         <Wrapper className="upper-content-wrapper">
-                                            <Wrapper className="flex justify-between items-center">
+                                            <Wrapper className="flex justify-between items-center flex-wrap">
                                                 <p className="p-1 text-base md:text-xl font-black uppercase">
                                                         Pro živnostníky
                                                 </p>
@@ -202,7 +202,7 @@ const Pricing = ({ ...props }: pricingProps) => {
                                 <Fragment>
                                     <Wrapper className="p-4 w-full md:max-w-[500px] bg-black/30 border border-gray-500 rounded-md price-wrapper">
                                         <Wrapper className="upper-content-wrapper">
-                                            <Wrapper className="flex justify-between items-center">
+                                            <Wrapper className="flex justify-between items-center flex-wrap">
                                                 <p className="p-1 text-base md:text-xl font-black uppercase">
                                                     Větší webová stránka
                                                 </p>
@@ -267,7 +267,7 @@ const Pricing = ({ ...props }: pricingProps) => {
                                 <Fragment>
                                     <Wrapper className="p-4 w-full md:max-w-[500px] bg-black/30 border border-gray-500 rounded-md price-wrapper">
                                         <Wrapper className="upper-content-wrapper">
-                                            <Wrapper className="flex justify-between items-center">
+                                            <Wrapper className="flex justify-between items-center flex-wrap">
                                                 <p className="p-1 text-base md:text-xl font-black uppercase">
                                                     Velká webová stránka
                                                 </p>

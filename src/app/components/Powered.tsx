@@ -24,7 +24,7 @@ const Powered = ({ ...props }: poweredProps) => {
                 <span className="powered">
                     Powered by
                 </span>
-                <Logo />
+                <Logo className="h-14 w-14" />
             </Wrapper>
         </Fragment>
     );

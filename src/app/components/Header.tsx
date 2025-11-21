@@ -35,7 +35,7 @@ const Header = ({ ...props }: headerProps) => {
 
     return (
         <Fragment>
-            <Wrapper className={clsx(`${className || ""} w-full fixed z-50 bg-gray-800 text-white p-4 header-wrapper`)}>
+            <Wrapper className={clsx(`${className || ""} w-full fixed z-50 bg-gray-800 text-white px-2 header-wrapper`)}>
                 <Wrapper className="flex justify-between items-center gap-4 md:gap-2">
                     <Logo />
                     <ul className="hidden md:flex items-center gap-4 header-item-list-wrapper">

@@ -27,6 +27,7 @@ import Link from "next/link";
 
 import Wrapper from "@/app/components/Wrapper";
 import Header from "@/app/components/Header";
+import Logo from "../components/Logo";
 import PageLabel from "../components/PageLabel";
 import Footer from "../components/Footer";
 
@@ -76,13 +77,14 @@ const Page = () => {
             {/* <Header /> */}
             {/* pt-28 md:pt-18 */}
             <Wrapper className="min-h-screen border-t border-gray-500 bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a]">
-                <Wrapper className="p-4 text-gray-500 border-b border-gray-500">
+                <Wrapper className="flex justify-between items-center p-4 text-gray-500 border-b border-gray-500">
                     <Link
                     href={`/`}
                     className="flex gap-1 text-base transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
                         <ChevronLeft />
                         Zpátky domů
                     </Link>
+                    <Logo />
                 </Wrapper>
                 <Wrapper className="px-4 md:px-24 py-4 md:py-16 text-white">
                     <Wrapper className="flex flex-col justify-center items-center">
@@ -218,7 +220,7 @@ const Page = () => {
                             type="submit"
                             disabled={isSubmitting}
                             className="bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-base md:text-lg font-black uppercase">
-                                Odesláním, mě kontaktujete
+                                Kontaktujte mě
                             </button>
                         </form>
                     </Wrapper>

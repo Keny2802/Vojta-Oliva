@@ -25,6 +25,7 @@ import Link from "next/link";
 
 import Wrapper from "../components/Wrapper";
 import PageLabel from "../components/PageLabel";
+import ContactInfo from "../components/ContactInfo";
 
 type contactProps = {
     className?: string;
@@ -233,55 +234,12 @@ const Contact = ({ ...props }: contactProps) => {
                                 type="submit"
                                 disabled={isSubmitting}
                                 className="bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-base md:text-lg font-black uppercase">
-                                    Odesláním, mě kontaktujete
+                                    {/* Odesláním, mě kontaktujete */}
+                                    Kontaktujte mě
                                 </button>
                             </form>
                         </Wrapper>
-                        <Wrapper className="w-full md:w-max p-4 bg-black/30 border border-gray-500 rounded-md">
-                            <h3 className="text-xl">
-                                Kontaktní informace
-                            </h3>
-                            <p className="mt-2 pb-4 text-sm text-gray-300 border-b border-gray-500">
-                                Pokud máte jakýkoliv dotaz nebo zájem, kontaktujte mě prosím.
-                            </p>
-                            <Wrapper className="mt-4">
-                                <Wrapper className="flex flex-col gap-3">
-                                    <p className="text-base text-gray-300">
-                                        Vojta Oliva
-                                    </p>
-                                    <Wrapper className="text-base text-gray-300 flex items-center gap-2">
-                                        <Mail />
-                                        <Link
-                                        href={`mailto:info.modernizujme@gmail.com`}
-                                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
-                                            info.modernizujme@gmail.com
-                                        </Link>
-                                    </Wrapper>
-                                    <Wrapper className="text-base text-gray-300 flex items-center gap-2">
-                                        <Phone />
-                                        <Link
-                                        href={`tel:737007626`}
-                                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
-                                            +420 737 007 626
-                                        </Link>
-                                    </Wrapper>
-                                </Wrapper>
-                            </Wrapper>
-                            <Wrapper className="mt-4 flex items-center flex-col md:flex-row gap-4">
-                                <Link
-                                href={`tel:737007626`}
-                                className="w-full text-base flex items-center gap-2 bg-blue-600 px-3 py-2 rounded-md">
-                                    <Phone />
-                                    Zavolejte mi
-                                </Link>
-                                <Link
-                                href={`mailto:info.modernizujme@gmail.com`}
-                                className="w-full text-base flex items-center gap-2 bg-blue-600 px-3 py-2 rounded-md">
-                                    <Mail />
-                                    Napište mi mail
-                                </Link>
-                            </Wrapper>
-                        </Wrapper>
+                        <ContactInfo isFooter={false} />
                     </Wrapper>
                 </Wrapper>
             </Wrapper>

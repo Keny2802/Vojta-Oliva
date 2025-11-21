@@ -9,6 +9,7 @@ import setLinkWithoutHash from "../functions/setLinkWithoutHash";
 
 import Wrapper from "./Wrapper";
 import Logo from "./Logo";
+import ContactInfo from "./ContactInfo";
 import Powered from "./Powered";
 import Year from "./Year";
 
@@ -25,7 +26,7 @@ const Footer = () => {
                         </p>
                     </Wrapper>
                     {/* items-center flex-col */}
-                    <Wrapper className="mt-4 pb-2 flex justify-between md:flex-row gap-4">
+                    <Wrapper className="mt-4 flex justify-between md:flex-row gap-4 pb-4 border-b border-gray-500">
                         <Wrapper>
                             <p className="border-b border-gray-500 pb-1">
                                 Navigace
@@ -72,7 +73,7 @@ const Footer = () => {
                                     O mně
                                 </Link>
                                 <Link
-                                href={`#kontakt`}
+                                href={`/#kontakt`}
                                 className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]"
                                 onClick={(e) => {
                                     setLinkWithoutHash(e, "kontakt");
@@ -94,6 +95,10 @@ const Footer = () => {
                             </Wrapper>
                         </Wrapper>
                     </Wrapper>
+                    <Wrapper className="flex justify-start ">
+                        <ContactInfo className="mt-4" isFooter={true} />
+                        {/* <ContactInfo className="mt-4" /> */}
+                    </Wrapper>
                 </Wrapper>
                 {/* <Wrapper className="bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a] text-gray-300">
                     <Wrapper className="p-8 flex flex-col items-center">
@@ -101,9 +106,9 @@ const Footer = () => {
                         <Year className="mt-2" />
                     </Wrapper>
                 </Wrapper> */}
-                <Wrapper className="bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a] text-gray-300 p-4 border-t border-gray-500 flex flex-col items-center">
+                <Wrapper className="bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a] text-gray-300 p-2 border-t border-gray-500 flex flex-col items-center">
                     <Powered />
-                    <Year className="mt-1" />
+                    <Year />
                 </Wrapper>
             </Wrapper>
         </Fragment>

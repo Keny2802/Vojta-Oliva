@@ -63,8 +63,9 @@ const Faq = () => {
                                 }
                             </Accordion>
                             <Wrapper className="mt-2 flex justify-center py-10">
-                            <p className="p-2 text-center text-sm text-gray-500">
-                                Stále jste nedostali odpovědi na Vaše dotazy, vůbec se nic neděje,
+                                <p className="p-2 text-center text-sm text-gray-500">
+                                    Stále jste nedostali odpovědi na Vaše dotazy, vůbec se nic neděje,
+                                </p>
                                 {" "}
                                 <Link
                                 href={`#kontakt`}
@@ -74,8 +75,7 @@ const Faq = () => {
                                 }}>
                                     kontaktujte mě.
                                 </Link>
-                            </p>
-                        </Wrapper>
+                            </Wrapper>
                         </Wrapper>
                     </Wrapper>
                 </Wrapper>

@@ -81,6 +81,20 @@ const AboutMe = () => {
                             </Wrapper>
                         </Wrapper>
                     </Wrapper>
+                    <Wrapper className="mt-2 flex justify-center items-center py-10">
+                        <p className="p-2 text-center text-sm text-gray-500">
+                            Nepodal jsem o sobě dostatečné INFO nebo chcete se mě na cokoliv zeptat, neváhejte mě
+                        </p>
+                        {" "}
+                        <Link
+                        href={`#kontakt`}
+                        className="border-b border-gray-500"
+                        onClick={(e) => {
+                            setLinkWithoutHash(e, "kontakt");
+                        }}>
+                            kontaktovat.
+                        </Link>
+                    </Wrapper>
                 </Wrapper>
             </Wrapper>
         </Fragment>

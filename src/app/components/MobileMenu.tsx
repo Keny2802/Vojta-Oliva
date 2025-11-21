@@ -39,54 +39,54 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                     <Logo className="text-white py-2 border-b border-gray-200" />
                     <ul className="mt-4 flex flex-col gap-2 mobile-menu-items-list-wrapper">
                         <Link
-                        href={`/#portfolio`}
+                        href={`#portfolio`}
                         onClick={(e) => {
-                            // setLinkWithoutHash(e, "portfolio");
+                            setLinkWithoutHash(e, "portfolio");
                             setMobileMenuHidden(false);
                         }}
                         className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
                             Portfolio
                         </Link>
                         <Link
-                        href={`/#reference`}
+                        href={`#reference`}
                         onClick={(e) => {
-                            // setLinkWithoutHash(e, "reference");
+                            setLinkWithoutHash(e, "reference");
                             setMobileMenuHidden(false);
                         }}
                         className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
                             Reference
                         </Link>
                         <Link
-                        href={`/#cenik`}
+                        href={`#cenik`}
                         onClick={(e) => {
-                            // setLinkWithoutHash(e, "cenik");
+                            setLinkWithoutHash(e, "cenik");
                             setMobileMenuHidden(false);
                         }}
                         className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
                             Ceník
                         </Link>
                         <Link
-                        href={`/#faq`}
+                        href={`#faq`}
                         onClick={(e) => {
-                            // setLinkWithoutHash(e, "faq");
+                            setLinkWithoutHash(e, "faq");
                             setMobileMenuHidden(false);
                         }}
                         className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
                             FAQ
                         </Link>
                         <Link
-                        href={`/#o-mne`}
+                        href={`#o-mne`}
                         onClick={(e) => {
-                            // setLinkWithoutHash(e, "o-mne");
+                            setLinkWithoutHash(e, "o-mne");
                             setMobileMenuHidden(false);
                         }}
                         className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
                             O mně
                         </Link>
                         <Link
-                        href={`#/kontakt`}
+                        href={`#kontakt`}
                         onClick={(e) => {
-                            // setLinkWithoutHash(e, "kontakt");
+                            setLinkWithoutHash(e, "kontakt");
                             setMobileMenuHidden(false);
                         }}
                         className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">

@@ -74,7 +74,8 @@ const Page = () => {
     return (
         <Fragment>
             {/* <Header /> */}
-            <Wrapper className="pt-28 md:pt-18 min-h-screen border-t border-gray-500 bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a]">
+            {/* pt-28 md:pt-18 */}
+            <Wrapper className="min-h-screen border-t border-gray-500 bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a]">
                 <Wrapper className="p-4 text-gray-500 border-b border-gray-500">
                     <Link
                     href={`/`}

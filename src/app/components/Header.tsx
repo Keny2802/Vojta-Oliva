@@ -40,31 +40,31 @@ const Header = ({ ...props }: headerProps) => {
                     <Logo />
                     <ul className="hidden md:flex items-center gap-4 header-item-list-wrapper">
                         <Link
-                        href={`#portfolio`}
+                        href={`/#portfolio`}
                         onClick={(e) => {
-                            setLinkWithoutHash(e, "portfolio");
+                            // setLinkWithoutHash(e, "portfolio");
                         }}
                         className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
                             Portfolio
                         </Link>
                         <Link
-                        href={`#reference`}
+                        href={`/#reference`}
                         onClick={(e) => {
-                            setLinkWithoutHash(e, "reference");
+                            // setLinkWithoutHash(e, "reference");
                         }}
                         className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
                             Reference
                         </Link>
                         <Link
-                        href={`#cenik`}
+                        href={`/#cenik`}
                         onClick={(e) => {
-                            setLinkWithoutHash(e, "cenik");
+                            // setLinkWithoutHash(e, "cenik");
                         }}
                         className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
                             Ceník
                         </Link>
                         <Link
-                        href={`#faq`}
+                        href={`/#faq`}
                         onClick={(e) => {
                             setLinkWithoutHash(e, "faq");
                         }}
@@ -72,7 +72,7 @@ const Header = ({ ...props }: headerProps) => {
                             FAQ
                         </Link>
                         <Link
-                        href={`#o-mne`}
+                        href={`/#o-mne`}
                         onClick={(e) => {
                             setLinkWithoutHash(e, "o-mne");
                         }}
@@ -80,9 +80,9 @@ const Header = ({ ...props }: headerProps) => {
                             O mně
                         </Link>
                         <Link
-                        href={`#kontakt`}
+                        href={`/#kontakt`}
                         onClick={(e) => {
-                            setLinkWithoutHash(e, "kontakt");
+                            // setLinkWithoutHash(e, "kontakt");
                         }}
                         className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
                             Kontakt

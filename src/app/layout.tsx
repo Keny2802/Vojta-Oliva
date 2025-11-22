@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { LanguageProvider } from "./components/LanguageContext";
 
 export const metadata: Metadata = {
   // title: "New Web - Cenově dostupný webový vývoj",
   // description: "New Web - Cenově dostupný webový vývoj",
   title: "Vojta Oliva - Cenově dostupný webový vývoj",
-  description: "Vojta Oliva - poskytuje velmi cenově výhodný webový vývoj s budoucností.",
+  description: "Vojta Oliva - poskytuje velmi cenově výhodný webový vývoj, který má kvalitu, udržitelnost a hlavně budoucnost.",
   icons: {
     icon: [
       {
@@ -26,7 +27,9 @@ export default function RootLayout({
       <body
         className="body"
       >
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

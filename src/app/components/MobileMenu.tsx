@@ -14,6 +14,7 @@ import setLinkWithoutHash from "../functions/setLinkWithoutHash";
 
 import Wrapper from "./Wrapper";
 import Logo from "./Logo";
+import LanguageSwitcher from "./LanguageSwitcher";
 import Powered from "./Powered";
 import Year from "./Year";
 
@@ -21,14 +22,20 @@ type mobileMenuProps = {
     className?: string;
     isMobileMenuHidden: boolean;
     setMobileMenuHidden: (isHidden: boolean) => void;
+    // languageSwitcherState: "Čeština" | "English" | "Deutsch";
+    // setLanguageSwitcherState: (language: "Čeština" | "English" | "Deutsch") => void;
     children?: ReactNode;
 };
 
 const MobileMenu = ({ ...props }: mobileMenuProps) => {
+    const [isCzechSwitcherClicked, setCzechSwitcherClicked] = useState<boolean>(false);
+
     const {
         className,
         isMobileMenuHidden,
         setMobileMenuHidden,
+        // languageSwitcherState,
+        // setLanguageSwitcherState,
         children
     } = props;
 
@@ -93,6 +100,9 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                             Kontakt
                         </Link>
                     </ul>
+                    <LanguageSwitcher
+                    className="mt-2 top-[52%] left-3 w-11/12"
+                    />
                     <Link
                     href={`/nabidka`}
                     className="mt-4 flex items-center gap-2 bg-white text-black rounded-lg px-3 py-2">

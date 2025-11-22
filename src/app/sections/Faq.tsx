@@ -65,16 +65,16 @@ const Faq = () => {
                             <Wrapper className="mt-2 flex justify-center py-10">
                                 <p className="p-2 text-center text-sm text-gray-500">
                                     Stále jste nedostali odpovědi na Vaše dotazy, vůbec se nic neděje,
+                                    {" "}
+                                    <Link
+                                    href={`#kontakt`}
+                                    className="border-b border-gray-500"
+                                    onClick={(e) => {
+                                        setLinkWithoutHash(e, "kontakt");
+                                    }}>
+                                        kontaktujte mě.
+                                    </Link>
                                 </p>
-                                {" "}
-                                <Link
-                                href={`#kontakt`}
-                                className="border-b border-gray-500"
-                                onClick={(e) => {
-                                    setLinkWithoutHash(e, "kontakt");
-                                }}>
-                                    kontaktujte mě.
-                                </Link>
                             </Wrapper>
                         </Wrapper>
                     </Wrapper>

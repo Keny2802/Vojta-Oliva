@@ -16,7 +16,7 @@ import Year from "./Year";
 const Footer = () => {
     return (
         <Fragment>
-            <Wrapper className="flex flex-col justify-between">
+            <Wrapper className="flex flex-col justify-between" attributes={{ id: "footer" }}>
                 <Wrapper className="px-4 md:px-24 py-4 md:py-16 text-gray-300 bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a] border-t border-gray-500 footer-wrapper">
                     <Wrapper className="flex justify-between items-center flex-col md:flex-row gap-4 pb-2 border-b border-gray-500">
                         <Logo />

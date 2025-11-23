@@ -1,6 +1,6 @@
 import {
     faqProps
-} from "./types/faqProps"
+} from "../types/faqProps";
 
 const faqSet:faqProps[] = [
     {

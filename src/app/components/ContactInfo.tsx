@@ -6,6 +6,9 @@ import {
     Mail,
     Phone
 } from "lucide-react";
+import {
+    useLanguage
+} from "../components/LanguageContext";
 import Link from "next/link";
 import clsx from "clsx";
 
@@ -19,6 +22,11 @@ type contactInfoProps = {
 
 const ContactInfo = ({ ...props }: contactInfoProps) => {
     const {
+        language,
+        setLanguage
+    } = useLanguage();
+
+    const {
         className,
         isFooter,
         children
@@ -31,49 +39,153 @@ const ContactInfo = ({ ...props }: contactInfoProps) => {
                 ${isFooter && "w-full"}
                 ${!isFooter && "w-full md:w-max"}
                 p-4 bg-black/30 border border-gray-500 rounded-md`)}>
-                <h3 className="text-xl">
-                    Kontaktní informace
-                </h3>
-                <p className="mt-2 pb-4 text-sm text-gray-300 border-b border-gray-500">
-                    Pokud máte jakýkoliv dotaz nebo zájem, kontaktujte mě prosím.
-                </p>
-                <Wrapper className="mt-4">
-                    <Wrapper className="flex flex-col gap-3">
-                        <p className="text-base text-gray-300">
-                            Vojta Oliva
-                        </p>
-                        <Wrapper className="text-base text-gray-300 flex items-center gap-2">
-                            <Mail />
-                            <Link
-                            href={`mailto:info.modernizujme@gmail.com`}
-                            className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
-                                info.modernizujme@gmail.com
-                            </Link>
-                        </Wrapper>
-                        <Wrapper className="text-base text-gray-300 flex items-center gap-2">
-                            <Phone />
-                            <Link
-                            href={`tel:737007626`}
-                            className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
-                                +420 737 007 626
-                            </Link>
-                        </Wrapper>
-                    </Wrapper>
-                </Wrapper>
-                <Wrapper className="mt-4 flex items-center flex-col md:flex-row gap-4">
-                    <Link
-                    href={`tel:737007626`}
-                    className="w-full text-base flex items-center gap-2 bg-blue-600 px-3 py-2 rounded-md">
-                        <Phone />
-                        Zavolejte mi
-                    </Link>
-                    <Link
-                    href={`mailto:info.modernizujme@gmail.com`}
-                    className="w-full text-base flex items-center gap-2 bg-blue-600 px-3 py-2 rounded-md">
-                        <Mail />
-                        Napište mi mail
-                    </Link>
-                </Wrapper>
+                {
+                    language === "Čeština" && (
+                        <Fragment>
+                            <h3 className="text-xl">
+                                Kontaktní informace
+                            </h3>
+                            <p className="mt-2 pb-4 text-sm text-gray-300 border-b border-gray-500">
+                                Pokud máte jakýkoliv dotaz nebo zájem, kontaktujte mě prosím.
+                            </p>
+                            <Wrapper className="mt-4">
+                                <Wrapper className="flex flex-col gap-3">
+                                    <p className="text-base text-gray-300">
+                                        Vojta Oliva
+                                    </p>
+                                    <Wrapper className="text-base text-gray-300 flex items-center gap-2">
+                                        <Mail />
+                                        <Link
+                                        href={`mailto:info.modernizujme@gmail.com`}
+                                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                                            info.modernizujme@gmail.com
+                                        </Link>
+                                    </Wrapper>
+                                    <Wrapper className="text-base text-gray-300 flex items-center gap-2">
+                                        <Phone />
+                                        <Link
+                                        href={`tel:737007626`}
+                                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                                            +420 737 007 626
+                                        </Link>
+                                    </Wrapper>
+                                </Wrapper>
+                            </Wrapper>
+                            <Wrapper className="mt-4 flex items-center flex-col md:flex-row gap-4">
+                                <Link
+                                href={`tel:737007626`}
+                                className="w-full text-base flex items-center gap-2 bg-blue-600 px-3 py-2 rounded-md">
+                                    <Phone />
+                                    Zavolejte mi
+                                </Link>
+                                <Link
+                                href={`mailto:info.modernizujme@gmail.com`}
+                                className="w-full text-base flex items-center gap-2 bg-blue-600 px-3 py-2 rounded-md">
+                                    <Mail />
+                                    Napište mi mail
+                                </Link>
+                            </Wrapper>
+                        </Fragment>
+                    )
+                }
+                {
+                    language === "English" && (
+                        <Fragment>
+                            <h3 className="text-xl">
+                                Contact information
+                            </h3>
+                            <p className="mt-2 pb-4 text-sm text-gray-300 border-b border-gray-500">
+                                If you have any questions or interest, please contact me.
+                            </p>
+                            <Wrapper className="mt-4">
+                                <Wrapper className="flex flex-col gap-3">
+                                    <p className="text-base text-gray-300">
+                                        Vojta Oliva
+                                    </p>
+                                    <Wrapper className="text-base text-gray-300 flex items-center gap-2">
+                                        <Mail />
+                                        <Link
+                                        href={`mailto:info.modernizujme@gmail.com`}
+                                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                                            info.modernizujme@gmail.com
+                                        </Link>
+                                    </Wrapper>
+                                    <Wrapper className="text-base text-gray-300 flex items-center gap-2">
+                                        <Phone />
+                                        <Link
+                                        href={`tel:737007626`}
+                                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                                            +420 737 007 626
+                                        </Link>
+                                    </Wrapper>
+                                </Wrapper>
+                            </Wrapper>
+                            <Wrapper className="mt-4 flex items-center flex-col md:flex-row flex-wrap gap-4">
+                                <Link
+                                href={`tel:737007626`}
+                                className="w-full text-base flex items-center gap-2 bg-blue-600 px-3 py-2 rounded-md">
+                                    <Phone />
+                                    Contact me
+                                </Link>
+                                <Link
+                                href={`mailto:info.modernizujme@gmail.com`}
+                                className="w-full text-base flex items-center gap-2 bg-blue-600 px-3 py-2 rounded-md">
+                                    <Mail />
+                                    Write to me a mail
+                                </Link>
+                            </Wrapper>
+                        </Fragment>
+                    )
+                }
+                {
+                    language === "Deutsch" && (
+                        <Fragment>
+                            <h3 className="text-xl">
+                                Kontaktinformationen
+                            </h3>
+                            <p className="mt-2 pb-4 text-sm text-gray-300 border-b border-gray-500">
+                                Bei Fragen oder Interesse kontaktieren Sie mich bitte.
+                            </p>
+                            <Wrapper className="mt-4">
+                                <Wrapper className="flex flex-col gap-3">
+                                    <p className="text-base text-gray-300">
+                                        Vojta Oliva
+                                    </p>
+                                    <Wrapper className="text-base text-gray-300 flex items-center gap-2">
+                                        <Mail />
+                                        <Link
+                                        href={`mailto:info.modernizujme@gmail.com`}
+                                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                                            info.modernizujme@gmail.com
+                                        </Link>
+                                    </Wrapper>
+                                    <Wrapper className="text-base text-gray-300 flex items-center gap-2">
+                                        <Phone />
+                                        <Link
+                                        href={`tel:737007626`}
+                                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                                            +420 737 007 626
+                                        </Link>
+                                    </Wrapper>
+                                </Wrapper>
+                            </Wrapper>
+                            <Wrapper className="mt-4 flex items-center flex-col md:flex-row flex-wrap gap-4">
+                                <Link
+                                href={`tel:737007626`}
+                                className="w-full text-base flex items-center gap-2 bg-blue-600 px-3 py-2 rounded-md">
+                                    <Phone />
+                                    Kontaktieren Sie mich
+                                </Link>
+                                <Link
+                                href={`mailto:info.modernizujme@gmail.com`}
+                                className="w-full text-base flex items-center gap-2 bg-blue-600 px-3 py-2 rounded-md">
+                                    <Mail />
+                                    Schreib mir eine Mail
+                                </Link>
+                            </Wrapper>
+                        </Fragment>
+                    )
+                }
             </Wrapper>
         </Fragment>
     );

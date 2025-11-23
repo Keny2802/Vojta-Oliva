@@ -12,20 +12,20 @@ import {
     ChevronDown,
     ChevronUp
 } from "lucide-react";
+import languageSet from "../sets/languageSet";
 import clsx from "clsx";
 
 import Wrapper from "./Wrapper";
 
-type languageProps = "Čeština" | "English" | "Deutsch";
-
+type Language = "Čeština" | "English" | "Deutsch";
 type languageSwitcherProps = {
     className?: string;
-    // language: languageProps;
-    // setLanguage: (language: languageProps) => void;
     children?: ReactNode;
 };
 
 const LanguageSwitcher = ({ ...props }: languageSwitcherProps) => {
+    const [languageSwitcherClicked, setLanguageSwitcherClicked] = useState<boolean>(false);
+    
     const {
         language,
         setLanguage
@@ -33,36 +33,46 @@ const LanguageSwitcher = ({ ...props }: languageSwitcherProps) => {
 
     const {
         className,
-        // language,
-        // setLanguage,
         children
     } = props;
 
-    const [isChevronClicked, setChevronClicked] = useState<boolean>(false);
-    const [isChevronHovered, setChevronHovered] = useState<boolean>(false);
-    const [isCzechSwitcherClicked, setCzechSwitcherClicked] = useState<boolean>(false);
-    // const [languageSwitcherState, setLanguageSwitcherState] = useState<"Čeština" | "English" | "Deutsch">("Čeština");
-    
-    // const {
-    //     language,
-    //     setLanguage
-    // } = useLanguage();
-
     return (
         <Fragment>
-            {/* absolute top-4 z-10 */}
             <Wrapper className={clsx(`${className} bg-gray-700 fixed
             ${String(className).includes("top-") ? className : "top-4"}
+            ${languageSwitcherClicked ? "flex" : "hidden"}
             flex flex-col rounded-md group language-switcher-wrapper`)}>
                 <Wrapper
-                className={clsx(`${language === "Čeština" && "bg-black/30"} flex justify-between items-center gap-2 md:gap-3 p-1 cursor-pointer hover:bg-black/30 group-hover:border-b group-hover:border-gray-500`)}
+                className={clsx(`
+                ${language === "Čeština" && "bg-black/30"}
+                flex justify-between items-center gap-2 md:gap-3 p-1 cursor-pointer hover:bg-black/30 group-hover:border-b group-hover:border-gray-500`)}
                 attributes={{
-                    onClick: () => setLanguage("Čeština")
+                    onClick: () => (
+                        setLanguage("Čeština")
+                    )
                 }}
                 >
-                    <ChevronDown
-                    className="cursor-pointer transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]"
-                    />
+                    {
+                        languageSwitcherClicked ? (
+                            <Fragment>
+                                <ChevronUp
+                                className="cursor-pointer transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]"
+                                onClick={(e) => {
+                                    setLanguageSwitcherClicked(false);
+                                }}
+                                />
+                            </Fragment>
+                        ) : (
+                            <Fragment>
+                                <ChevronDown
+                                className="cursor-pointer transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]"
+                                onClick={(e) => {
+                                    setLanguageSwitcherClicked(true);
+                                }}
+                                />
+                            </Fragment>
+                        )
+                    }
                     <p className="text-sm text-gray-300">
                         Čeština
                     </p>
@@ -76,9 +86,7 @@ const LanguageSwitcher = ({ ...props }: languageSwitcherProps) => {
                 hidden justify-between items-center gap-2 md:gap-1 border-b border-gray-500 p-1 cursor-pointer transition-colors duration-300 ease-in-out hover:bg-black/30 group-hover:flex`)}
                 attributes={{
                     onClick: () => setLanguage("English")
-                }}
-                >
-                    {/* <ChevronDown className="cursor-pointer" /> */}
+                }}>
                     <p className="text-sm text-gray-300">
                         English
                     </p>
@@ -102,38 +110,6 @@ const LanguageSwitcher = ({ ...props }: languageSwitcherProps) => {
                     code="de"
                     />
                 </Wrapper>
-                {/* <Wrapper className={clsx(`
-                ${languageSwitcherState === "English" && "bg-black/30 order-1"}
-                opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 language-child-switcher-wrapper`)}
-                attributes={{
-                    onClick: () => setLanguageSwitcherState("English")
-                }}
-                >
-                    <Wrapper className="hidden justify-between items-center gap-2 md:gap-1 border-b border-gray-500 p-1 cursor-pointer transition-colors duration-300 ease-in-out hover:bg-black/30 group-hover:flex">
-                        <p className="text-sm text-gray-300">
-                            English
-                        </p>
-                        <Flag
-                        className="h-8 w-8"
-                        code="gb"
-                        />
-                    </Wrapper>
-                    <Wrapper className={clsx(`
-                    ${languageSwitcherState === "Deutsch" && "bg-black/30"}
-                    hidden justify-between items-center gap-2 md:gap-1 p-1 cursor-pointer transition-colors duration-300 ease-in-out hover:bg-black/30 group-hover:flex`)}
-                    attributes={{
-                        onClick: () => setLanguageSwitcherState("Deutsch")
-                    }}
-                    >
-                        <p className="text-sm text-gray-300">
-                            Deutsch
-                        </p>
-                        <Flag
-                        className="h-8 w-8"
-                        code="de"
-                        />
-                    </Wrapper>
-                </Wrapper> */}
             </Wrapper>
         </Fragment>
     );

@@ -71,7 +71,7 @@ const References = () => {
                                 <Wrapper className="flex flex-col justify-center items-center">
                                     <PageLabel
                                     pageLabelAdditContent={<Sparkle className="text-fuchsia-300" />}
-                                    pageLabelText="References" />
+                                    pageLabelText="Referenzen" />
                                     <h2 className="text-3xl md:text-5xl font-black uppercase">
                                         2 References
                                     </h2>
@@ -95,6 +95,42 @@ const References = () => {
                                             setLinkWithoutHash(e, "kontakt");
                                         }}>
                                             contact me.
+                                        </Link>
+                                    </p>
+                                </Wrapper>
+                            </Fragment>
+                        )
+                    }
+                    {
+                        language === "Deutsch" && (
+                            <Fragment>
+                                <Wrapper className="flex flex-col justify-center items-center">
+                                    <PageLabel
+                                    pageLabelAdditContent={<Sparkle className="text-fuchsia-300" />}
+                                    pageLabelText="References" />
+                                    <h2 className="text-3xl md:text-5xl font-black uppercase">
+                                        2 Referenzen
+                                    </h2>
+                                    <p className="mt-4 text-base text-center text-gray-300">
+                                        Referenzen sind ein Beleg für die Glaubwürdigkeit.
+                                    </p>
+                                </Wrapper>
+                                <Wrapper className="mt-6 flex justify-center">
+                                    <p className="text-xl text-gray-500">
+                                        🤷🏼 Ich habe noch keine Referenzen.
+                                    </p>
+                                </Wrapper>
+                                <Wrapper className="mt-2 flex justify-center py-10">
+                                    <p className="p-2 text-center text-sm text-gray-500">
+                                        Haben Sie Fragen an mich? Zögern Sie nicht.
+                                        {" "}
+                                        <Link
+                                        href={`#kontakt`}
+                                        className="border-b border-gray-500"
+                                        onClick={(e) => {
+                                            setLinkWithoutHash(e, "kontakt");
+                                        }}>
+                                            Kontaktieren Sie mich.
                                         </Link>
                                     </p>
                                 </Wrapper>

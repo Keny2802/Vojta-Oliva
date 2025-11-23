@@ -17,7 +17,7 @@ const faqSet:faqProps[] = [
     },
     {
         faqHeading: "Kdo jste a co děláte?",
-        faqContent: "Ke dni 20/11/2025, jsem student, který hledá první klienty a proto nabízí weby, dá říci za hubičku."
+        faqContent: "Ke dni 20/11/2025, jsem student, který hledá první klienty a proto nabízí weby, dá se říci za hubičku."
     },
     {
         faqHeading: "Jak dlouho Vám trvá dokončit kompletní zakázku?",

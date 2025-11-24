@@ -118,7 +118,8 @@ const Hero = ({ ...props }: heroProps) => {
                                 Výborné ceny
                             </p>
                             <p className="text-sm text-gray-200">
-                                5.000 - 15.000 Kč
+                                {/* 5.000 - 15.000 Kč */}
+                                4.500 - 8.000 Kč
                             </p>
                         </Wrapper>
                         <Wrapper className="flex flex-col items-center gap-1">

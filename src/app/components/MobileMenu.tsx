@@ -8,13 +8,15 @@ import {
 import {
     FileText
 } from "lucide-react";
+import {
+    useTheme
+} from "../context/ThemeContext";
 import clsx from "clsx";
 import Link from "next/link";
 import setLinkWithoutHash from "../functions/setLinkWithoutHash";
 
 import Wrapper from "./Wrapper";
 import Logo from "./Logo";
-import LanguageSwitcher from "./LanguageSwitcher";
 import Powered from "./Powered";
 import Year from "./Year";
 
@@ -22,28 +24,31 @@ type mobileMenuProps = {
     className?: string;
     isMobileMenuHidden: boolean;
     setMobileMenuHidden: (isHidden: boolean) => void;
-    // languageSwitcherState: "Čeština" | "English" | "Deutsch";
-    // setLanguageSwitcherState: (language: "Čeština" | "English" | "Deutsch") => void;
     children?: ReactNode;
 };
 
 const MobileMenu = ({ ...props }: mobileMenuProps) => {
-    const [isCzechSwitcherClicked, setCzechSwitcherClicked] = useState<boolean>(false);
+    const {
+        theme,
+        setTheme
+    } = useTheme();
 
     const {
         className,
         isMobileMenuHidden,
         setMobileMenuHidden,
-        // languageSwitcherState,
-        // setLanguageSwitcherState,
         children
     } = props;
 
     return (
         <Fragment>
-            <Wrapper className={clsx(`${className || ""} ${isMobileMenuHidden ? "translate-x-0" : "-translate-x-full"} flex flex-col justify-between p-4 text-white fixed top-0 w-64 h-screen bg-gray-800 transition-transform duration-300 ease-in-out z-50 mobile-menu-wrapper`)}>
+            <Wrapper className={clsx(`
+            ${className || ""} ${isMobileMenuHidden ? "translate-x-0" : "-translate-x-full"}
+            ${theme === "Dark" ? "bg-gray-800 text-white" : "bg-gray-50 shadow-md"}
+            flex flex-col justify-between p-4 fixed top-0 w-64 h-screen transition-transform duration-300 ease-in-out z-50 mobile-menu-wrapper`)}>
                 <Wrapper>
-                    <Logo className="text-white py-2 border-b border-gray-200" />
+                    {/* py-2 border-b border-gray-200 */}
+                    <Logo className="text-white" />
                     <ul className="mt-4 flex flex-col gap-2 mobile-menu-items-list-wrapper">
                         <Link
                         href={`#portfolio`}
@@ -100,15 +105,33 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                             Kontakt
                         </Link>
                     </ul>
-                    <LanguageSwitcher
-                    className="mt-2 top-[52%] left-3 w-11/12"
-                    />
-                    <Link
+                    {/* <Link
                     href={`/nabidka`}
                     className="mt-4 flex items-center gap-2 bg-white text-black rounded-lg px-3 py-2">
                         <FileText />
                         Získat nabídku
-                    </Link>
+                    </Link> */}
+                    {
+                        theme === "Dark" ? (
+                            <Fragment>
+                                <Link
+                                    href={`/nabidka`}
+                                    className="mt-4 flex items-center gap-2 bg-white text-black rounded-lg px-3 py-2">
+                                    <FileText />
+                                    Získat nabídku
+                                </Link>
+                            </Fragment>
+                        ) : (
+                            <Fragment>
+                                <Link
+                                    href={`/nabidka`}
+                                    className="mt-4 flex items-center gap-2 bg-black text-white rounded-lg px-3 py-2">
+                                    <FileText />
+                                    Získat nabídku
+                                </Link>
+                            </Fragment>
+                        )
+                    }
                 </Wrapper>
                 <Wrapper className="flex flex-col items-center text-sm text-gray-200">
                     <Powered />

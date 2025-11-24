@@ -7,9 +7,10 @@ import {
     ReactNode
 } from "react";
 import {
-    useLanguage
-} from "./LanguageContext";
+    useTheme
+} from "../context/ThemeContext";
 import Link from "next/link";
+import clsx from "clsx";
 import setLinkWithoutHash from "../functions/setLinkWithoutHash";
 
 import Wrapper from "./Wrapper";
@@ -20,17 +21,16 @@ import Year from "./Year";
 
 const Footer = () => {
     const {
-        language,
-        setLanguage
-    } = useLanguage();
+        theme
+    } = useTheme();
 
     return (
         <Fragment>
             <Wrapper
-            className="flex flex-col justify-between"
-            id="footer">
+                className="flex flex-col justify-between"
+                id="footer">
                 <Wrapper
-                className="px-4 md:px-24 py-4 md:py-16 text-gray-300 bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a] border-t border-gray-500 footer-wrapper">
+                className={clsx(`px-4 md:px-24 py-4 md:py-16 ${theme === "Dark" ? "border-t border-gray-500 bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a] text-gray-300" : "bg-gray-50 border-t border-gray-200"}`)}>
                     <Wrapper className="flex justify-between items-center flex-col md:flex-row gap-4 pb-2 border-b border-gray-500">
                         <Logo />
                         <p className="text-sm md:text-base">
@@ -45,51 +45,51 @@ const Footer = () => {
                             </p>
                             <Wrapper className="mt-2 flex flex-col gap-2">
                                 <Link
-                                href={`#portfolio`}
-                                className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]"
-                                onClick={(e) => {
-                                    setLinkWithoutHash(e, "portfolio");
-                                }}>
+                                    href={`#portfolio`}
+                                    className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]"
+                                    onClick={(e) => {
+                                        setLinkWithoutHash(e, "portfolio");
+                                    }}>
                                     Portfolio
                                 </Link>
                                 <Link
-                                href={`#reference`}
-                                className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]"
-                                onClick={(e) => {
-                                    setLinkWithoutHash(e, "reference");
-                                }}>
+                                    href={`#reference`}
+                                    className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]"
+                                    onClick={(e) => {
+                                        setLinkWithoutHash(e, "reference");
+                                    }}>
                                     Reference
                                 </Link>
                                 <Link
-                                href={`#cenik`}
-                                className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]"
-                                onClick={(e) => {
-                                    setLinkWithoutHash(e, "cenik");
-                                }}>
+                                    href={`#cenik`}
+                                    className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]"
+                                    onClick={(e) => {
+                                        setLinkWithoutHash(e, "cenik");
+                                    }}>
                                     Ceník
                                 </Link>
                                 <Link
-                                href={`#faq`}
-                                onClick={(e) => {
-                                    setLinkWithoutHash(e, "faq");
-                                }}
-                                className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                                    href={`#faq`}
+                                    onClick={(e) => {
+                                        setLinkWithoutHash(e, "faq");
+                                    }}
+                                    className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
                                     FAQ
                                 </Link>
                                 <Link
-                                href={`#o-mne`}
-                                className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]"
-                                onClick={(e) => {
-                                    setLinkWithoutHash(e, "o-mne");
-                                }}>
+                                    href={`#o-mne`}
+                                    className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]"
+                                    onClick={(e) => {
+                                        setLinkWithoutHash(e, "o-mne");
+                                    }}>
                                     O mně
                                 </Link>
                                 <Link
-                                href={`/#kontakt`}
-                                className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]"
-                                onClick={(e) => {
-                                    setLinkWithoutHash(e, "kontakt");
-                                }}>
+                                    href={`/#kontakt`}
+                                    className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]"
+                                    onClick={(e) => {
+                                        setLinkWithoutHash(e, "kontakt");
+                                    }}>
                                     Kontakt
                                 </Link>
                             </Wrapper>
@@ -100,8 +100,8 @@ const Footer = () => {
                             </p>
                             <Wrapper className="mt-2 flex flex-col gap-2">
                                 <Link
-                                href={`/nabidka`}
-                                className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                                    href={`/nabidka`}
+                                    className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
                                     Nabídka
                                 </Link>
                             </Wrapper>
@@ -111,7 +111,9 @@ const Footer = () => {
                         <ContactInfo className="mt-4" isFooter={true} />
                     </Wrapper>
                 </Wrapper>
-                <Wrapper className="bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a] text-gray-300 p-2 border-t border-gray-500 flex flex-col items-center">
+                <Wrapper className={clsx(`
+                    flex flex-col items-center p-2
+                    ${theme === "Dark" ? "border-t border-gray-500 bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a]" : "bg-gray-50 border-t border-gray-200"}`)}>
                     <Powered />
                     <Year />
                 </Wrapper>

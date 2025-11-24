@@ -9,14 +9,15 @@ import {
     Sparkle
 } from "lucide-react";
 import {
-    useLanguage
-} from "../components/LanguageContext";
-import {
     ScrollTrigger
 } from "gsap/ScrollTrigger";
+import {
+    useTheme
+} from "../context/ThemeContext";
 import gsap from "gsap";
 import Link from "next/link";
 import Image from "next/image";
+import clsx from "clsx";
 import setLinkWithoutHash from "../functions/setLinkWithoutHash";
 
 import Wrapper from "../components/Wrapper";
@@ -26,7 +27,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const AboutMe = () => {
     const sectionTextRef = useRef<HTMLDivElement>(null);
-            
+
     useEffect(() => {
         if (!sectionTextRef.current) {
             return;
@@ -46,58 +47,60 @@ const AboutMe = () => {
     }, []);
 
     const {
-        language,
-        setLanguage
-    } = useLanguage();
+        theme
+    } = useTheme();
 
     return (
         <Fragment>
             <Wrapper
-            className="border-t border-gray-500 bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a]"
-            id="o-mne">
+                className={clsx(`${theme === "Dark" ? "border-t border-gray-500 bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a]" : "bg-gray-50 border-t border-gray-200"}`)}
+                id="o-mne">
                 <Wrapper className="px-4 md:px-24 py-4 md:py-16 text-white" ref={sectionTextRef}>
-                    <Wrapper className="flex flex-col justify-center items-center">
+                    <Wrapper className={clsx(`${theme === "Dark" ? "text-white" : "text-black/90"} flex flex-col justify-center items-center`)}>
                         <PageLabel
-                        pageLabelAdditContent={<Sparkle className="text-fuchsia-300" />}
-                        pageLabelText="O mně"
+                            pageLabelAdditContent={<Sparkle className="text-fuchsia-300" />}
+                            pageLabelText="O mně"
+                            className="text-white"
                         />
                         <h2 className="text-3xl md:text-5xl font-black uppercase">
                             5 O mně
                         </h2>
-                        <p className="mt-4 text-base text-center text-gray-300">
+                        <p className="mt-4 text-base text-center">
                             Díky této sekci, zjistíte více informací o mně.
                         </p>
                         <Wrapper className="mt-4 flex justify-between items-center flex-col md:flex-row gap-8">
                             <Image
-                            height={400}
-                            width={400}
-                            src="/fotky/o-mne/o-mne.png"
-                            alt="Fotka o mě, který je i zárověň jako inzerát."
-                            loading="lazy"
-                            decoding="async"
-                            className=" w-full md:h-[600px] md:w-[600px] rounded-md"
+                                height={400}
+                                width={400}
+                                src="/fotky/o-mne/o-mne.png"
+                                alt="Fotka o mě, který je i zárověň jako inzerát."
+                                loading="lazy"
+                                decoding="async"
+                                className=" w-full md:h-[600px] md:w-[600px] rounded-md"
                             />
-                            <Wrapper className="bg-black/30 rounded-md p-4 border border-gray-500 flex flex-col">
+                            <Wrapper className={clsx(`
+                                ${theme === "Dark" ? "border border-gray-500 bg-black/30" : "border border-gray-200 bg-black/5"}
+                                rounded-md p-4 flex flex-col`)}>
                                 <h2 className="text-2xl md:text-3xl font-black uppercase">
                                     Zjistěte o mně více informací
                                 </h2>
                                 <p className="mt-2 pb-1 text-sm text-gray-500 border-b border-gray-500">
                                     Chcete o mě vědet více, přečtěte si o mě, těchto pár slov.
                                 </p>
-                                <Wrapper className="mt-2 flex flex-col">
-                                    <p className="text-sm text-gray-500">
+                                <Wrapper className={clsx(`${theme === "Dark" ? "text-gray-500" : "text-black/80"} mt-2 flex flex-col`)}>
+                                    <p className="text-sm">
                                         Ahoj přátelé, kamarádi, webaři a všichni.
                                     </p>
-                                    <p className="mt-1 text-sm text-gray-500">
+                                    <p className="mt-1 text-sm">
                                         Jmenuju se Vojta a jsem student, který ve volném čase dělá weby, které jsou moje velkým koníčkem.
                                     </p>
-                                    <p className="text-sm text-gray-500">
+                                    <p className="text-sm">
                                         Ke dni 20/11/2025, sháním první klienty a proto nastavuji ceny tak nízko.
                                     </p>
-                                    <p className="mt-2 text-sm text-gray-500">
+                                    <p className="mt-2 text-sm">
                                         Mým cílem nejsou peníze na prvním místě, ale získání prvních klientů a získání zkušeností a referencí, proto ceny jsou spíše symbolické.
                                     </p>
-                                    <p className="mt-3 text-sm text-gray-500 italic">
+                                    <p className="mt-3 text-sm italic">
                                         Napsal Vojta Oliva
                                     </p>
                                     {/* <p className="mt-2 text-sm text-gray-500">
@@ -105,11 +108,11 @@ const AboutMe = () => {
                                     </p> */}
                                 </Wrapper>
                                 <Link
-                                href={`#kontakt`}
-                                onClick={(e) => {
-                                    setLinkWithoutHash(e, "kontakt");
-                                }}
-                                className="inline-block mt-4 px-3 py-2 rounded-md bg-blue-600 text-center cursor-pointer">
+                                    href={`#kontakt`}
+                                    onClick={(e) => {
+                                        setLinkWithoutHash(e, "kontakt");
+                                    }}
+                                    className="inline-block mt-4 px-3 py-2 rounded-md bg-blue-600 text-center cursor-pointer">
                                     Napište mi
                                 </Link>
                             </Wrapper>
@@ -120,11 +123,11 @@ const AboutMe = () => {
                             Nepodal jsem o sobě dostatečné INFO nebo chcete se mě na cokoliv zeptat, neváhejte mě
                             {" "}
                             <Link
-                            href={`#kontakt`}
-                            className="border-b border-gray-500"
-                            onClick={(e) => {
-                                setLinkWithoutHash(e, "kontakt");
-                            }}>
+                                href={`#kontakt`}
+                                className="border-b border-gray-500"
+                                onClick={(e) => {
+                                    setLinkWithoutHash(e, "kontakt");
+                                }}>
                                 kontaktovat.
                             </Link>
                         </p>

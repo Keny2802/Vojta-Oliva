@@ -2,6 +2,9 @@ import {
     Fragment,
     ReactNode
 } from "react";
+import {
+    useTheme
+} from "../context/ThemeContext";
 import clsx from "clsx";
 import dynamic from "next/dynamic";
 
@@ -14,15 +17,32 @@ const dynamicYear = new Date().getFullYear();
 
 const Year = ({ ...props }: yearProps) => {
     const {
+        theme,
+        setTheme
+    } = useTheme();
+    
+    const {
         className,
         children
     } = props;
 
     return (
         <Fragment>
-            <p className={clsx(`${className || ""} dynamic-year`)}>
-                {dynamicYear}
-            </p>
+            {
+                theme === "Dark" ? (
+                    <Fragment>
+                        <p className={clsx(`${className || ""} text-gray-300 dynamic-year`)}>
+                            {dynamicYear}
+                        </p>
+                    </Fragment>
+                ) : (
+                    <Fragment>
+                        <p className={clsx(`${className || ""} text-black dynamic-year`)}>
+                            {dynamicYear}
+                        </p>
+                    </Fragment>
+                )
+            }
         </Fragment>
     );
 };

@@ -23,11 +23,11 @@ import {
     Phone
 } from "lucide-react";
 import {
-    useLanguage
-} from "../components/LanguageContext";
-import {
     ScrollTrigger
 } from "gsap/ScrollTrigger";
+import {
+    useTheme
+} from "../context/ThemeContext";
 import gsap from "gsap";
 import clsx from "clsx";
 import Link from "next/link";
@@ -43,7 +43,7 @@ type contactProps = {
 
 const Contact = ({ ...props }: contactProps) => {
     const sectionTextRef = useRef<HTMLDivElement>(null);
-        
+
     useEffect(() => {
         if (!sectionTextRef.current) {
             return;
@@ -68,9 +68,8 @@ const Contact = ({ ...props }: contactProps) => {
     } = props;
 
     const {
-        language,
-        setLanguage
-    } = useLanguage();
+        theme
+    } = useTheme();
 
     const {
         register,
@@ -130,25 +129,32 @@ const Contact = ({ ...props }: contactProps) => {
 
     return (
         <Fragment>
-            <Wrapper className={clsx(`${className || ""} border-t border-gray-500 bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a] contact-wrapper`)}
-            attributes={{
-                id: "kontakt"
-            }}>
+            <Wrapper className={clsx(`
+            ${className || ""}
+            ${theme === "Dark" ? "border-t border-gray-500 bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a]" : "bg-gray-50 border-t border-gray-200"}
+            `)}
+                id="kontakt"
+            >
                 <Wrapper className="px-4 md:px-24 py-4 md:py-16 text-white">
-                    <Wrapper className="flex flex-col justify-center items-center" ref={sectionTextRef}>
+                    <Wrapper
+                    className={clsx(`${theme === "Dark" ? "text-white" : "text-black/90"} flex flex-col justify-center items-center`)}
+                    ref={sectionTextRef}>
                         <PageLabel
-                        pageLabelAdditContent={<Sparkle className="text-fuchsia-300" />}
-                        pageLabelText="Kontakt"
+                            pageLabelAdditContent={<Sparkle className="text-fuchsia-300" />}
+                            pageLabelText="Kontakt"
+                            className="text-white"
                         />
                         <h2 className="text-3xl md:text-5xl font-black uppercase">
                             6 Kontakt
                         </h2>
-                        <p className="mt-4 text-base text-center text-gray-300">
+                        <p className="mt-4 text-base text-center">
                             Kontaktujte mě a domluvíme realizaci Vašeho webu.
                         </p>
                     </Wrapper>
                     <Wrapper className="mt-4 flex justify-center items-center flex-col md:flex-row gap-4">
-                        <Wrapper className="w-full md:w-1/2 p-4 bg-black/30 border border-gray-500 rounded-md">
+                        <Wrapper className={clsx(`
+                        ${theme === "Dark" ? "bg-black/30" : "bg-black/90"}
+                        w-full md:w-1/2 p-4 border border-gray-500 rounded-md`)}>
                             <h3 className="text-xl">
                                 Vyplňte kontaktní formulář
                             </h3>
@@ -156,19 +162,19 @@ const Contact = ({ ...props }: contactProps) => {
                                 Vyplněním kontaktního formuláře, Vás kontaktuji nejpozději do 24 hodin.
                             </p>
                             <form
-                            onSubmit={handleSubmit(handleContactForm)}
-                            className="flex flex-col gap-4">
+                                onSubmit={handleSubmit(handleContactForm)}
+                                className="flex flex-col gap-4">
                                 <Wrapper className="mt-2 flex flex-col gap-2">
                                     <p className="text-base">
                                         Vaše Jméno
                                     </p>
                                     <input
-                                    {...register("name")}
-                                    type="text"
-                                    autoComplete="off"
-                                    spellCheck={false}
-                                    placeholder="Jan Novák"
-                                    className="border border-gray-500 rounded-md p-2 w-full focus:outline-none focus:border-blue-500"
+                                        {...register("name")}
+                                        type="text"
+                                        autoComplete="off"
+                                        spellCheck={false}
+                                        placeholder="Jan Novák"
+                                        className="border border-gray-500 rounded-md p-2 w-full focus:outline-none focus:border-blue-500"
                                     />
                                 </Wrapper>
                                 {
@@ -185,12 +191,12 @@ const Contact = ({ ...props }: contactProps) => {
                                         Váš mail
                                     </p>
                                     <input
-                                    {...register("email")}
-                                    type="email"
-                                    autoComplete="off"
-                                    spellCheck={false}
-                                    placeholder="jan.novak@seznam.cz"
-                                    className="border border-gray-500 rounded-md p-2 w-full focus:outline-none focus:border-blue-500"
+                                        {...register("email")}
+                                        type="email"
+                                        autoComplete="off"
+                                        spellCheck={false}
+                                        placeholder="jan.novak@seznam.cz"
+                                        className="border border-gray-500 rounded-md p-2 w-full focus:outline-none focus:border-blue-500"
                                     />
                                 </Wrapper>
                                 {
@@ -207,12 +213,12 @@ const Contact = ({ ...props }: contactProps) => {
                                         Vaše telefonní číslo (volitelné, pro osobní komunikaci)
                                     </p>
                                     <input
-                                    {...register("phone")}
-                                    type="text"
-                                    autoComplete="off"
-                                    spellCheck={false}
-                                    placeholder="737 737 737"
-                                    className="border border-gray-500 rounded-md p-2 w-full focus:outline-none focus:border-blue-500"
+                                        {...register("phone")}
+                                        type="text"
+                                        autoComplete="off"
+                                        spellCheck={false}
+                                        placeholder="737 737 737"
+                                        className="border border-gray-500 rounded-md p-2 w-full focus:outline-none focus:border-blue-500"
                                     />
                                 </Wrapper>
                                 {
@@ -229,12 +235,12 @@ const Contact = ({ ...props }: contactProps) => {
                                         Předmět Zprávy (volitelné)
                                     </p>
                                     <input
-                                    {...register("emailSubject")}
-                                    type="text"
-                                    autoComplete="off"
-                                    spellCheck={false}
-                                    placeholder="Předmět Vaší zprávy"
-                                    className="border border-gray-500 rounded-md p-2 w-full focus:outline-none focus:border-blue-500"
+                                        {...register("emailSubject")}
+                                        type="text"
+                                        autoComplete="off"
+                                        spellCheck={false}
+                                        placeholder="Předmět Vaší zprávy"
+                                        className="border border-gray-500 rounded-md p-2 w-full focus:outline-none focus:border-blue-500"
                                     />
                                 </Wrapper>
                                 {
@@ -251,9 +257,9 @@ const Contact = ({ ...props }: contactProps) => {
                                         Zpráva pro mě
                                     </p>
                                     <textarea
-                                    {...register("emailMessage")}
-                                    className="h-48 max-h-auto resize-none border border-gray-500 rounded-md p-2 w-full focus:outline-none focus:border-blue-500"
-                                    placeholder="Napište mi o co se jedná."></textarea>
+                                        {...register("emailMessage")}
+                                        className="h-48 max-h-auto resize-none border border-gray-500 rounded-md p-2 w-full focus:outline-none focus:border-blue-500"
+                                        placeholder="Napište mi o co se jedná."></textarea>
                                 </Wrapper>
                                 {
                                     errors.emailMessage && (
@@ -265,9 +271,9 @@ const Contact = ({ ...props }: contactProps) => {
                                     )
                                 }
                                 <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                className="bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-base md:text-lg font-black uppercase">
+                                    type="submit"
+                                    disabled={isSubmitting}
+                                    className="bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-base md:text-lg font-black uppercase">
                                     {/* Odesláním, mě kontaktujete */}
                                     Kontaktujte mě
                                 </button>

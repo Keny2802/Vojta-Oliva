@@ -2,6 +2,9 @@ import {
     Fragment,
     ReactNode
 } from "react";
+import {
+    useTheme
+} from "../context/ThemeContext";
 import clsx from "clsx";
 
 import Wrapper from "./Wrapper";
@@ -14,6 +17,11 @@ type poweredProps = {
 
 const Powered = ({ ...props }: poweredProps) => {
     const {
+        theme,
+        setTheme
+    } = useTheme();
+
+    const {
         className,
         children
     } = props;
@@ -21,9 +29,17 @@ const Powered = ({ ...props }: poweredProps) => {
     return (
         <Fragment>
             <Wrapper className={clsx(`${className || ""} flex items-center gap-2 powered`)}>
-                <span className="powered">
-                    Powered by
-                </span>
+                {
+                    theme === "Dark" ? (
+                        <span className="text-gray-300 powered">
+                            Powered by
+                        </span>
+                    ) : (
+                        <span className="text-black powered">
+                            Powered by
+                        </span>
+                    )
+                }
                 <Logo className="h-14 w-14" />
             </Wrapper>
         </Fragment>

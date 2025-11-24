@@ -13,11 +13,11 @@ import {
     MonitorCloud
 } from "lucide-react";
 import {
-    useLanguage
-} from "../components/LanguageContext";
-import {
     ScrollTrigger
 } from "gsap/ScrollTrigger";
+import {
+    useTheme
+} from "../context/ThemeContext";
 import gsap from "gsap";
 // import pricingOptionsSet from "../sets/pricingOptionsSet";
 // import pricingCardsSet from "../sets/pricingCardsSet";
@@ -47,7 +47,7 @@ const Pricing = ({ ...props }: pricingProps) => {
     const [englishActivePricingTab, setEnglishActivePricingTab] = useState<englishPricingTabType>("Small web");
 
     const sectionTextRef = useRef<HTMLDivElement>(null);
-    
+
     useEffect(() => {
         if (!sectionTextRef.current) {
             return;
@@ -67,64 +67,73 @@ const Pricing = ({ ...props }: pricingProps) => {
     }, []);
 
     const {
-        language,
-        setLanguage
-    } = useLanguage();
-
-    const {
         className,
         children
     } = props;
 
+    const {
+        theme
+    } = useTheme();
+
     return (
         <Fragment>
             <Wrapper
-            className={clsx(`${className || ""} border-t border-gray-500 bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a] pricing-wrapper`)}
-            attributes={{
-                id: "cenik"
-            }}>
+                className={clsx(`
+                ${className || ""}
+                ${theme === "Dark" ? "border-t border-gray-500 bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a]" : "bg-gray-50 border-t border-gray-200"}
+                pricing-wrapper`)}
+                id="cenik">
                 <Wrapper className="px-4 md:px-24 py-4 md:py-16 text-white" ref={sectionTextRef}>
-                    <Wrapper className="flex flex-col justify-center items-center" >
+                    <Wrapper className={clsx(`${theme === "Dark" ? "text-white" : "text-black/90"} flex flex-col justify-center items-center`)}>
                         <PageLabel
-                        pageLabelAdditContent={<Sparkle className="text-fuchsia-300" />}
-                        pageLabelText="Ceník"
+                            pageLabelAdditContent={<Sparkle className="text-fuchsia-300" />}
+                            pageLabelText="Ceník"
+                            className="text-white"
                         />
                         <h2 className="text-3xl md:text-5xl font-black uppercase">
                             3 Ceník
                         </h2>
-                        <p className="mt-4 text-base text-center text-gray-300">
+                        <p className="mt-4 text-base text-center">
                             Ceník, který je dostupný opravdu pro všechny, jak pro jednotlivce tak pro malé firmy.
                         </p>
                     </Wrapper>
                     <Wrapper className="pricing-wrapper">
                         <Wrapper className="my-4 flex justify-center items-center gap-4 flex-wrap">
                             <button
-                            className={clsx(`${activePricingTab === "Malý web" ? "bg-blue-600" : "bg-black/30"} bg-black/30 px-3 py-2 rounded-md cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105`)}
-                            onClick={(e) => {
-                                setActivePricingTab("Malý web");
-                            }}>
+                                className={clsx(`
+                                ${activePricingTab === "Malý web" ? "bg-blue-600" : "bg-black/80"}
+                                px-3 py-2 rounded-md cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105`)}
+                                onClick={(e) => {
+                                    setActivePricingTab("Malý web");
+                                }}>
                                 Malý web
                             </button>
                             <button
-                            className={clsx(`${activePricingTab === "Střední web" ? "bg-blue-600" : "bg-black/30"} bg-black/30 px-3 py-2 rounded-md cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105`)}
-                            onClick={(e) => {
-                                setActivePricingTab("Střední web");
-                            }}>
+                                className={clsx(`
+                                ${activePricingTab === "Střední web" ? "bg-blue-600" : "bg-black/80"}
+                                bg-black/30 px-3 py-2 rounded-md cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105`)}
+                                onClick={(e) => {
+                                    setActivePricingTab("Střední web");
+                                }}>
                                 Střední web
                             </button>
                             <button
-                            className={clsx(`${activePricingTab === "Velký web" ? "bg-blue-600" : "bg-black/30"} bg-black/30 px-3 py-2 rounded-md cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105`)}
-                            onClick={(e) => {
-                                setActivePricingTab("Velký web");
-                            }}>
+                                className={clsx(`
+                                ${activePricingTab === "Velký web" ? "bg-blue-600" : "bg-black/80"}
+                                bg-black/30 px-3 py-2 rounded-md cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105`)}
+                                onClick={(e) => {
+                                    setActivePricingTab("Velký web");
+                                }}>
                                 Velký web
                             </button>
                         </Wrapper>
-                    {/* udělat komponenty na form group form field form wrapper a další */}
+                        {/* udělat komponenty na form group form field form wrapper a další */}
                         <Wrapper className="mt-4 flex justify-center gap-4 flex-col md:flex-row prices-wrapper">
                             {activePricingTab === "Malý web" ? (
                                 <Fragment>
-                                    <Wrapper className="p-4 w-full md:max-w-[500px] bg-black/30 border border-gray-500 rounded-md price-wrapper">
+                                    <Wrapper className={clsx(`
+                                    ${theme === "Dark" ? "bg-black/30 border border-gray-500" : "bg-black/90 border border-gray-200"}
+                                    p-4 w-full md:max-w-[500px] rounded-md price-wrapper`)}>
                                         <Wrapper className="upper-content-wrapper">
                                             <Wrapper className="flex justify-between items-center flex-wrap">
                                                 <p className="p-1 text-base md:text-xl font-black uppercase">
@@ -171,11 +180,11 @@ const Pricing = ({ ...props }: pricingProps) => {
                                             </Wrapper>
                                         </Wrapper>
                                         <Link
-                                        href={`#kontakt`}
-                                        className="block mt-4 bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-center text-base md:text-lg font-black uppercase"
-                                        onClick={(e) => {
-                                            setLinkWithoutHash(e, "kontakt");
-                                        }}>
+                                            href={`#kontakt`}
+                                            className="block mt-4 bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-center text-base md:text-lg font-black uppercase"
+                                            onClick={(e) => {
+                                                setLinkWithoutHash(e, "kontakt");
+                                            }}>
                                             Chci tuto službu
                                         </Link>
                                     </Wrapper>
@@ -183,7 +192,9 @@ const Pricing = ({ ...props }: pricingProps) => {
                             ) : null}
                             {activePricingTab === "Střední web" ? (
                                 <Fragment>
-                                    <Wrapper className="p-4 w-full md:max-w-[500px] bg-black/30 border border-gray-500 rounded-md price-wrapper">
+                                    <Wrapper className={clsx(`
+                                    ${theme === "Dark" ? "bg-black/30 border border-gray-500" : "bg-black/90 border border-gray-200"}
+                                    p-4 w-full md:max-w-[500px] rounded-md price-wrapper`)}>
                                         <Wrapper className="upper-content-wrapper">
                                             <Wrapper className="flex justify-between items-center flex-wrap">
                                                 <p className="p-1 text-base md:text-xl font-black uppercase">
@@ -236,19 +247,21 @@ const Pricing = ({ ...props }: pricingProps) => {
                                             </Wrapper>
                                         </Wrapper>
                                         <Link
-                                        href={`#kontakt`}
-                                        className="block mt-4 bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-center text-base md:text-lg font-black uppercase"
-                                        onClick={(e) => {
-                                            setLinkWithoutHash(e, "kontakt");
-                                        }}>
+                                            href={`#kontakt`}
+                                            className="block mt-4 bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-center text-base md:text-lg font-black uppercase"
+                                            onClick={(e) => {
+                                                setLinkWithoutHash(e, "kontakt");
+                                            }}>
                                             Chci tuto službu
                                         </Link>
                                     </Wrapper>
                                 </Fragment>
-                            ): null}
+                            ) : null}
                             {activePricingTab === "Velký web" ? (
                                 <Fragment>
-                                    <Wrapper className="p-4 w-full md:max-w-[500px] bg-black/30 border border-gray-500 rounded-md price-wrapper">
+                                    <Wrapper className={clsx(`
+                                    ${theme === "Dark" ? "bg-black/30 border border-gray-500" : "bg-black/90 border border-gray-200"}
+                                    p-4 w-full md:max-w-[500px] rounded-md price-wrapper`)}>
                                         <Wrapper className="upper-content-wrapper">
                                             <Wrapper className="flex justify-between items-center flex-wrap">
                                                 <p className="p-1 text-base md:text-xl font-black uppercase">
@@ -301,16 +314,16 @@ const Pricing = ({ ...props }: pricingProps) => {
                                             </Wrapper>
                                         </Wrapper>
                                         <Link
-                                        href={`#kontakt`}
-                                        className="block mt-4 bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-center text-base md:text-lg font-black uppercase"
-                                        onClick={(e) => {
-                                            setLinkWithoutHash(e, "kontakt");
-                                        }}>
+                                            href={`#kontakt`}
+                                            className="block mt-4 bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-center text-base md:text-lg font-black uppercase"
+                                            onClick={(e) => {
+                                                setLinkWithoutHash(e, "kontakt");
+                                            }}>
                                             Chci tuto službu
                                         </Link>
                                     </Wrapper>
                                 </Fragment>
-                            ): null}
+                            ) : null}
                         </Wrapper>
                     </Wrapper>
                 </Wrapper>
@@ -319,11 +332,11 @@ const Pricing = ({ ...props }: pricingProps) => {
                         Pokud Vaše dotazy nebyli zodpovězené nebo máte na mě, jakékoliv dotazy, neváhejte mne
                         {" "}
                         <Link
-                        href={`#kontakt`}
-                        className="border-b border-gray-500"
-                        onClick={(e) => {
-                            setLinkWithoutHash(e, "kontakt");
-                        }}>
+                            href={`#kontakt`}
+                            className="border-b border-gray-500"
+                            onClick={(e) => {
+                                setLinkWithoutHash(e, "kontakt");
+                            }}>
                             kontaktovat.
                         </Link>
                     </p>

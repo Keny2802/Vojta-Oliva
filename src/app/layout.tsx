@@ -1,6 +1,10 @@
-import type { Metadata } from "next";
+import type {
+  Metadata
+} from "next";
+import {
+  ThemeProvider
+} from "./context/ThemeContext";
 import "./globals.css";
-import { LanguageProvider } from "./components/LanguageContext";
 
 export const metadata: Metadata = {
   // title: "New Web - Cenově dostupný webový vývoj",
@@ -27,9 +31,9 @@ export default function RootLayout({
       <body
         className="body"
       >
-        <LanguageProvider>
-          {children}
-        </LanguageProvider>
+        <ThemeProvider>
+            {children}
+        </ThemeProvider>
       </body>
     </html>
   );

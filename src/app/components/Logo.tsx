@@ -7,6 +7,9 @@ import {
 import {
     usePathname
 } from "next/navigation";
+import {
+    useTheme
+} from "../context/ThemeContext";
 import clsx from "clsx";
 import Link from "next/link";
 import Image from "next/image";
@@ -15,6 +18,7 @@ import Wrapper from "./Wrapper";
 
 type logoProps = {
     className?: string;
+    imageClassName?: string;
     children?: ReactNode;
 };
 
@@ -23,7 +27,13 @@ const Logo = ({ ...props }: logoProps) => {
     const isHome = pathName === "/";
 
     const {
+        theme,
+        setTheme
+    } = useTheme();
+
+    const {
         className,
+        imageClassName,
         children
     } = props;
 
@@ -35,16 +45,33 @@ const Logo = ({ ...props }: logoProps) => {
                 className="text-xl md:text-2xl font-black cursor-pointer">
                     {/* newWeb */}
                     {/* Vojta Oliva */}
-                    <Image
-                    // height={300}
-                    // width={300}
-                    width={75}
-                    height={75}
-                    src={`/fotky/logo/clean logo 1.png`}
-                    alt="Vojta Oliva Logo"
-                    loading="lazy"
-                    decoding="async"
-                    />
+                    {
+                        theme === "Dark" ? (
+                            <Image
+                            // height={300}
+                            // width={300}
+                            width={75}
+                            height={75}
+                            src={`/fotky/logo/clean logo 1.png`}
+                            alt="Vojta Oliva Logo"
+                            loading="lazy"
+                            decoding="async"
+                            className={clsx(`${imageClassName}`)}
+                            />
+                        ) : (
+                            <Image
+                            // height={300}
+                            // width={300}
+                            width={75}
+                            height={75}
+                            src={`/fotky/logo/clean logo 1.png`}
+                            alt="Vojta Oliva Logo"
+                            loading="lazy"
+                            decoding="async"
+                            className={clsx(`bg-black/85 rounded-md ${imageClassName}`)}
+                            />
+                        )
+                    }
                 </Link>
             </Wrapper>
         </Fragment>

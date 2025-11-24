@@ -37,6 +37,8 @@ type pricingProps = {
 type pricingTabType = "Malý web" | "Střední web" | "Velký web";
 type englishPricingTabType = "Small web" | "Middle web" | "Big web";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Pricing = ({ ...props }: pricingProps) => {
     // const [selectedService, setSelectService] = useState<boolean>(false);
     // const [currentIndex, setCurrentIndex] = useState<number>(0);

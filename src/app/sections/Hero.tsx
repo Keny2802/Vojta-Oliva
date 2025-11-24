@@ -49,7 +49,7 @@ const Hero = ({ ...props }: heroProps) => {
 
         gsap.from(sectionTextRef.current, {
             opacity: 0.25,
-            y: 30,
+            y: 20,
             duration: 0.5,
             ease: "power2.out",
             scrollTrigger: {

@@ -48,8 +48,8 @@ const Hero = ({ ...props }: heroProps) => {
         };
 
         gsap.from(sectionTextRef.current, {
-            opacity: 0.5,
-            y: -30,
+            opacity: 0.25,
+            y: 30,
             duration: 0.5,
             ease: "power2.out",
             scrollTrigger: {
@@ -79,7 +79,7 @@ const Hero = ({ ...props }: heroProps) => {
                         pageLabelAdditContent={<Home />}
                         pageLabelText="Domovská stránka"
                         />
-                        <h1 className="text-3xl md:text-6xl font-black hero-text" ref={sectionTextRef}>
+                        <h1 className="text-3xl md:text-6xl font-black hero-text">
                             Nakopni svůj web jen a pouze s
                             {" "}
                             <span className="bg-linear-to-r from-[#0d3c7a] via-[#4022a1] to-[#6a1fcc] text-transparent bg-clip-text">

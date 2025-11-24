@@ -35,13 +35,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Portfolio = ({ ...props }) => {
     const portfolioProjectRef = useRef<HTMLDivElement>(null);
-
     const sectionTextRef = useRef<HTMLHeadingElement>(null);
 
     useEffect(() => {
-        if (!sectionTextRef.current) {
-            return;
-        };
+        const animatedPortfolioProjects = gsap.utils.toArray<HTMLDivElement>(".reveal-portfolio-project");
+
+        if (!sectionTextRef.current || !portfolioProjectRef.current) return;
 
         gsap.from(sectionTextRef.current, {
             opacity: 0,
@@ -50,9 +49,24 @@ const Portfolio = ({ ...props }) => {
             ease: "power2.out",
             scrollTrigger: {
                 trigger: sectionTextRef.current,
-                start: "top+=200 bottom"
-                // toggleActions: "play none none reverse"
+                start: "top 85%",
+                toggleActions: "play none none reverse"
             }
+        });
+
+        animatedPortfolioProjects.forEach((portfolioProject, portfolioProjectIndex) => {
+            gsap.from(portfolioProject, {
+                opacity: 0,
+                y: 30,
+                duration: 0.5,
+                delay: portfolioProjectIndex * 0.1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: portfolioProject,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                }
+            });
         });
     }, []);
 
@@ -83,7 +97,7 @@ const Portfolio = ({ ...props }) => {
                         <h2 className="text-3xl md:text-5xl font-black uppercase">
                             1 Moje portfolio
                         </h2>
-                        <p className="mt-4 text-base text-gray-300" ref={sectionTextRef}>
+                        <p className="mt-4 text-base text-gray-300">
                             Moje portfolio je důkazem důvěryhodnosti.
                         </p>
                     </Wrapper>
@@ -91,7 +105,8 @@ const Portfolio = ({ ...props }) => {
                         {
                             portfolioSet.map((portfolioProject, portfolioProjectIndex) => (
                                 <Fragment key={portfolioProjectIndex}>
-                                    <div className="relative bg-black/30 border border-gray-500 p-4 overflow-hidden rounded-md w-full max-w-sm mx-auto"
+                                    <Wrapper
+                                    className="relative bg-black/30 border border-gray-500 p-4 overflow-hidden rounded-md w-full max-w-sm mx-auto reveal-portfolio-project"
                                     ref={portfolioProjectRef}>
                                         <span className="absolute top-2 right-5 text-[#f8aa0e] text-5xl font-black">
                                             {portfolioProjectIndex + 1}
@@ -117,7 +132,7 @@ const Portfolio = ({ ...props }) => {
                                                 Zobrazit {portfolioProject.projectName}
                                             </Link>
                                         </Wrapper>
-                                    </div>
+                                    </Wrapper>
                                 </Fragment>
                             ))
                         }

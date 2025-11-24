@@ -2,6 +2,8 @@
 
 import {
     useState,
+    useRef,
+    useEffect,
     Fragment,
     ReactNode
 } from "react";
@@ -13,6 +15,10 @@ import {
 import {
     useLanguage
 } from "../components/LanguageContext";
+import {
+    ScrollTrigger
+} from "gsap/ScrollTrigger";
+import gsap from "gsap";
 // import pricingOptionsSet from "../sets/pricingOptionsSet";
 // import pricingCardsSet from "../sets/pricingCardsSet";
 import setLinkWithoutHash from "../functions/setLinkWithoutHash";
@@ -38,6 +44,26 @@ const Pricing = ({ ...props }: pricingProps) => {
     const [activePricingTab, setActivePricingTab] = useState<pricingTabType>("Malý web");
     const [englishActivePricingTab, setEnglishActivePricingTab] = useState<englishPricingTabType>("Small web");
 
+    const sectionTextRef = useRef<HTMLDivElement>(null);
+    
+    useEffect(() => {
+        if (!sectionTextRef.current) {
+            return;
+        };
+
+        gsap.from(sectionTextRef.current, {
+            opacity: 0,
+            y: 40,
+            duration: 0.5,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: sectionTextRef.current,
+                start: "top 85%",
+                toggleActions: "play none none reverse"
+            }
+        });
+    }, []);
+
     const {
         language,
         setLanguage
@@ -55,7 +81,7 @@ const Pricing = ({ ...props }: pricingProps) => {
             attributes={{
                 id: "cenik"
             }}>
-                <Wrapper className="px-4 md:px-24 py-4 md:py-16 text-white">
+                <Wrapper className="px-4 md:px-24 py-4 md:py-16 text-white" ref={sectionTextRef}>
                     <Wrapper className="flex flex-col justify-center items-center" >
                         <PageLabel
                         pageLabelAdditContent={<Sparkle className="text-fuchsia-300" />}

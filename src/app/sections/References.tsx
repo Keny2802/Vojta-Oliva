@@ -1,6 +1,8 @@
 "use client";
 
 import {
+    useRef,
+    useEffect,
     Fragment
 } from "react";
 import {
@@ -9,13 +11,36 @@ import {
 import {
     Sparkle
 } from "lucide-react";
+import {
+    ScrollTrigger
+} from "gsap/ScrollTrigger";
+import gsap from "gsap";
 import Link from "next/link";
-
 import Wrapper from "../components/Wrapper";
 import PageLabel from "../components/PageLabel";
 import setLinkWithoutHash from "../functions/setLinkWithoutHash";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const References = () => {
+    const sectionTextRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (!sectionTextRef.current) return;
+
+        gsap.from(sectionTextRef.current, {
+            opacity: 0,
+            y: 40,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: sectionTextRef.current,
+                start: "top 85%",
+                toggleActions: "play none none reverse"
+            }
+        });
+    }, []);
+
     const {
         language,
         setLanguage
@@ -29,114 +54,38 @@ const References = () => {
                 id: "reference"
             }}>
                 <Wrapper className="px-4 md:px-24 py-4 md:py-16 text-white">
-                    {
-                        language === "Čeština" && (
-                            <Fragment>
-                                <Wrapper className="flex flex-col justify-center items-center">
-                                    <PageLabel
-                                    pageLabelAdditContent={<Sparkle className="text-fuchsia-300" />}
-                                    pageLabelText="References" />
-                                    <h2 className="text-3xl md:text-5xl font-black uppercase">
-                                        2 Reference
-                                    </h2>
-                                    <p className="mt-4 text-base text-center text-gray-300">
-                                        Reference, jsou důkazem důvěryhodnosti.
-                                    </p>
-                                </Wrapper>
-                                <Wrapper className="mt-6 flex justify-center">
-                                    <p className="text-xl text-gray-500">
-                                        🤷🏼 Zatím žádné recenze nemám.
-                                    </p>
-                                </Wrapper>
-                                <Wrapper className="mt-2 flex justify-center py-10">
-                                    <p className="p-2 text-center text-sm text-gray-500">
-                                        Máte na mě jakýkoliv dotaz, neváhejte mne
-                                        {" "}
-                                        <Link
-                                        href={`#kontakt`}
-                                        className="border-b border-gray-500"
-                                        onClick={(e) => {
-                                            setLinkWithoutHash(e, "kontakt");
-                                        }}>
-                                            kontaktovat.
-                                        </Link>
-                                    </p>
-                                </Wrapper>
-                            </Fragment>
-                        )
-                    }
-                    {
-                        language === "English" && (
-                            <Fragment>
-                                <Wrapper className="flex flex-col justify-center items-center">
-                                    <PageLabel
-                                    pageLabelAdditContent={<Sparkle className="text-fuchsia-300" />}
-                                    pageLabelText="Referenzen" />
-                                    <h2 className="text-3xl md:text-5xl font-black uppercase">
-                                        2 References
-                                    </h2>
-                                    <p className="mt-4 text-base text-center text-gray-300">
-                                        References, are confirmation of credibility.
-                                    </p>
-                                </Wrapper>
-                                <Wrapper className="mt-6 flex justify-center">
-                                    <p className="text-xl text-gray-500">
-                                        🤷🏼 I don't have no references yet.
-                                    </p>
-                                </Wrapper>
-                                <Wrapper className="mt-2 flex justify-center py-10">
-                                    <p className="p-2 text-center text-sm text-gray-500">
-                                        Do you have question on me? Feel free to
-                                        {" "}
-                                        <Link
-                                        href={`#kontakt`}
-                                        className="border-b border-gray-500"
-                                        onClick={(e) => {
-                                            setLinkWithoutHash(e, "kontakt");
-                                        }}>
-                                            contact me.
-                                        </Link>
-                                    </p>
-                                </Wrapper>
-                            </Fragment>
-                        )
-                    }
-                    {
-                        language === "Deutsch" && (
-                            <Fragment>
-                                <Wrapper className="flex flex-col justify-center items-center">
-                                    <PageLabel
-                                    pageLabelAdditContent={<Sparkle className="text-fuchsia-300" />}
-                                    pageLabelText="References" />
-                                    <h2 className="text-3xl md:text-5xl font-black uppercase">
-                                        2 Referenzen
-                                    </h2>
-                                    <p className="mt-4 text-base text-center text-gray-300">
-                                        Referenzen sind ein Beleg für die Glaubwürdigkeit.
-                                    </p>
-                                </Wrapper>
-                                <Wrapper className="mt-6 flex justify-center">
-                                    <p className="text-xl text-gray-500">
-                                        🤷🏼 Ich habe noch keine Referenzen.
-                                    </p>
-                                </Wrapper>
-                                <Wrapper className="mt-2 flex justify-center py-10">
-                                    <p className="p-2 text-center text-sm text-gray-500">
-                                        Haben Sie Fragen an mich? Zögern Sie nicht.
-                                        {" "}
-                                        <Link
-                                        href={`#kontakt`}
-                                        className="border-b border-gray-500"
-                                        onClick={(e) => {
-                                            setLinkWithoutHash(e, "kontakt");
-                                        }}>
-                                            Kontaktieren Sie mich.
-                                        </Link>
-                                    </p>
-                                </Wrapper>
-                            </Fragment>
-                        )
-                    }
+                    <Wrapper ref={sectionTextRef}>
+                        <Wrapper className="flex flex-col justify-center items-center">
+                            <PageLabel
+                            pageLabelAdditContent={<Sparkle className="text-fuchsia-300" />}
+                            pageLabelText="References" />
+                            <h2 className="text-3xl md:text-5xl font-black uppercase">
+                                2 Reference
+                            </h2>
+                            <p className="mt-4 text-base text-center text-gray-300">
+                                Reference, jsou důkazem důvěryhodnosti.
+                            </p>
+                        </Wrapper>
+                        <Wrapper className="mt-6 flex justify-center">
+                            <p className="text-xl text-gray-500">
+                                🤷🏼 Zatím žádné recenze nemám.
+                            </p>
+                        </Wrapper>
+                        <Wrapper className="mt-2 flex justify-center py-10">
+                            <p className="p-2 text-center text-sm text-gray-500">
+                                Máte na mě jakýkoliv dotaz, neváhejte mne
+                                {" "}
+                                <Link
+                                href={`#kontakt`}
+                                className="border-b border-gray-500"
+                                onClick={(e) => {
+                                    setLinkWithoutHash(e, "kontakt");
+                                }}>
+                                    kontaktovat.
+                                </Link>
+                            </p>
+                        </Wrapper>
+                    </Wrapper>
                 </Wrapper>
             </Wrapper>
         </Fragment>

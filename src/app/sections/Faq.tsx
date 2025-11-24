@@ -75,7 +75,7 @@ const Faq = () => {
                                             ))
                                             }
                                         </Accordion>
-                                        <Wrapper className="mt-2 flex justify-center py-10">
+                                        <Wrapper className="mt-2 flex justify-center items-center py-10">
                                             <p className="p-2 text-center text-sm text-gray-500">
                                                 Stále jste nedostali odpovědi na Vaše dotazy, vůbec se nic neděje,
                                                 {" "}
@@ -131,7 +131,7 @@ const Faq = () => {
                                             ))
                                             }
                                         </Accordion>
-                                        <Wrapper className="mt-2 flex justify-center py-10">
+                                        <Wrapper className="mt-2 flex justify-center items-center py-10">
                                             <p className="p-2 text-center text-sm text-gray-500">
                                                 You still haven't received answers to your questions, nothing is happening at all,
                                                 {" "}
@@ -187,7 +187,7 @@ const Faq = () => {
                                             ))
                                             }
                                         </Accordion>
-                                        <Wrapper className="mt-2 flex justify-center py-10">
+                                        <Wrapper className="mt-2 flex justify-center items-center py-10">
                                             <p className="p-2 text-center text-sm text-gray-500">
                                                 Sie haben immer noch keine Antworten auf Ihre Fragen erhalten, es passiert überhaupt nichts,
                                                 {" "}

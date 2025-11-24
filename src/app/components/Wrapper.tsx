@@ -7,6 +7,8 @@ import clsx from "clsx";
 type wrapperProps = {
     attributes?: React.HTMLAttributes<HTMLDivElement>;
     className?: string;
+    id?: string;
+    ref?: any;
     children?: ReactNode;
 };
 
@@ -14,6 +16,8 @@ const Wrapper = ({ ...props }: wrapperProps) => {
     const {
         attributes,
         className,
+        id,
+        ref,
         children
     } = props;
 
@@ -21,7 +25,9 @@ const Wrapper = ({ ...props }: wrapperProps) => {
         <Fragment>
             <div
             {...attributes}
-            className={clsx(`${className || ""}`)}>
+            className={clsx(`${className || ""}`)}
+            id={id}
+            ref={ref}>
                 {children}
             </div>
         </Fragment>

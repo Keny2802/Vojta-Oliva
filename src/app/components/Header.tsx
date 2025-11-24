@@ -40,7 +40,7 @@ const Header = ({ ...props }: headerProps) => {
     const [isMobileMenuHidden, setMobileMenuHidden] = useState<boolean>(false);
     const [isCzechSwitcherClicked, setCzechSwitcherClicked] = useState<boolean>(false);
     // const [languageSwitcherState, setLanguageSwitcherState] = useState<"Čeština" | "English" | "Deutsch">("Čeština");
-    const { language } = useLanguage();
+    // const { language } = useLanguage();
 
     const {
         className,
@@ -53,7 +53,7 @@ const Header = ({ ...props }: headerProps) => {
                 <Wrapper className="flex justify-between items-center gap-4 md:gap-2">
                     <Logo />
                     <ul className="hidden md:flex items-center gap-4 header-item-list-wrapper">
-                        {
+                        {/* {
                             language === "Čeština" && (czechLanguageSwitchSet.map((language, languageIndex) => (
                             language.links.map((link, linkIndex) => (
                                 <Fragment key={linkIndex}>
@@ -103,68 +103,80 @@ const Header = ({ ...props }: headerProps) => {
                                 </Fragment>
                             ))
                             )))
-                        }
-                        {/* <Link
-                        href={`#portfolio`}
-                        onClick={(e) => {
-                            setLinkWithoutHash(e, "portfolio");
-                        }}
-                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
-                            Portfolio
-                        </Link>
-                        <Link
-                        href={`#reference`}
-                        onClick={(e) => {
-                            setLinkWithoutHash(e, "reference");
-                        }}
-                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
-                            Reference
-                        </Link>
-                        <Link
-                        href={`#cenik`}
-                        onClick={(e) => {
-                            setLinkWithoutHash(e, "cenik");
-                        }}
-                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
-                            Ceník
-                        </Link>
-                        <Link
-                        href={`/#faq`}
-                        onClick={(e) => {
-                            setLinkWithoutHash(e, "faq");
-                        }}
-                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
-                            FAQ
-                        </Link>
-                        <Link
-                        href={`#o-mne`}
-                        onClick={(e) => {
-                            setLinkWithoutHash(e, "o-mne");
-                        }}
-                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
-                            O mně
-                        </Link>
-                        <Link
-                        href={`#kontakt`}
-                        onClick={(e) => {
-                            setLinkWithoutHash(e, "kontakt");
-                        }}
-                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
-                            Kontakt
-                        </Link> */}
+                        } */}
+                        <li className="header-list-item">
+                            <Link
+                            href={`#portfolio`}
+                            onClick={(e) => {
+                                setLinkWithoutHash(e, "portfolio");
+                            }}
+                            className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                                Portfolio
+                            </Link>
+                        </li>
+                        <li className="header-list-item">
+                            <Link
+                            href={`#reference`}
+                            onClick={(e) => {
+                                setLinkWithoutHash(e, "reference");
+                            }}
+                            className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                                Reference
+                            </Link>
+                        </li>
+                        <li className="header-list-item">
+                            <Link
+                            href={`#cenik`}
+                            onClick={(e) => {
+                                setLinkWithoutHash(e, "cenik");
+                            }}
+                            className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                                Ceník
+                            </Link>
+                        </li>
+                        <li className="header-list-item">
+                            <Link
+                            href={`/#faq`}
+                            onClick={(e) => {
+                                setLinkWithoutHash(e, "faq");
+                            }}
+                            className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                                FAQ
+                            </Link>
+                        </li>
+                        <li className="header-list-item">
+                            <Link
+                            href={`#o-mne`}
+                            onClick={(e) => {
+                                setLinkWithoutHash(e, "o-mne");
+                            }}
+                            className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                                O mně
+                            </Link>
+                        </li>
+                        <li className="header-list-item">
+                            <Link
+                            href={`#kontakt`}
+                            onClick={(e) => {
+                                setLinkWithoutHash(e, "kontakt");
+                            }}
+                            className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                                Kontakt
+                            </Link>
+                        </li>
                     </ul>
                     <Wrapper className="flex items-center gap-4 header-right-wrapper">
-                        <LanguageSwitcher
-                        className="right-56 hidden md:flex" />
+                        {/* <LanguageSwitcher
+                        className="right-56 hidden md:flex" /> */}
                         <Sun className="cursor-pointer" />
                         {/* <LanguageSwitcher className="hidden md:flex" /> */}
-                        {/* <Link
+                        <Link
                         href={`/nabidka`}
                         className="hidden md:flex justify-center items-center gap-2 bg-white text-black rounded-lg px-3 py-2">
                             <FileText />
                             Získat nabídku
-                        </Link> */}
-                        {
+                        </Link>
+                        {/* {
                             language === "Čeština" && (
                                 <Fragment>
                                     <Link
@@ -199,7 +211,7 @@ const Header = ({ ...props }: headerProps) => {
                                     </Link>
                                 </Fragment>
                             )
-                        }
+                        } */}
                         {/* <LanguageSwitcher className="hidden md:flex" /> */}
                         {/* <LanguageSwitcher /> */}
                         {

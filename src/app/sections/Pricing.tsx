@@ -56,776 +56,250 @@ const Pricing = ({ ...props }: pricingProps) => {
                 id: "cenik"
             }}>
                 <Wrapper className="px-4 md:px-24 py-4 md:py-16 text-white">
-                    {
-                        language === "Čeština" && (
-                            <Fragment>
-                                <Wrapper className="flex flex-col justify-center items-center">
-                                    <PageLabel
-                                    pageLabelAdditContent={<Sparkle className="text-fuchsia-300" />}
-                                    pageLabelText="Ceník"
-                                    />
-                                    <h2 className="text-3xl md:text-5xl font-black uppercase">
-                                        3 Ceník
-                                    </h2>
-                                    <p className="mt-4 text-base text-center text-gray-300">
-                                        Ceník, který je dostupný opravdu pro všechny, jak pro jednotlivce tak pro malé firmy.
-                                    </p>
-                                </Wrapper>
-                                <Wrapper className="pricing-wrapper">
-                                    <Wrapper className="my-4 flex justify-center items-center gap-4 flex-wrap">
-                                        <button
-                                        className={clsx(`${activePricingTab === "Malý web" ? "bg-blue-600" : "bg-black/30"} bg-black/30 px-3 py-2 rounded-md cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105`)}
+                    <Wrapper className="flex flex-col justify-center items-center" >
+                        <PageLabel
+                        pageLabelAdditContent={<Sparkle className="text-fuchsia-300" />}
+                        pageLabelText="Ceník"
+                        />
+                        <h2 className="text-3xl md:text-5xl font-black uppercase">
+                            3 Ceník
+                        </h2>
+                        <p className="mt-4 text-base text-center text-gray-300">
+                            Ceník, který je dostupný opravdu pro všechny, jak pro jednotlivce tak pro malé firmy.
+                        </p>
+                    </Wrapper>
+                    <Wrapper className="pricing-wrapper">
+                        <Wrapper className="my-4 flex justify-center items-center gap-4 flex-wrap">
+                            <button
+                            className={clsx(`${activePricingTab === "Malý web" ? "bg-blue-600" : "bg-black/30"} bg-black/30 px-3 py-2 rounded-md cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105`)}
+                            onClick={(e) => {
+                                setActivePricingTab("Malý web");
+                            }}>
+                                Malý web
+                            </button>
+                            <button
+                            className={clsx(`${activePricingTab === "Střední web" ? "bg-blue-600" : "bg-black/30"} bg-black/30 px-3 py-2 rounded-md cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105`)}
+                            onClick={(e) => {
+                                setActivePricingTab("Střední web");
+                            }}>
+                                Střední web
+                            </button>
+                            <button
+                            className={clsx(`${activePricingTab === "Velký web" ? "bg-blue-600" : "bg-black/30"} bg-black/30 px-3 py-2 rounded-md cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105`)}
+                            onClick={(e) => {
+                                setActivePricingTab("Velký web");
+                            }}>
+                                Velký web
+                            </button>
+                        </Wrapper>
+                    {/* udělat komponenty na form group form field form wrapper a další */}
+                        <Wrapper className="mt-4 flex justify-center gap-4 flex-col md:flex-row prices-wrapper">
+                            {activePricingTab === "Malý web" ? (
+                                <Fragment>
+                                    <Wrapper className="p-4 w-full md:max-w-[500px] bg-black/30 border border-gray-500 rounded-md price-wrapper">
+                                        <Wrapper className="upper-content-wrapper">
+                                            <Wrapper className="flex justify-between items-center flex-wrap">
+                                                <p className="p-1 text-base md:text-xl font-black uppercase">
+                                                    Pro živnostníky
+                                                </p>
+                                                <span className="text-base md:text-xl font-black price">
+                                                    4500 Kč
+                                                </span>
+                                            </Wrapper>
+                                            <p className="pb-2 mt-2 text-center text-sm text-gray-500 border-b border-gray-500">
+                                                Webová prezentace, jednostránková stránka nebo až 5 podstránek.
+                                            </p>
+                                        </Wrapper>
+                                        <Wrapper className="mt-4 flex justify-center items-center gap-2">
+                                            <MonitorCloud />
+                                            <p className="text-lg text-gray-200 font-black">
+                                                Co tato služba obsahuje?
+                                            </p>
+                                        </Wrapper>
+                                        <Wrapper className="mt-2 flex flex-col gap-2">
+                                            <Wrapper className="flex items-center gap-2">
+                                                <CheckCircle className="text-green-500" />
+                                                <p className="text-base text-gray-200">
+                                                    Kompletní webová stránka na míru, podle Vašeho výběru.
+                                                </p>
+                                            </Wrapper>
+                                            <Wrapper className="flex items-center gap-2">
+                                                <CheckCircle className="text-green-500" />
+                                                <p className="text-base text-gray-200">
+                                                    2 Návrhy pro Vaší webovou stránku.
+                                                </p>
+                                            </Wrapper>
+                                            <Wrapper className="flex items-center gap-2">
+                                                <CheckCircle className="text-green-500" />
+                                                <p className="text-base text-gray-200">
+                                                    Stálá komunikace s klientem.
+                                                </p>
+                                            </Wrapper>
+                                            <Wrapper className="flex items-center gap-2">
+                                                <CheckCircle className="text-green-500" />
+                                                <p className="text-base text-gray-200">
+                                                    Průběžné podávání informací o stavu projektu.
+                                                </p>
+                                            </Wrapper>
+                                        </Wrapper>
+                                        <Link
+                                        href={`#kontakt`}
+                                        className="block mt-4 bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-center text-base md:text-lg font-black uppercase"
                                         onClick={(e) => {
-                                            setActivePricingTab("Malý web");
+                                            setLinkWithoutHash(e, "kontakt");
                                         }}>
-                                            Malý web
-                                        </button>
-                                        <button
-                                        className={clsx(`${activePricingTab === "Střední web" ? "bg-blue-600" : "bg-black/30"} bg-black/30 px-3 py-2 rounded-md cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105`)}
-                                        onClick={(e) => {
-                                            setActivePricingTab("Střední web");
-                                        }}>
-                                            Střední web
-                                        </button>
-                                        <button
-                                        className={clsx(`${activePricingTab === "Velký web" ? "bg-blue-600" : "bg-black/30"} bg-black/30 px-3 py-2 rounded-md cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105`)}
-                                        onClick={(e) => {
-                                            setActivePricingTab("Velký web");
-                                        }}>
-                                            Velký web
-                                        </button>
+                                            Chci tuto službu
+                                        </Link>
                                     </Wrapper>
-                                {/* udělat komponenty na form group form field form wrapper a další */}
-                                    <Wrapper className="mt-4 flex justify-center gap-4 flex-col md:flex-row prices-wrapper">
-                                        {activePricingTab === "Malý web" ? (
-                                            <Fragment>
-                                                <Wrapper className="p-4 w-full md:max-w-[500px] bg-black/30 border border-gray-500 rounded-md price-wrapper">
-                                                    <Wrapper className="upper-content-wrapper">
-                                                        <Wrapper className="flex justify-between items-center flex-wrap">
-                                                            <p className="p-1 text-base md:text-xl font-black uppercase">
-                                                                Pro živnostníky
-                                                            </p>
-                                                            <span className="text-base md:text-xl font-black price">
-                                                                4500 Kč
-                                                            </span>
-                                                        </Wrapper>
-                                                        <p className="pb-2 mt-2 text-center text-sm text-gray-500 border-b border-gray-500">
-                                                            Webová prezentace, jednostránková stránka nebo až 5 podstránek.
-                                                        </p>
-                                                    </Wrapper>
-                                                    <Wrapper className="mt-4 flex justify-center items-center gap-2">
-                                                        <MonitorCloud />
-                                                        <p className="text-lg text-gray-200 font-black">
-                                                            Co tato služba obsahuje?
-                                                        </p>
-                                                    </Wrapper>
-                                                    <Wrapper className="mt-2 flex flex-col gap-2">
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Kompletní webová stránka na míru, podle Vašeho výběru.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                2 Návrhy pro Vaší webovou stránku.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Stálá komunikace s klientem.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Průběžné podávání informací o stavu projektu.
-                                                            </p>
-                                                        </Wrapper>
-                                                    </Wrapper>
-                                                    <Link
-                                                    href={`#kontakt`}
-                                                    className="block mt-4 bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-center text-base md:text-lg font-black uppercase"
-                                                    onClick={(e) => {
-                                                        setLinkWithoutHash(e, "kontakt");
-                                                    }}>
-                                                        Chci tuto službu
-                                                    </Link>
-                                                </Wrapper>
-                                            </Fragment>
-                                        ) : null}
-                                        {activePricingTab === "Střední web" ? (
-                                            <Fragment>
-                                                <Wrapper className="p-4 w-full md:max-w-[500px] bg-black/30 border border-gray-500 rounded-md price-wrapper">
-                                                    <Wrapper className="upper-content-wrapper">
-                                                        <Wrapper className="flex justify-between items-center flex-wrap">
-                                                            <p className="p-1 text-base md:text-xl font-black uppercase">
-                                                                Větší webová stránka
-                                                            </p>
-                                                            <span className="text-base md:text-xl font-black price">
-                                                                6000 Kč
-                                                            </span>
-                                                        </Wrapper>
-                                                        <p className="pb-2 mt-2 text-center text-sm text-gray-500 border-b border-gray-500">
-                                                            Webová prezentace, domovská stránka a k tomu až 10 podstránek.
-                                                        </p>
-                                                    </Wrapper>
-                                                    <Wrapper className="mt-4 flex justify-center items-center gap-2">
-                                                        <MonitorCloud />
-                                                        <p className="text-lg text-gray-200 font-black">
-                                                            Co tato služba obsahuje?
-                                                        </p>
-                                                    </Wrapper>
-                                                    <Wrapper className="mt-2 flex flex-col gap-2">
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Kompletní webová stránka na míru, podle Vašeho výběru.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Až 10 podstránek.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Vlastní kontaktní formulář na míru.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Stálá komunikace s klientem.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Průběžné podávání informací o stavu projektu.
-                                                            </p>
-                                                        </Wrapper>
-                                                    </Wrapper>
-                                                    <Link
-                                                    href={`#kontakt`}
-                                                    className="block mt-4 bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-center text-base md:text-lg font-black uppercase"
-                                                    onClick={(e) => {
-                                                        setLinkWithoutHash(e, "kontakt");
-                                                    }}>
-                                                        Chci tuto službu
-                                                    </Link>
-                                                </Wrapper>
-                                            </Fragment>
-                                        ): null}
-                                        {activePricingTab === "Velký web" ? (
-                                            <Fragment>
-                                                <Wrapper className="p-4 w-full md:max-w-[500px] bg-black/30 border border-gray-500 rounded-md price-wrapper">
-                                                    <Wrapper className="upper-content-wrapper">
-                                                        <Wrapper className="flex justify-between items-center flex-wrap">
-                                                            <p className="p-1 text-base md:text-xl font-black uppercase">
-                                                                Velká webová stránka
-                                                            </p>
-                                                            <span className="text-base md:text-xl font-black price">
-                                                                8000 Kč
-                                                            </span>
-                                                        </Wrapper>
-                                                        <p className="pb-2 mt-2 text-center text-sm text-gray-500 border-b border-gray-500">
-                                                            Webová prezentace, domovská stránka a k tomu až 15 podstránek.
-                                                        </p>
-                                                    </Wrapper>
-                                                    <Wrapper className="mt-4 flex justify-center items-center gap-2">
-                                                        <MonitorCloud />
-                                                        <p className="text-lg text-gray-200 font-black">
-                                                            Co tato služba obsahuje?
-                                                        </p>
-                                                    </Wrapper>
-                                                    <Wrapper className="mt-2 flex flex-col gap-2">
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Kompletní webová stránka na míru, podle Vašeho výběru.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Až 15 podstránek.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Vlastní kontaktní formulář na míru.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Stálá komunikace s klientem.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Průběžné podávání informací o stavu projektu.
-                                                            </p>
-                                                        </Wrapper>
-                                                    </Wrapper>
-                                                    <Link
-                                                    href={`#kontakt`}
-                                                    className="block mt-4 bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-center text-base md:text-lg font-black uppercase"
-                                                    onClick={(e) => {
-                                                        setLinkWithoutHash(e, "kontakt");
-                                                    }}>
-                                                        Chci tuto službu
-                                                    </Link>
-                                                </Wrapper>
-                                            </Fragment>
-                                        ): null}
+                                </Fragment>
+                            ) : null}
+                            {activePricingTab === "Střední web" ? (
+                                <Fragment>
+                                    <Wrapper className="p-4 w-full md:max-w-[500px] bg-black/30 border border-gray-500 rounded-md price-wrapper">
+                                        <Wrapper className="upper-content-wrapper">
+                                            <Wrapper className="flex justify-between items-center flex-wrap">
+                                                <p className="p-1 text-base md:text-xl font-black uppercase">
+                                                    Větší webová stránka
+                                                </p>
+                                                <span className="text-base md:text-xl font-black price">
+                                                    6000 Kč
+                                                </span>
+                                            </Wrapper>
+                                            <p className="pb-2 mt-2 text-center text-sm text-gray-500 border-b border-gray-500">
+                                                Webová prezentace, domovská stránka a k tomu až 10 podstránek.
+                                            </p>
+                                        </Wrapper>
+                                        <Wrapper className="mt-4 flex justify-center items-center gap-2">
+                                            <MonitorCloud />
+                                            <p className="text-lg text-gray-200 font-black">
+                                                Co tato služba obsahuje?
+                                            </p>
+                                        </Wrapper>
+                                        <Wrapper className="mt-2 flex flex-col gap-2">
+                                            <Wrapper className="flex items-center gap-2">
+                                                <CheckCircle className="text-green-500" />
+                                                <p className="text-base text-gray-200">
+                                                    Kompletní webová stránka na míru, podle Vašeho výběru.
+                                                </p>
+                                            </Wrapper>
+                                            <Wrapper className="flex items-center gap-2">
+                                                <CheckCircle className="text-green-500" />
+                                                <p className="text-base text-gray-200">
+                                                    Až 10 podstránek.
+                                                </p>
+                                            </Wrapper>
+                                            <Wrapper className="flex items-center gap-2">
+                                                <CheckCircle className="text-green-500" />
+                                                <p className="text-base text-gray-200">
+                                                    Vlastní kontaktní formulář na míru.
+                                                </p>
+                                            </Wrapper>
+                                            <Wrapper className="flex items-center gap-2">
+                                                <CheckCircle className="text-green-500" />
+                                                <p className="text-base text-gray-200">
+                                                    Stálá komunikace s klientem.
+                                                </p>
+                                            </Wrapper>
+                                            <Wrapper className="flex items-center gap-2">
+                                                <CheckCircle className="text-green-500" />
+                                                <p className="text-base text-gray-200">
+                                                    Průběžné podávání informací o stavu projektu.
+                                                </p>
+                                            </Wrapper>
+                                        </Wrapper>
+                                        <Link
+                                        href={`#kontakt`}
+                                        className="block mt-4 bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-center text-base md:text-lg font-black uppercase"
+                                        onClick={(e) => {
+                                            setLinkWithoutHash(e, "kontakt");
+                                        }}>
+                                            Chci tuto službu
+                                        </Link>
                                     </Wrapper>
-                                </Wrapper>
-                            </Fragment>
-                        )
-                    }
-                    {
-                        language === "English" && (
-                            <Fragment>
-                                <Wrapper className="flex flex-col justify-center items-center">
-                                    <PageLabel
-                                    pageLabelAdditContent={<Sparkle className="text-fuchsia-300" />}
-                                    pageLabelText="Pricing"
-                                    />
-                                    <h2 className="text-3xl md:text-5xl font-black uppercase">
-                                        3 Pricing
-                                    </h2>
-                                    <p className="mt-4 text-base text-center text-gray-300">
-                                        Prices, that are available really for everyone, both for individuals and small bussiness.
-                                    </p>
-                                </Wrapper>
-                                <Wrapper className="pricing-wrapper">
-                                    <Wrapper className="my-4 flex justify-center items-center gap-4 flex-wrap">
-                                        <button
-                                        className={clsx(`${englishActivePricingTab === "Small web" ? "bg-blue-600" : "bg-black/30"} bg-black/30 px-3 py-2 rounded-md cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105`)}
+                                </Fragment>
+                            ): null}
+                            {activePricingTab === "Velký web" ? (
+                                <Fragment>
+                                    <Wrapper className="p-4 w-full md:max-w-[500px] bg-black/30 border border-gray-500 rounded-md price-wrapper">
+                                        <Wrapper className="upper-content-wrapper">
+                                            <Wrapper className="flex justify-between items-center flex-wrap">
+                                                <p className="p-1 text-base md:text-xl font-black uppercase">
+                                                    Velká webová stránka
+                                                </p>
+                                                <span className="text-base md:text-xl font-black price">
+                                                    8000 Kč
+                                                </span>
+                                            </Wrapper>
+                                            <p className="pb-2 mt-2 text-center text-sm text-gray-500 border-b border-gray-500">
+                                                Webová prezentace, domovská stránka a k tomu až 15 podstránek.
+                                            </p>
+                                        </Wrapper>
+                                        <Wrapper className="mt-4 flex justify-center items-center gap-2">
+                                            <MonitorCloud />
+                                            <p className="text-lg text-gray-200 font-black">
+                                                Co tato služba obsahuje?
+                                            </p>
+                                        </Wrapper>
+                                        <Wrapper className="mt-2 flex flex-col gap-2">
+                                            <Wrapper className="flex items-center gap-2">
+                                                <CheckCircle className="text-green-500" />
+                                                <p className="text-base text-gray-200">
+                                                    Kompletní webová stránka na míru, podle Vašeho výběru.
+                                                </p>
+                                            </Wrapper>
+                                            <Wrapper className="flex items-center gap-2">
+                                                <CheckCircle className="text-green-500" />
+                                                <p className="text-base text-gray-200">
+                                                    Až 15 podstránek.
+                                                </p>
+                                            </Wrapper>
+                                            <Wrapper className="flex items-center gap-2">
+                                                <CheckCircle className="text-green-500" />
+                                                <p className="text-base text-gray-200">
+                                                    Vlastní kontaktní formulář na míru.
+                                                </p>
+                                            </Wrapper>
+                                            <Wrapper className="flex items-center gap-2">
+                                                <CheckCircle className="text-green-500" />
+                                                <p className="text-base text-gray-200">
+                                                    Stálá komunikace s klientem.
+                                                </p>
+                                            </Wrapper>
+                                            <Wrapper className="flex items-center gap-2">
+                                                <CheckCircle className="text-green-500" />
+                                                <p className="text-base text-gray-200">
+                                                    Průběžné podávání informací o stavu projektu.
+                                                </p>
+                                            </Wrapper>
+                                        </Wrapper>
+                                        <Link
+                                        href={`#kontakt`}
+                                        className="block mt-4 bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-center text-base md:text-lg font-black uppercase"
                                         onClick={(e) => {
-                                            setEnglishActivePricingTab("Small web");
+                                            setLinkWithoutHash(e, "kontakt");
                                         }}>
-                                            {/* Malý web */}
-                                            {/* {englishActivePricingTab} */}
-                                            Small web
-                                        </button>
-                                        <button
-                                        className={clsx(`${englishActivePricingTab === "Middle web" ? "bg-blue-600" : "bg-black/30"} bg-black/30 px-3 py-2 rounded-md cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105`)}
-                                        onClick={(e) => {
-                                            setEnglishActivePricingTab("Middle web");
-                                        }}>
-                                            Middle web
-                                        </button>
-                                        <button
-                                        className={clsx(`${englishActivePricingTab === "Big web" ? "bg-blue-600" : "bg-black/30"} bg-black/30 px-3 py-2 rounded-md cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105`)}
-                                        onClick={(e) => {
-                                            setEnglishActivePricingTab("Big web");
-                                        }}>
-                                            Big web
-                                        </button>
+                                            Chci tuto službu
+                                        </Link>
                                     </Wrapper>
-                                {/* udělat komponenty na form group form field form wrapper a další */}
-                                    <Wrapper className="mt-4 flex justify-center gap-4 flex-col md:flex-row prices-wrapper">
-                                        {englishActivePricingTab === "Small web" ? (
-                                            <Fragment>
-                                                <Wrapper className="p-4 w-full md:max-w-[500px] bg-black/30 border border-gray-500 rounded-md price-wrapper">
-                                                    <Wrapper className="upper-content-wrapper">
-                                                        <Wrapper className="flex justify-between items-center flex-wrap">
-                                                            <p className="p-1 text-base md:text-xl font-black uppercase">
-                                                                For entrepreneurs
-                                                            </p>
-                                                            <span className="text-base md:text-xl font-black price">
-                                                                214.02 $
-                                                            </span>
-                                                        </Wrapper>
-                                                        <p className="pb-2 mt-2 text-center text-sm text-gray-500 border-b border-gray-500">
-                                                            Web presentation, one page website or up to 5 pages.
-                                                        </p>
-                                                    </Wrapper>
-                                                    <Wrapper className="mt-4 flex justify-center items-center gap-2">
-                                                        <MonitorCloud />
-                                                        <p className="text-lg text-gray-200 font-black">
-                                                            What this services includes?
-                                                        </p>
-                                                    </Wrapper>
-                                                    <Wrapper className="mt-2 flex flex-col gap-2">
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Complete custom website, that's on your choice.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                2 Suggestions for your website.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Constant communication with a client.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Continuos provision information on status of the project.
-                                                            </p>
-                                                        </Wrapper>
-                                                    </Wrapper>
-                                                    <Link
-                                                    href={`#kontakt`}
-                                                    className="block mt-4 bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-center text-base md:text-lg font-black uppercase"
-                                                    onClick={(e) => {
-                                                        setLinkWithoutHash(e, "kontakt");
-                                                    }}>
-                                                        I want this service
-                                                    </Link>
-                                                </Wrapper>
-                                            </Fragment>
-                                        ) : null}
-                                        {englishActivePricingTab === "Middle web" ? (
-                                            <Fragment>
-                                                <Wrapper className="p-4 w-full md:max-w-[500px] bg-black/30 border border-gray-500 rounded-md price-wrapper">
-                                                    <Wrapper className="upper-content-wrapper">
-                                                        <Wrapper className="flex justify-between items-center flex-wrap">
-                                                            <p className="p-1 text-base md:text-xl font-black uppercase">
-                                                                Bigger web
-                                                            </p>
-                                                            <span className="text-base md:text-xl font-black price">
-                                                                285.36 $
-                                                            </span>
-                                                        </Wrapper>
-                                                        <p className="pb-2 mt-2 text-center text-sm text-gray-500 border-b border-gray-500">
-                                                            Web presentation, home page and up to 10 pages.
-                                                        </p>
-                                                    </Wrapper>
-                                                    <Wrapper className="mt-4 flex justify-center items-center gap-2">
-                                                        <MonitorCloud />
-                                                        <p className="text-lg text-gray-200 font-black">
-                                                            What this services includes?
-                                                        </p>
-                                                    </Wrapper>
-                                                    <Wrapper className="mt-2 flex flex-col gap-2">
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Completely custom website, that's on your choice. 
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Up to 10 pages.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Own custom contact form.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Constant communication with a client.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Continuos provision information on status of the project.
-                                                            </p>
-                                                        </Wrapper>
-                                                    </Wrapper>
-                                                    <Link
-                                                    href={`#kontakt`}
-                                                    className="block mt-4 bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-center text-base md:text-lg font-black uppercase"
-                                                    onClick={(e) => {
-                                                        setLinkWithoutHash(e, "kontakt");
-                                                    }}>
-                                                        I want this service
-                                                    </Link>
-                                                </Wrapper>
-                                            </Fragment>
-                                        ): null}
-                                        {englishActivePricingTab === "Big web" ? (
-                                            <Fragment>
-                                                <Wrapper className="p-4 w-full md:max-w-[500px] bg-black/30 border border-gray-500 rounded-md price-wrapper">
-                                                    <Wrapper className="upper-content-wrapper">
-                                                        <Wrapper className="flex justify-between items-center flex-wrap">
-                                                            <p className="p-1 text-base md:text-xl font-black uppercase">
-                                                                Big web
-                                                            </p>
-                                                            <span className="text-base md:text-xl font-black price">
-                                                                380.48 $
-                                                            </span>
-                                                        </Wrapper>
-                                                        <p className="pb-2 mt-2 text-center text-sm text-gray-500 border-b border-gray-500">
-                                                            Web presentation, home page and up to 15 pages.
-                                                        </p>
-                                                    </Wrapper>
-                                                    <Wrapper className="mt-4 flex justify-center items-center gap-2">
-                                                        <MonitorCloud />
-                                                        <p className="text-lg text-gray-200 font-black">
-                                                            What this service includes?
-                                                        </p>
-                                                    </Wrapper>
-                                                    <Wrapper className="mt-2 flex flex-col gap-2">
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Completely custom website, that's on your choice.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Up to 15 pages.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Own custom contact form.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Constant communication with a client.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Continuos provision information on status of the project.
-                                                            </p>
-                                                        </Wrapper>
-                                                    </Wrapper>
-                                                    <Link
-                                                    href={`#kontakt`}
-                                                    className="block mt-4 bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-center text-base md:text-lg font-black uppercase"
-                                                    onClick={(e) => {
-                                                        setLinkWithoutHash(e, "kontakt");
-                                                    }}>
-                                                        I want this service
-                                                    </Link>
-                                                </Wrapper>
-                                            </Fragment>
-                                        ): null}
-                                    </Wrapper>
-                                </Wrapper>
-                            </Fragment>
-                        )
-                    }
-                    {
-                        language === "Deutsch" && (
-                            <Fragment>
-                                <Wrapper className="flex flex-col justify-center items-center">
-                                    <PageLabel
-                                    pageLabelAdditContent={<Sparkle className="text-fuchsia-300" />}
-                                    pageLabelText="Preisliste"
-                                    />
-                                    <h2 className="text-3xl md:text-5xl font-black uppercase">
-                                        3 Preisliste
-                                    </h2>
-                                    <p className="mt-4 text-base text-center text-gray-300">
-                                        Preise, die wirklich für jeden erschwinglich sind, sowohl für Privatpersonen als auch für kleine Unternehmen.
-                                    </p>
-                                </Wrapper>
-                                <Wrapper className="pricing-wrapper">
-                                    <Wrapper className="my-4 flex justify-center items-center gap-4 flex-wrap">
-                                        <button
-                                        className={clsx(`${englishActivePricingTab === "Small web" ? "bg-blue-600" : "bg-black/30"} bg-black/30 px-3 py-2 rounded-md cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105`)}
-                                        onClick={(e) => {
-                                            setEnglishActivePricingTab("Small web");
-                                        }}>
-                                            {/* Malý web */}
-                                            {/* {englishActivePricingTab} */}
-                                            Small web
-                                        </button>
-                                        <button
-                                        className={clsx(`${englishActivePricingTab === "Middle web" ? "bg-blue-600" : "bg-black/30"} bg-black/30 px-3 py-2 rounded-md cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105`)}
-                                        onClick={(e) => {
-                                            setEnglishActivePricingTab("Middle web");
-                                        }}>
-                                            Middle web
-                                        </button>
-                                        <button
-                                        className={clsx(`${englishActivePricingTab === "Big web" ? "bg-blue-600" : "bg-black/30"} bg-black/30 px-3 py-2 rounded-md cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105`)}
-                                        onClick={(e) => {
-                                            setEnglishActivePricingTab("Big web");
-                                        }}>
-                                            Big web
-                                        </button>
-                                    </Wrapper>
-                                {/* udělat komponenty na form group form field form wrapper a další */}
-                                    <Wrapper className="mt-4 flex justify-center gap-4 flex-col md:flex-row prices-wrapper">
-                                        {englishActivePricingTab === "Small web" ? (
-                                            <Fragment>
-                                                <Wrapper className="p-4 w-full md:max-w-[500px] bg-black/30 border border-gray-500 rounded-md price-wrapper">
-                                                    <Wrapper className="upper-content-wrapper">
-                                                        <Wrapper className="flex justify-between items-center flex-wrap">
-                                                            <p className="p-1 text-base md:text-xl font-black uppercase">
-                                                                Für Unternehmer
-                                                            </p>
-                                                            <span className="text-base md:text-xl font-black price">
-                                                                185.85 €
-                                                            </span>
-                                                        </Wrapper>
-                                                        <p className="pb-2 mt-2 text-center text-sm text-gray-500 border-b border-gray-500">
-                                                            Webpräsentation, einseitige Website oder bis zu 5 Seiten.
-                                                        </p>
-                                                    </Wrapper>
-                                                    <Wrapper className="mt-4 flex justify-center items-center gap-2">
-                                                        <MonitorCloud />
-                                                        <p className="text-lg text-gray-200 font-black">
-                                                            Was beinhaltet dieser Service?
-                                                        </p>
-                                                    </Wrapper>
-                                                    <Wrapper className="mt-2 flex flex-col gap-2">
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Eine komplett individuell gestaltete Website - ganz nach Ihren Wünschen.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                2 Vorschläge für Ihre Website.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Ständige Kommunikation mit dem Kunden.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Kontinuierliche Bereitstellung von Informationen zum Status des Projekts.
-                                                            </p>
-                                                        </Wrapper>
-                                                    </Wrapper>
-                                                    <Link
-                                                    href={`#kontakt`}
-                                                    className="block mt-4 bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-center text-base md:text-lg font-black uppercase"
-                                                    onClick={(e) => {
-                                                        setLinkWithoutHash(e, "kontakt");
-                                                    }}>
-                                                        Ich möchte diesen Service
-                                                    </Link>
-                                                </Wrapper>
-                                            </Fragment>
-                                        ) : null}
-                                        {englishActivePricingTab === "Middle web" ? (
-                                            <Fragment>
-                                                <Wrapper className="p-4 w-full md:max-w-[500px] bg-black/30 border border-gray-500 rounded-md price-wrapper">
-                                                    <Wrapper className="upper-content-wrapper">
-                                                        <Wrapper className="flex justify-between items-center flex-wrap">
-                                                            <p className="p-1 text-base md:text-xl font-black uppercase">
-                                                                Bigger web
-                                                            </p>
-                                                            <span className="text-base md:text-xl font-black price">
-                                                                247.81 €
-                                                            </span>
-                                                        </Wrapper>
-                                                        <p className="pb-2 mt-2 text-center text-sm text-gray-500 border-b border-gray-500">
-                                                            Webpräsentation, Homepage und bis zu 10 Seiten.
-                                                        </p>
-                                                    </Wrapper>
-                                                    <Wrapper className="mt-4 flex justify-center items-center gap-2">
-                                                        <MonitorCloud />
-                                                        <p className="text-lg text-gray-200 font-black">
-                                                            Was beinhaltet dieser Service?
-                                                        </p>
-                                                    </Wrapper>
-                                                    <Wrapper className="mt-2 flex flex-col gap-2">
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Eine komplett individuell gestaltete Website - ganz nach Ihren Wünschen.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Bis zu 10 Seiten.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Eigenes, individuelles Kontaktformular.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Ständige Kommunikation mit dem Kunden.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Kontinuierliche Bereitstellung von Informationen zum Status des Projekts.
-                                                            </p>
-                                                        </Wrapper>
-                                                    </Wrapper>
-                                                    <Link
-                                                    href={`#kontakt`}
-                                                    className="block mt-4 bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-center text-base md:text-lg font-black uppercase"
-                                                    onClick={(e) => {
-                                                        setLinkWithoutHash(e, "kontakt");
-                                                    }}>
-                                                        Ich möchte diesen Service
-                                                    </Link>
-                                                </Wrapper>
-                                            </Fragment>
-                                        ): null}
-                                        {englishActivePricingTab === "Big web" ? (
-                                            <Fragment>
-                                                <Wrapper className="p-4 w-full md:max-w-[500px] bg-black/30 border border-gray-500 rounded-md price-wrapper">
-                                                    <Wrapper className="upper-content-wrapper">
-                                                        <Wrapper className="flex justify-between items-center flex-wrap">
-                                                            <p className="p-1 text-base md:text-xl font-black uppercase">
-                                                                Big web
-                                                            </p>
-                                                            <span className="text-base md:text-xl font-black price">
-                                                                330.41 €
-                                                            </span>
-                                                        </Wrapper>
-                                                        <p className="pb-2 mt-2 text-center text-sm text-gray-500 border-b border-gray-500">
-                                                            Webpräsentation, Homepage und bis zu 15 Seiten.
-                                                        </p>
-                                                    </Wrapper>
-                                                    <Wrapper className="mt-4 flex justify-center items-center gap-2">
-                                                        <MonitorCloud />
-                                                        <p className="text-lg text-gray-200 font-black">
-                                                            Was beinhaltet dieser Service?
-                                                        </p>
-                                                    </Wrapper>
-                                                    <Wrapper className="mt-2 flex flex-col gap-2">
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Eine komplett individuell gestaltete Website - ganz nach Ihren Wünschen.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Bis zu 15 Seiten.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Eigenes, individuelles Kontaktformular.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Ständige Kommunikation mit dem Kunden.
-                                                            </p>
-                                                        </Wrapper>
-                                                        <Wrapper className="flex items-center gap-2">
-                                                            <CheckCircle className="text-green-500" />
-                                                            <p className="text-base text-gray-200">
-                                                                Kontinuierliche Bereitstellung von Informationen zum Status des Projekts.
-                                                            </p>
-                                                        </Wrapper>
-                                                    </Wrapper>
-                                                    <Link
-                                                    href={`#kontakt`}
-                                                    className="block mt-4 bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-center text-base md:text-lg font-black uppercase"
-                                                    onClick={(e) => {
-                                                        setLinkWithoutHash(e, "kontakt");
-                                                    }}>
-                                                        Ich möchte diesen Service
-                                                    </Link>
-                                                </Wrapper>
-                                            </Fragment>
-                                        ): null}
-                                    </Wrapper>
-                                </Wrapper>
-                            </Fragment>
-                        )
-                    }
+                                </Fragment>
+                            ): null}
+                        </Wrapper>
+                    </Wrapper>
                 </Wrapper>
-                {
-                    language === "Čeština" && (
-                        <Fragment>
-                            <Wrapper className="mt-2 flex justify-center py-10">
-                                <p className="p-2 text-center text-sm text-gray-500">
-                                    Pokud Vaše dotazy nebyli zodpovězené nebo máte na mě, jakékoliv dotazy, neváhejte mne
-                                    {" "}
-                                    <Link
-                                    href={`#kontakt`}
-                                    className="border-b border-gray-500"
-                                    onClick={(e) => {
-                                        setLinkWithoutHash(e, "kontakt");
-                                    }}>
-                                        kontaktovat.
-                                    </Link>
-                                </p>
-                            </Wrapper>
-                        </Fragment>
-                    )
-                }
-                {
-                    language === "English" && (
-                        <Fragment>
-                            <Wrapper className="mt-2 flex justify-center py-10">
-                                <p className="p-2 text-center text-sm text-gray-500">
-                                    If your questions wasn't answered or do you have, any questions, feel free to
-                                    {" "}
-                                    <Link
-                                    href={`#kontakt`}
-                                    className="border-b border-gray-500"
-                                    onClick={(e) => {
-                                        setLinkWithoutHash(e, "kontakt");
-                                    }}>
-                                        contact me.
-                                    </Link>
-                                </p>
-                            </Wrapper>
-                        </Fragment>
-                    )
-                }
-                {
-                    language === "Deutsch" && (
-                        <Fragment>
-                            <Wrapper className="mt-2 flex justify-center py-10">
-                                <p className="p-2 text-center text-sm text-gray-500">
-                                    Falls Ihre Frage nicht beantwortet wurde oder Sie weitere Fragen haben, zögern Sie nicht, uns zu kontaktieren.
-                                    {" "}
-                                    <Link
-                                    href={`#kontakt`}
-                                    className="border-b border-gray-500"
-                                    onClick={(e) => {
-                                        setLinkWithoutHash(e, "kontakt");
-                                    }}>
-                                        Kontaktieren Sie mich.
-                                    </Link>
-                                </p>
-                            </Wrapper>
-                        </Fragment>
-                    )
-                }
+                <Wrapper className="mt-2 flex justify-center py-10">
+                    <p className="p-2 text-center text-sm text-gray-500">
+                        Pokud Vaše dotazy nebyli zodpovězené nebo máte na mě, jakékoliv dotazy, neváhejte mne
+                        {" "}
+                        <Link
+                        href={`#kontakt`}
+                        className="border-b border-gray-500"
+                        onClick={(e) => {
+                            setLinkWithoutHash(e, "kontakt");
+                        }}>
+                            kontaktovat.
+                        </Link>
+                    </p>
+                </Wrapper>
             </Wrapper>
         </Fragment>
     );

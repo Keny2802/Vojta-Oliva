@@ -137,10 +137,12 @@ const Header = ({ ...props }: headerProps) => {
                             theme === "Dark" ? (
                                 <Fragment>
                                     <Link
-                                        href={`/nabidka`}
+                                        // href={`/nabidka`}
+                                        href="mailto:info.modernizujme@gmail.com"
                                         className="hidden md:flex justify-center items-center gap-2 bg-white text-black rounded-lg px-3 py-2">
                                         <FileText />
-                                        Získat nabídku
+                                        {/* Získat nabídku */}
+                                        info.modernizujme@gmail.com
                                     </Link>
                                 </Fragment>
                             ) : (

@@ -84,10 +84,12 @@ const Hero = ({ ...props }: heroProps) => {
                             <h1 className="text-3xl md:text-6xl font-black hero-text">
                                 Nakopni svůj web jen a pouze s
                                 {" "}
-                                <span className="bg-linear-to-r from-[#0d3c7a] via-[#4022a1] to-[#6a1fcc] text-transparent bg-clip-text">
-                                    {/* new Web */}
+                                <span className="text-[#14b8a5]">
                                     Vojtou Olivou
                                 </span>,
+                                {/* <span className="bg-linear-to-r from-[#0d3c7a] via-[#4022a1] to-[#6a1fcc] text-transparent bg-clip-text">
+                                    Vojtou Olivou
+                                </span>, */}
                                 {" "}
                                 cenově dostupný webový vývoj.
                             </h1>

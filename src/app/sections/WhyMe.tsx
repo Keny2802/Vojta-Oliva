@@ -157,7 +157,7 @@ const WhyMe = ({ ...props }: WhymeProps) => {
                                         <p className="text-[15.5px] text-black/90">
                                             Více návrhů
                                         </p>
-                                        <p className="text-sm text-black/90">
+                                        <p className="text-sm text-center text-black/90">
                                             Ano, více návrhů v ceně.
                                         </p>
                                     </Wrapper>

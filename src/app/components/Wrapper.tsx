@@ -1,5 +1,6 @@
 import {
     Fragment,
+    CSSProperties,
     ReactNode
 } from "react";
 import clsx from "clsx";
@@ -8,11 +9,11 @@ type wrapperProps = {
     attributes?: React.HTMLAttributes<HTMLDivElement>;
     className?: string;
     id?: string;
-    ref?: any;
-    onMouseMove?: any;
-    OnMouseEnter?: any;
-    onMouseLeave?: any;
-    style?: any;
+    ref?: React.Ref<HTMLDivElement>;
+    onMouseMove?: React.MouseEventHandler<HTMLDivElement>;
+    OnMouseEnter?: React.MouseEventHandler<HTMLDivElement>;
+    onMouseLeave?: React.MouseEventHandler<HTMLDivElement>;
+    style?: CSSProperties;
     children?: ReactNode;
 };
 

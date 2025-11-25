@@ -30,7 +30,6 @@ import {
 } from "../context/ThemeContext";
 import gsap from "gsap";
 import clsx from "clsx";
-import Link from "next/link";
 
 import Wrapper from "../components/Wrapper";
 import PageLabel from "../components/PageLabel";
@@ -40,6 +39,8 @@ type contactProps = {
     className?: string;
     children?: ReactNode;
 };
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Contact = ({ ...props }: contactProps) => {
     const sectionTextRef = useRef<HTMLDivElement>(null);

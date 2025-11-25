@@ -38,11 +38,11 @@ const ContactInfo = ({ ...props }: contactInfoProps) => {
                 ${isFooter && "w-full"}
                 ${!isFooter && "w-full md:w-max"}
                 ${theme === "Dark" ? "bg-black/30 border border-gray-500" : "border border-gray-200 bg-black/90"}
-                p-4 rounded-md`)}>
+                text-gray-300 p-4 rounded-md`)}>
                 <h3 className="text-xl">
                     Kontaktní informace
                 </h3>
-                <p className="mt-2 pb-4 text-sm text-gray-300 border-b border-gray-500">
+                <p className="mt-2 pb-4 text-sm border-b border-gray-500">
                     Pokud máte jakýkoliv dotaz nebo zájem, kontaktujte mě prosím.
                 </p>
                 <Wrapper className="mt-4">

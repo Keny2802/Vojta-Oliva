@@ -77,7 +77,8 @@ const Hero = ({ ...props }: heroProps) => {
                     <Wrapper className="flex flex-col items-center" ref={sectionTextRef}>
                         <PageLabel
                             pageLabelAdditContent={<Home />}
-                            pageLabelText="Domovská stránka"
+                            // pageLabelText="Domovská stránka"
+                            pageLabelText="Domov"
                         />
                         <Wrapper className={clsx(`${theme === "Light" && "text-black/90"} flex flex-col items-center`)}>
                             <h1 className="text-3xl md:text-6xl font-black hero-text">
@@ -91,7 +92,8 @@ const Hero = ({ ...props }: heroProps) => {
                                 cenově dostupný webový vývoj.
                             </h1>
                             <p className="mt-4 p-4 text-lg md:text-2xl max-w-3xl">
-                                Poskytuji webový vývoj jednotlivcům a malým podnikům růst a získávat nové klienty.
+                                Ahoj, jmenuju se Vojta Oliva, poskytuji webový vývoj živnostníkům a malým podnikům, za opravdu dostupné ceny.
+                                {/* Poskytuji webový vývoj jednotlivcům a malým podnikům růst a získávat nové klienty. */}
                             </p>
                         </Wrapper>
                         <Wrapper className="w-full mt-4 p-4 flex justify-center items-center gap-4 flex-col md:flex-row">
@@ -113,7 +115,8 @@ const Hero = ({ ...props }: heroProps) => {
                                     setLinkWithoutHash(e, "kontakt")
                                 }}>
                                 <Phone />
-                                Kontaktujte mě
+                                {/* Kontaktujte mě */}
+                                Nezávazná konzultace zdarma
                             </Link>
                         </Wrapper>
                     </Wrapper>

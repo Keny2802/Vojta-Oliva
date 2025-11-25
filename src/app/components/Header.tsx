@@ -13,15 +13,6 @@ import {
     Moon
 } from "lucide-react";
 import {
-    czechLanguageSwitchSet
-} from "../sets/czechLanguageSwitchSet";
-import {
-    englishLanguageSwitchSet
-} from "../sets/englishLanguageSwitchSet";
-import {
-    deutschLanguageSwitchSet
-} from "../sets/deutschLanguageSwitchSet";
-import {
     useTheme
 } from "../context/ThemeContext";
 import clsx from "clsx";

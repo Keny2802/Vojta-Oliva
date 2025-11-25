@@ -1,10 +1,7 @@
 "use client";
 
 import {
-    useRef,
-    useEffect,
     Fragment,
-    ReactNode
 } from "react";
 import {
     useTheme

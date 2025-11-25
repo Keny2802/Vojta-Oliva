@@ -23,8 +23,6 @@ import {
 import gsap from "gsap";
 import clsx from "clsx";
 import faqSet from "../sets/faqSet";
-// import englishFaqSet from "../sets/englishFaqSet";
-// import deutschFaqSet from "../sets/deutschFaqSet";
 import setLinkWithoutHash from "../functions/setLinkWithoutHash";
 import Link from "next/link";
 

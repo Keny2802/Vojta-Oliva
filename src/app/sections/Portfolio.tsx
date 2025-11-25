@@ -8,7 +8,8 @@ import {
     ReactNode,
 } from "react";
 import {
-    Sparkle
+    Sparkle,
+    SquareArrowOutUpRight
 } from "lucide-react";
 import {
     ScrollTrigger
@@ -18,8 +19,6 @@ import {
 } from "../context/ThemeContext";
 import gsap from "gsap";
 import portfolioSet from "../sets/portfolioSet";
-// import englishPortfolioSet from "../sets/englishPortfolioSet";
-// import deutschPortfolioSet from "../sets/deutschPortfolioSet";
 import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
@@ -76,7 +75,6 @@ const Portfolio = ({ ...props }) => {
     }, []);
 
     const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
-        const target = e.target;
         const currentTarget = e.currentTarget;
         const clientX = e.clientX;
         const clientY = e.clientY;
@@ -92,13 +90,11 @@ const Portfolio = ({ ...props }) => {
     };
 
     const {
-        theme,
-        setTheme
+        theme
     } = useTheme();
 
     const {
         className,
-        children
     } = props;
 
     return (
@@ -137,7 +133,7 @@ const Portfolio = ({ ...props }) => {
                                 <Fragment key={portfolioProjectIndex}>
                                     <Wrapper
                                         className={clsx(`
-                                        ${theme === "Dark" ? "bg-black/30" : "bg-white shadow-md"}
+                                        ${theme === "Dark" ? "bg-[#171717]/30" : "bg-white shadow-md"}
                                         relative border border-gray-500 overflow-hidden rounded-md w-full max-w-sm mx-auto cursor-pointer transition-transform duration-300 ease-in-out reveal-portfolio-project
                                         `)}
                                         onMouseMove={handleMove}
@@ -155,13 +151,13 @@ const Portfolio = ({ ...props }) => {
                                             {portfolioProjectIndex + 1}
                                         </span>
                                         <Image
-                                            height={182}
-                                            width={384}
-                                            src={portfolioProject.projectImage}
-                                            alt={`Úvodní Fotka - ${portfolioProject.projectName}`}
-                                            loading="lazy"
-                                            decoding="async"
-                                            className="w-auto h-auto"></Image>
+                                        height={182}
+                                        width={384}
+                                        src={portfolioProject.projectImage}
+                                        alt={`Úvodní Fotka - ${portfolioProject.projectName}`}
+                                        loading="lazy"
+                                        decoding="async"
+                                        className="w-auto h-auto" />
                                         <Wrapper className="p-4 flex flex-col gap-2">
                                             <p className={clsx(`${theme === "Dark" ? "text-white" : "text-black/90"} text-2xl font-black uppercase`)}>
                                                 {portfolioProject.projectName}
@@ -169,10 +165,22 @@ const Portfolio = ({ ...props }) => {
                                             <p className={clsx(`${theme === "Dark" ? "text-gray-300" : "text-black/80"}`)}>
                                                 {portfolioProject.projectDescription}
                                             </p>
+                                            <ul className={clsx(`${theme === "Dark" ? "text-gray-300" : "text-black/90"} mt-2 flex items-center gap-2 portfolio-project-tech-stack`)}>
+                                                {
+                                                    portfolioProject.portfolioTechStack.map((portfolioTechStack, portfolioTechStackIndex) => (
+                                                        <Fragment key={portfolioTechStackIndex}>
+                                                            <li className={clsx(`${theme === "Dark" ? "bg-black/70" : "bg-white shadow-lg"} p-2 rounded-lg text-sm portfolio-project-list-item`)}>
+                                                                {portfolioTechStack}
+                                                            </li>
+                                                        </Fragment>
+                                                    ))
+                                                }
+                                            </ul>
                                             <Link
                                                 href={portfolioProject.projectLink}
-                                                className={clsx(`${theme === "Dark" ? "text-gray-300" : "text-black/80"} mt-6 underline underline-offset-4`)}>
-                                                Zobrazit {portfolioProject.projectName}
+                                                className={clsx(`${theme === "Dark" ? "p-4 rounded-md bg-white/5 text-gray-300" : "p-4 rounded-md bg-gray-50 shadow-md text-black/80"} flex items-center gap-3 mt-6 underline underline-offset-4 transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]`)}>
+                                                <SquareArrowOutUpRight />
+                                                Zobrazit webovku
                                             </Link>
                                         </Wrapper>
                                     </Wrapper>

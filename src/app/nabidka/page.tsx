@@ -12,9 +12,6 @@ import {
     Phone,
 } from "lucide-react";
 import {
-    Metadata
-} from "next";
-import {
     zodResolver
 } from "@hookform/resolvers/zod";
 import {
@@ -31,7 +28,6 @@ import clsx from "clsx";
 import Link from "next/link";
 
 import Wrapper from "@/app/components/Wrapper";
-import Header from "@/app/components/Header";
 import Logo from "../components/Logo";
 import PageLabel from "../components/PageLabel";
 import Footer from "../components/Footer";

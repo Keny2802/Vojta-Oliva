@@ -19,15 +19,12 @@ import {
     useTheme
 } from "../context/ThemeContext";
 import gsap from "gsap";
-// import pricingOptionsSet from "../sets/pricingOptionsSet";
-// import pricingCardsSet from "../sets/pricingCardsSet";
 import setLinkWithoutHash from "../functions/setLinkWithoutHash";
 import clsx from "clsx";
 import Link from "next/link";
 
 import Wrapper from "../components/Wrapper";
 import PageLabel from "../components/PageLabel";
-import HelpHint from "../components/HelpHint";
 
 type pricingProps = {
     className?: string;

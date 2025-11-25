@@ -63,7 +63,7 @@ const AboutMe = () => {
                             className="text-white"
                         />
                         <h2 className="text-3xl md:text-5xl font-black uppercase">
-                            5 O mně
+                            6 O mně
                         </h2>
                         <p className="mt-4 text-base text-center">
                             Díky této sekci, zjistíte více informací o mně.

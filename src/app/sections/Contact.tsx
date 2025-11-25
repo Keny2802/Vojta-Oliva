@@ -145,7 +145,7 @@ const Contact = ({ ...props }: contactProps) => {
                             className="text-white"
                         />
                         <h2 className="text-3xl md:text-5xl font-black uppercase">
-                            6 Kontakt
+                            7 Kontakt
                         </h2>
                         <p className="mt-4 text-base text-center">
                             Kontaktujte mě a domluvíme realizaci Vašeho webu.

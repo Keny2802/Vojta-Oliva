@@ -9,6 +9,10 @@ type wrapperProps = {
     className?: string;
     id?: string;
     ref?: any;
+    onMouseMove?: any;
+    OnMouseEnter?: any;
+    onMouseLeave?: any;
+    style?: any;
     children?: ReactNode;
 };
 
@@ -18,6 +22,10 @@ const Wrapper = ({ ...props }: wrapperProps) => {
         className,
         id,
         ref,
+        onMouseMove,
+        OnMouseEnter,
+        onMouseLeave,
+        style,
         children
     } = props;
 
@@ -27,7 +35,12 @@ const Wrapper = ({ ...props }: wrapperProps) => {
             {...attributes}
             className={clsx(`${className || ""}`)}
             id={id}
-            ref={ref}>
+            ref={ref}
+            onMouseMove={onMouseMove}
+            onMouseEnter={OnMouseEnter}
+            onMouseLeave={onMouseLeave}
+            style={style}
+            >
                 {children}
             </div>
         </Fragment>

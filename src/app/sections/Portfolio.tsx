@@ -2,6 +2,7 @@
 
 import {
     useRef,
+    useState,
     useEffect,
     Fragment,
     ReactNode,
@@ -36,6 +37,10 @@ gsap.registerPlugin(ScrollTrigger);
 const Portfolio = ({ ...props }) => {
     const portfolioProjectRef = useRef<HTMLDivElement>(null);
     const sectionTextRef = useRef<HTMLHeadingElement>(null);
+    const [tilt, setTilt] = useState({
+        x: 0,
+        y: 0
+    });
 
     useEffect(() => {
         const animatedPortfolioProjects = gsap.utils.toArray<HTMLDivElement>(".reveal-portfolio-project");
@@ -69,6 +74,22 @@ const Portfolio = ({ ...props }) => {
             });
         });
     }, []);
+
+    const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        const target = e.target;
+        const currentTarget = e.currentTarget;
+        const clientX = e.clientX;
+        const clientY = e.clientY;
+        const rect = currentTarget.getBoundingClientRect();
+
+        const x = (clientX - rect.left) / rect.width;
+        const y = (clientY - rect.top) / rect.height;
+
+        setTilt({
+            x: (y - 0.5) * 20,
+            y: (x - 0.5) * -20
+        });
+    };
 
     const {
         theme,
@@ -117,9 +138,19 @@ const Portfolio = ({ ...props }) => {
                                     <Wrapper
                                         className={clsx(`
                                         ${theme === "Dark" ? "bg-black/30" : "bg-white shadow-md"}
-                                        relative border border-gray-500 overflow-hidden rounded-md w-full max-w-sm mx-auto reveal-portfolio-project
+                                        relative border border-gray-500 overflow-hidden rounded-md w-full max-w-sm mx-auto cursor-pointer transition-transform duration-300 ease-in-out reveal-portfolio-project
                                         `)}
-                                        ref={portfolioProjectRef}>
+                                        onMouseMove={handleMove}
+                                        onMouseLeave={() => {
+                                            setTilt({
+                                                x: 0,
+                                                y: 0
+                                            });
+                                        }}
+                                        style={{
+                                            transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`
+                                        }}
+                                        >
                                         <span className="absolute top-2 right-5 text-[#f8aa0e] text-5xl font-black">
                                             {portfolioProjectIndex + 1}
                                         </span>

@@ -79,7 +79,7 @@ const Pricing = ({ ...props }: pricingProps) => {
                 className={clsx(`
                 ${className || ""}
                 ${theme === "Dark" ? "border-t border-gray-500 bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a]" : "bg-gray-50 border-t border-gray-200"}
-                pricing-wrapper`)}
+                section pricing-wrapper`)}
                 id="cenik">
                 <Wrapper className="px-4 md:px-24 py-4 md:py-16 text-white" ref={sectionTextRef}>
                     <Wrapper className={clsx(`${theme === "Dark" ? "text-white" : "text-black/90"} flex flex-col justify-center items-center`)}>
@@ -114,8 +114,8 @@ const Pricing = ({ ...props }: pricingProps) => {
                                         </Wrapper>
                                         <Wrapper className={clsx(`${theme === "Dark" ? "bg-black/30" : "bg-black/90"} p-4 w-full md:max-w-[500px] rounded-md price-wrapper`)}>
                                             <Wrapper className="upper-content-wrapper">
-                                                <Wrapper className="flex justify-between items-center flex-wrap">
-                                                    <p className="p-1 text-base md:text-xl font-black uppercase">
+                                                {/* <Wrapper className="flex justify-between items-center flex-wrap">
+                                                    <p className="p-1 text-base md:text-lg font-black uppercase">
                                                         {pricingCard.cardHeading}
                                                     </p>
                                                     <span className="text-base md:text-xl font-black price">
@@ -129,10 +129,31 @@ const Pricing = ({ ...props }: pricingProps) => {
                                                             </span>
                                                         )}
                                                     </span>
+                                                </Wrapper> */}
+                                                <Wrapper className="flex flex-col gap-3">
+                                                    <p className={clsx(`
+                                                    ${pricingCard.cardLabel === "Pro ty co spěchají" && "border-b border-[#14b8a5]"}
+                                                    ${pricingCard.cardLabel === "Nejlepší" && "border-b border-[#6267f2]"}
+                                                    ${pricingCard.cardLabel === "Novinka" && "border-b border-[#14b8a5]"}
+                                                    p-1 text-2xl md:text-3xl font-black uppercase
+                                                    `)}>
+                                                        {pricingCard.cardHeading}
+                                                    </p>
+                                                    <p className="text-4xl md:text-6xl text-center font-black price">
+                                                        {pricingCard.cardPrice} Kč
+                                                        {pricingCard.cardPrice === 2000 && (
+                                                            <span className="text-base md:text-xl">
+                                                                {" "}
+                                                                /
+                                                                {" "}
+                                                                měsíc
+                                                            </span>
+                                                        )}
+                                                    </p>
+                                                    <p className="pb-2 mt-2 text-center text-sm text-gray-500 border-b border-gray-500">
+                                                        {pricingCard.cardSubheading}
+                                                    </p>
                                                 </Wrapper>
-                                                <p className="pb-2 mt-2 text-center text-sm text-gray-500 border-b border-gray-500">
-                                                    {pricingCard.cardSubheading}
-                                                </p>
                                             </Wrapper>
                                             <Wrapper className="mt-4 flex justify-center items-center gap-2">
                                                 <MonitorCloud />

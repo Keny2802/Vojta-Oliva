@@ -20,7 +20,7 @@ const pricingCardsSet:pricingCardsProps[] = [
         cardLabel: "Nejlepší",
         cardHeading: "Kompletní web",
         cardPrice: 6000,
-        cardSubheading: "Webová prezentace, .",
+        cardSubheading: "Webová prezentace s 10 podstránkami.",
         cardIncludingSet: [
             "Kompletní webová stránka na míru.",
             "Až 10 podstránek.",
@@ -36,7 +36,7 @@ const pricingCardsSet:pricingCardsProps[] = [
         cardPrice: 2000,
         cardSubheading: "Údržba a pravidelná aktualizace webu.",
         cardIncludingSet: [
-            "Četnost aktualizací webu, na přání klienta.",
+            "Četnost aktualizací webu, podle přání klienta.",
             "Pravidelné zálohy webu.",
             "Úpravy webu a přidávání obsahu.",
             "Stálá komunikace s klientem o úpravách či změnách na webu."

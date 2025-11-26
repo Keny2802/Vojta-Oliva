@@ -72,7 +72,7 @@ const Hero = ({ ...props }: heroProps) => {
             <Wrapper className={clsx(`
                 ${className || ""}
                 ${theme === "Dark" ? "bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a]" : "bg-gray-50 shadow-md"}
-                pt-28 md:pt-18 flex flex-col justify-center w-full min-h-screen hero-wrapper`)}>
+                pt-28 md:pt-18 flex flex-col justify-center w-full min-h-screen section hero-wrapper`)}>
                 <HeroOverlayWrapper className="p-4">
                     <Wrapper className="flex flex-col items-center" ref={sectionTextRef}>
                         <PageLabel

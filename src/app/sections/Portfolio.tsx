@@ -109,7 +109,7 @@ const Portfolio = ({ ...props }) => {
                 :
                 "bg-gray-50 border-t border-gray-200"
                 }
-                portfolio-wrapper`)}
+                section portfolio-wrapper`)}
                 id="portfolio"
             >
                 <Wrapper className="px-4 md:px-24 py-4 md:py-16">

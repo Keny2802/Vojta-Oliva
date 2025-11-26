@@ -133,7 +133,7 @@ const Contact = ({ ...props }: contactProps) => {
             <Wrapper className={clsx(`
             ${className || ""}
             ${theme === "Dark" ? "border-t border-gray-500 bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a]" : "bg-gray-50 border-t border-gray-200"}
-            `)}
+            section`)}
                 id="kontakt"
             >
                 <Wrapper className="px-4 md:px-24 py-4 md:py-16 text-white">

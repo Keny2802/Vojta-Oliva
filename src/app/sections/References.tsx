@@ -55,7 +55,7 @@ const References = () => {
                 "bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a] border-t border-gray-500"
                 :
                 "bg-gray-50 border-t border-gray-200"}
-                `)}
+                section`)}
                 id="reference"
             >
                 <Wrapper className="px-4 md:px-24 py-4 md:py-16 text-white">

@@ -1,6 +1,8 @@
 "use client";
 
 import {
+    useState,
+    useEffect,
     Fragment,
     ReactNode
 } from "react";
@@ -27,6 +29,33 @@ type mobileMenuProps = {
 };
 
 const MobileMenu = ({ ...props }: mobileMenuProps) => {
+    const [activeLink, setActiveLink] = useState<string>("");
+
+    useEffect(() => {
+        const sections = document.querySelectorAll(".section");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                const target = entry.target;
+                const targetID = target.id;
+
+                if (entry.isIntersecting) {
+                    setActiveLink(targetID);
+                };
+            });
+        }, { threshold: 0.5 });
+
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
+
+        return () => {
+            sections.forEach((section) => {
+                observer.unobserve(section);
+            });
+        };
+    }, []);
+
     const {
         theme,
         setTheme
@@ -55,7 +84,9 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                             setLinkWithoutHash(e, "portfolio");
                             setMobileMenuHidden(false);
                         }}
-                        className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
+                        className={clsx(`
+                        ${activeLink === "portfolio" && "bg-[#171717] text-white px-3 py-2 rounded-md"}
+                        transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
                             Portfolio
                         </Link>
                         <Link
@@ -64,7 +95,9 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                             setLinkWithoutHash(e, "reference");
                             setMobileMenuHidden(false);
                         }}
-                        className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
+                        className={clsx(`
+                        ${activeLink === "reference" && "bg-[#171717] text-white px-3 py-2 rounded-md"}
+                        transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
                             Reference
                         </Link>
                         <Link
@@ -73,7 +106,9 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                             setLinkWithoutHash(e, "cenik");
                             setMobileMenuHidden(false);
                         }}
-                        className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
+                        className={clsx(`
+                        ${activeLink === "cenik" && "bg-[#171717] text-white px-3 py-2 rounded-md"}
+                        transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
                             Ceník
                         </Link>
                         <Link
@@ -82,7 +117,9 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                             setLinkWithoutHash(e, "faq");
                             setMobileMenuHidden(false);
                         }}
-                        className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
+                        className={clsx(`
+                        ${activeLink === "faq" && "bg-[#171717] text-white px-3 py-2 rounded-md"}
+                        transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
                             FAQ
                         </Link>
                         <Link
@@ -91,7 +128,9 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                             setLinkWithoutHash(e, "o-mne");
                             setMobileMenuHidden(false);
                         }}
-                        className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
+                        className={clsx(`
+                        ${activeLink === "o-mne" && "bg-[#171717] text-white px-3 py-2 rounded-md"}
+                        transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
                             O mně
                         </Link>
                         <Link
@@ -100,7 +139,9 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                             setLinkWithoutHash(e, "kontakt");
                             setMobileMenuHidden(false);
                         }}
-                        className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
+                        className={clsx(`
+                        ${activeLink === "kontakt" && "bg-[#171717] text-white px-3 py-2 rounded-md"}
+                        transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
                             Kontakt
                         </Link>
                     </ul>

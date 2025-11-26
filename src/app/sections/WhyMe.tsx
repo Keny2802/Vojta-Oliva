@@ -65,7 +65,7 @@ const WhyMe = ({ ...props }: WhymeProps) => {
             <Wrapper className={clsx(`
             ${className || ""}
             ${theme === "Dark" ? "border-t border-gray-500 bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a]" : "bg-gray-50 border-t border-gray-200"}
-            why-me-wrapper`)}
+            section why-me-wrapper`)}
             id="proc-ja">
                 <Wrapper className="px-4 md:px-24 py-4 md:py-16 text-white" ref={sectionTextRef}>
                     <Wrapper className={clsx(`${theme === "Dark" ? "text-white" : "text-black/90"} flex flex-col justify-center items-center`)}>

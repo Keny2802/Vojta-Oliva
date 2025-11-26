@@ -2,6 +2,7 @@
 
 import {
     useState,
+    useEffect,
     Fragment,
     ReactNode
 } from "react";
@@ -30,6 +31,33 @@ type headerProps = {
 
 const Header = ({ ...props }: headerProps) => {
     const [isMobileMenuHidden, setMobileMenuHidden] = useState<boolean>(false);
+    const [activeLink, setActiveLink] = useState<string>("");
+
+    useEffect(() => {
+        const sections = document.querySelectorAll(".section");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                const target = entry.target;
+
+                if (entry.isIntersecting) {
+                    setActiveLink(target.id);
+                };
+            });
+        }, {
+            threshold: 0.5
+        });
+
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
+
+        return () => {
+            sections.forEach((section) => {
+                observer.unobserve(section);
+            });
+        };
+    }, []);
     
     const {
         theme,
@@ -56,7 +84,9 @@ const Header = ({ ...props }: headerProps) => {
                                 onClick={(e) => {
                                     setLinkWithoutHash(e, "portfolio");
                                 }}
-                                className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
+                                className={clsx(`
+                                ${activeLink === "portfolio" && "text-[#14b8a5]"}
+                                transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
                                 Portfolio
                             </Link>
                         </li>
@@ -66,7 +96,9 @@ const Header = ({ ...props }: headerProps) => {
                                 onClick={(e) => {
                                     setLinkWithoutHash(e, "reference");
                                 }}
-                                className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
+                                className={clsx(`
+                                ${activeLink === "reference" && "text-[#14b8a5]"}
+                                transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
                                 Reference
                             </Link>
                         </li>
@@ -76,17 +108,21 @@ const Header = ({ ...props }: headerProps) => {
                                 onClick={(e) => {
                                     setLinkWithoutHash(e, "cenik");
                                 }}
-                                className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
+                                className={clsx(`
+                                ${activeLink === "cenik" && "text-[#14b8a5]"}
+                                transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
                                 Ceník
                             </Link>
                         </li>
                         <li className="header-list-item">
                             <Link
-                                href={`/#faq`}
+                                href={`#faq`}
                                 onClick={(e) => {
                                     setLinkWithoutHash(e, "faq");
                                 }}
-                                className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
+                                className={clsx(`
+                                ${activeLink === "faq" && "text-[#14b8a5]"}
+                                transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
                                 FAQ
                             </Link>
                         </li>
@@ -96,7 +132,9 @@ const Header = ({ ...props }: headerProps) => {
                                 onClick={(e) => {
                                     setLinkWithoutHash(e, "o-mne");
                                 }}
-                                className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
+                                className={clsx(`
+                                ${activeLink === "o-mne" && "text-[#14b8a5]"}
+                                transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
                                 O mně
                             </Link>
                         </li>
@@ -106,7 +144,9 @@ const Header = ({ ...props }: headerProps) => {
                                 onClick={(e) => {
                                     setLinkWithoutHash(e, "kontakt");
                                 }}
-                                className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
+                                className={clsx(`
+                                ${activeLink === "kontakt" && "text-[#14b8a5]"}
+                                transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
                                 Kontakt
                             </Link>
                         </li>

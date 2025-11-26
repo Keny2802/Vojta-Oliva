@@ -75,7 +75,6 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
             ${theme === "Dark" ? "bg-gray-800 text-white" : "bg-gray-50 shadow-md"}
             flex flex-col justify-between p-4 fixed top-0 w-64 h-screen transition-transform duration-300 ease-in-out z-50 mobile-menu-wrapper`)}>
                 <Wrapper>
-                    {/* py-2 border-b border-gray-200 */}
                     <Logo className="text-white" />
                     <ul className="mt-4 flex flex-col gap-2 mobile-menu-items-list-wrapper">
                         <Link
@@ -145,12 +144,6 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                             Kontakt
                         </Link>
                     </ul>
-                    {/* <Link
-                    href={`/nabidka`}
-                    className="mt-4 flex items-center gap-2 bg-white text-black rounded-lg px-3 py-2">
-                        <FileText />
-                        Získat nabídku
-                    </Link> */}
                     {
                         theme === "Dark" ? (
                             <Fragment>

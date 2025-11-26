@@ -27,6 +27,10 @@ const faqSet:faqProps[] = [
         faqHeading: "Co mám všechno v ceně hrazené?",
         faqContent: "v ceně máte vytvoření kompletního webu na míru, podle Vašich představ. Nasazení na hosting, doménu a finálně spuštění webu do světa INTERNETU."
     },
+    {
+        faqHeading: "Proč v žádné službě není responzivní design?",
+        faqContent: "Responzivní design v službách neuvádím schválně, protože to beru jako samozřejmnost dnešního moderního webu."
+    }
 ];
 
 export default faqSet;

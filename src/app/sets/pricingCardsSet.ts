@@ -42,18 +42,6 @@ const pricingCardsSet:pricingCardsProps[] = [
             "Stálá komunikace s klientem o úpravách či změnách na webu."
         ]
     }
-    // {
-    //     cardHeading: "Velká webová stránka",
-    //     cardPrice: 8000,
-    //     cardSubheading: "Webová prezentace, domovská stránka a k tomu až 15 podstránek.",
-    //     cardIncludingSet: [
-    //         "Kompletní webová stránka na míru.",
-    //         "Až 15 podstránek.",
-    //         "Vlastní kontaktní formulář na míru.",
-    //         "Stálá komunikace s klientem.",
-    //         "Průběžné podávání informací o stavu projektu.",
-    //     ]
-    // }
 ];
 
 export default pricingCardsSet;

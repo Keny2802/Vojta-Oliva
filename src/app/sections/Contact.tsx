@@ -91,22 +91,6 @@ const Contact = ({ ...props }: contactProps) => {
         }
     });
 
-    // const handleContactForm = async (contactFormData: contactFormProps) => {
-    //     try {
-    //         const res = await fetch("/api/contact", {
-    //             method: "POST",
-    //             headers: {
-    //                 "Content-Type": "application/json"
-    //             },
-    //             body: JSON.stringify(contactFormData)
-    //         });
-
-    //         if (res.ok) {
-    //             reset();
-    //         };
-    //     } catch (catchError) {};
-    // };
-
     const handleContactForm = async (contactFormData: contactFormProps) => {
         try {
             const res = await fetch("/api/contact", {
@@ -275,7 +259,6 @@ const Contact = ({ ...props }: contactProps) => {
                                     type="submit"
                                     disabled={isSubmitting}
                                     className="bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-base">
-                                    {/* Odesláním, mě kontaktujete */}
                                     Kontaktujte mě
                                 </button>
                             </form>

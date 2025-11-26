@@ -55,14 +55,12 @@ const Hero = ({ ...props }: heroProps) => {
         };
 
         gsap.from(sectionTextRef.current, {
-            // opacity: 0,
             y: 20,
             duration: 0.5,
             ease: "power2.out",
             scrollTrigger: {
                 trigger: sectionTextRef.current,
                 start: 0
-                // toggleActions: "play none none reverse"
             }
         });
     }, []);
@@ -77,7 +75,6 @@ const Hero = ({ ...props }: heroProps) => {
                     <Wrapper className="flex flex-col items-center" ref={sectionTextRef}>
                         <PageLabel
                             pageLabelAdditContent={<Home />}
-                            // pageLabelText="Domovská stránka"
                             pageLabelText="Domov"
                         />
                         <Wrapper className={clsx(`${theme === "Light" && "text-black/90"} flex flex-col items-center`)}>
@@ -87,15 +84,11 @@ const Hero = ({ ...props }: heroProps) => {
                                 <span className="text-[#14b8a5]">
                                     Vojtou Olivou
                                 </span>,
-                                {/* <span className="bg-linear-to-r from-[#0d3c7a] via-[#4022a1] to-[#6a1fcc] text-transparent bg-clip-text">
-                                    Vojtou Olivou
-                                </span>, */}
                                 {" "}
                                 cenově dostupný webový vývoj.
                             </h1>
                             <p className="mt-4 p-4 text-lg md:text-2xl max-w-3xl">
                                 Ahoj, jmenuju se Vojta Oliva, poskytuji webový vývoj živnostníkům a malým podnikům, za opravdu dostupné ceny.
-                                {/* Poskytuji webový vývoj jednotlivcům a malým podnikům růst a získávat nové klienty. */}
                             </p>
                         </Wrapper>
                         <Wrapper className="w-full mt-4 p-4 flex justify-center items-center gap-4 flex-col md:flex-row">
@@ -117,12 +110,10 @@ const Hero = ({ ...props }: heroProps) => {
                                     setLinkWithoutHash(e, "kontakt")
                                 }}>
                                 <Phone />
-                                {/* Kontaktujte mě */}
                                 Nezávazná konzultace zdarma
                             </Link>
                         </Wrapper>
                     </Wrapper>
-                    {/* grid grid-cols-2 lg:grid-cols-6 gap-4 */}
                     {
                         theme === "Dark" ? (
                             <Fragment>
@@ -133,7 +124,6 @@ const Hero = ({ ...props }: heroProps) => {
                                             Výborné ceny
                                         </p>
                                         <p className="text-sm text-gray-200">
-                                            {/* 5.000 - 15.000 Kč */}
                                             4.500 - 8.000 Kč
                                         </p>
                                     </Wrapper>
@@ -175,7 +165,6 @@ const Hero = ({ ...props }: heroProps) => {
                                             Výborné ceny
                                         </p>
                                         <p className="text-sm text-black/90">
-                                            {/* 5.000 - 15.000 Kč */}
                                             4.500 - 8.000 Kč
                                         </p>
                                     </Wrapper>

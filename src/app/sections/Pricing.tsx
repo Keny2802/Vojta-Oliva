@@ -1,7 +1,6 @@
 "use client";
 
 import {
-    useState,
     useRef,
     useEffect,
     Fragment,
@@ -38,12 +37,6 @@ type englishPricingTabType = "Small web" | "Middle web" | "Big web";
 gsap.registerPlugin(ScrollTrigger);
 
 const Pricing = ({ ...props }: pricingProps) => {
-    // const [selectedService, setSelectService] = useState<boolean>(false);
-    // const [currentIndex, setCurrentIndex] = useState<number>(0);
-    // const [addedService, addService] = useState<number[]>([]);
-    const [activePricingTab, setActivePricingTab] = useState<pricingTabType>("Malý web");
-    const [englishActivePricingTab, setEnglishActivePricingTab] = useState<englishPricingTabType>("Small web");
-
     const sectionTextRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -114,22 +107,6 @@ const Pricing = ({ ...props }: pricingProps) => {
                                         </Wrapper>
                                         <Wrapper className={clsx(`${theme === "Dark" ? "bg-black/30" : "bg-black/90"} p-4 w-full md:max-w-[500px] rounded-md price-wrapper`)}>
                                             <Wrapper className="upper-content-wrapper">
-                                                {/* <Wrapper className="flex justify-between items-center flex-wrap">
-                                                    <p className="p-1 text-base md:text-lg font-black uppercase">
-                                                        {pricingCard.cardHeading}
-                                                    </p>
-                                                    <span className="text-base md:text-xl font-black price">
-                                                        {pricingCard.cardPrice} Kč
-                                                        {pricingCard.cardPrice === 2000 && (
-                                                            <span className="text-base md:text-xl">
-                                                                {" "}
-                                                                /
-                                                                {" "}
-                                                                měsíc
-                                                            </span>
-                                                        )}
-                                                    </span>
-                                                </Wrapper> */}
                                                 <Wrapper className="flex flex-col gap-3">
                                                     <p className={clsx(`
                                                     ${pricingCard.cardLabel === "Pro ty co spěchají" && "border-b border-[#14b8a5]"}

@@ -112,7 +112,7 @@ const AboutMe = () => {
                                     onClick={(e) => {
                                         setLinkWithoutHash(e, "kontakt");
                                     }}
-                                    className="inline-block mt-4 px-3 py-2 rounded-md bg-blue-600 text-center cursor-pointer">
+                                    className="inline-block mt-4 px-3 py-2 rounded-md bg-blue-600 text-gray-300 text-center cursor-pointer">
                                     Napište mi
                                 </Link>
                             </Wrapper>

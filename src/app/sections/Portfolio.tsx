@@ -147,9 +147,9 @@ const Portfolio = ({ ...props }) => {
                                             transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`
                                         }}
                                         >
-                                        <span className="absolute top-2 right-5 text-[#f8aa0e] text-5xl font-black">
+                                        {/* <span className="absolute top-2 right-5 text-[#f8aa0e] text-5xl font-black">
                                             {portfolioProjectIndex + 1}
-                                        </span>
+                                        </span> */}
                                         <Image
                                         height={182}
                                         width={384}
@@ -169,7 +169,7 @@ const Portfolio = ({ ...props }) => {
                                                 {
                                                     portfolioProject.portfolioTechStack.map((portfolioTechStack, portfolioTechStackIndex) => (
                                                         <Fragment key={portfolioTechStackIndex}>
-                                                            <li className={clsx(`${theme === "Dark" ? "bg-black/70" : "bg-white shadow-lg"} p-2 rounded-lg text-sm portfolio-project-list-item`)}>
+                                                            <li className={clsx(`${theme === "Dark" ? "bg-white/5" : "bg-white/10 shadow-lg"} p-2 rounded-lg text-sm portfolio-project-list-item`)}>
                                                                 {portfolioTechStack}
                                                             </li>
                                                         </Fragment>
@@ -178,7 +178,7 @@ const Portfolio = ({ ...props }) => {
                                             </ul>
                                             <Link
                                                 href={portfolioProject.projectLink}
-                                                className={clsx(`${theme === "Dark" ? "p-4 rounded-md bg-white/5 text-gray-300" : "p-4 rounded-md bg-gray-50 shadow-md text-black/80"} flex items-center gap-3 mt-6 underline underline-offset-4 transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]`)}>
+                                                className={clsx(`${theme === "Dark" ? "p-4 rounded-md bg-white/5 text-gray-300" : "p-4 rounded-md bg-gray-50 shadow-md text-black/80"} flex items-center gap-3 mt-6 underline underline-offset-4 transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
                                                 <SquareArrowOutUpRight />
                                                 Zobrazit webovku
                                             </Link>

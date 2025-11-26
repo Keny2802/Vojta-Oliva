@@ -274,7 +274,7 @@ const Contact = ({ ...props }: contactProps) => {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-base md:text-lg font-black uppercase">
+                                    className="bg-blue-600 w-full rounded-md px-3 py-2 cursor-pointer text-base">
                                     {/* Odesláním, mě kontaktujete */}
                                     Kontaktujte mě
                                 </button>

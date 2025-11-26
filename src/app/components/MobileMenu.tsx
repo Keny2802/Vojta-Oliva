@@ -55,7 +55,7 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                             setLinkWithoutHash(e, "portfolio");
                             setMobileMenuHidden(false);
                         }}
-                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                        className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
                             Portfolio
                         </Link>
                         <Link
@@ -64,7 +64,7 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                             setLinkWithoutHash(e, "reference");
                             setMobileMenuHidden(false);
                         }}
-                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                        className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
                             Reference
                         </Link>
                         <Link
@@ -73,7 +73,7 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                             setLinkWithoutHash(e, "cenik");
                             setMobileMenuHidden(false);
                         }}
-                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                        className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
                             Ceník
                         </Link>
                         <Link
@@ -82,7 +82,7 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                             setLinkWithoutHash(e, "faq");
                             setMobileMenuHidden(false);
                         }}
-                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                        className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
                             FAQ
                         </Link>
                         <Link
@@ -91,7 +91,7 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                             setLinkWithoutHash(e, "o-mne");
                             setMobileMenuHidden(false);
                         }}
-                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                        className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
                             O mně
                         </Link>
                         <Link
@@ -100,7 +100,7 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                             setLinkWithoutHash(e, "kontakt");
                             setMobileMenuHidden(false);
                         }}
-                        className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                        className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
                             Kontakt
                         </Link>
                     </ul>

@@ -150,7 +150,7 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                             <Fragment>
                                 <Link
                                     href={`/nabidka`}
-                                    className="mt-4 flex items-center gap-2 bg-white text-black rounded-lg px-3 py-2">
+                                    className="mt-4 flex items-center gap-2 bg-white shadow-md text-black rounded-lg px-3 py-2">
                                     <FileText />
                                     Získat nabídku
                                 </Link>
@@ -159,7 +159,7 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                             <Fragment>
                                 <Link
                                     href={`/nabidka`}
-                                    className="mt-4 flex items-center gap-2 text-white rounded-lg px-3 py-2">
+                                    className="mt-4 flex items-center gap-2 bg-white shadow-md text-black rounded-lg px-3 py-2">
                                     <FileText />
                                     Získat nabídku
                                 </Link>
@@ -171,7 +171,7 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                             <Fragment>
                                 <Link
                                     href={`mailto:info@vojtaoliva.cz`}
-                                    className="mt-4 flex items-center gap-2 bg-gray-800 text-black rounded-lg px-3 py-2">
+                                    className="mt-4 flex items-center gap-2 bg-black text-white rounded-lg px-3 py-2">
                                     <Phone />
                                     Kontaktujte mě
                                 </Link>

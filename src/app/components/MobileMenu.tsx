@@ -8,7 +8,7 @@ import {
 } from "react";
 import {
     FileText,
-    Phone
+    Mail
 } from "lucide-react";
 import {
     useTheme
@@ -172,8 +172,8 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                                 <Link
                                     href={`mailto:info@vojtaoliva.cz`}
                                     className="mt-4 flex items-center gap-2 bg-black text-white rounded-lg px-3 py-2">
-                                    <Phone />
-                                    Kontaktujte mě
+                                    <Mail />
+                                    info@vojtaoliva.cz
                                 </Link>
                             </Fragment>
                         ) : (
@@ -181,8 +181,8 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                                 <Link
                                     href={`mailto:info@vojtaoliva.cz`}
                                     className="mt-4 flex items-center gap-2 bg-black text-white rounded-lg px-3 py-2">
-                                    <Phone />
-                                    Kontaktujte mě
+                                    <Mail />
+                                    info@vojtaoliva.cz
                                 </Link>
                             </Fragment>
                         )

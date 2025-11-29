@@ -7,11 +7,11 @@ import {
     ReactNode
 } from "react";
 import {
-    FileText,
     Menu,
     Minus,
     Sun,
-    Moon
+    Moon,
+    Mail
 } from "lucide-react";
 import {
     useTheme
@@ -179,7 +179,7 @@ const Header = ({ ...props }: headerProps) => {
                                     <Link
                                         href="mailto:info@vojtaoliva.cz"
                                         className="hidden md:flex justify-center items-center gap-2 bg-white text-black rounded-lg px-3 py-2">
-                                        <FileText />
+                                        <Mail />
                                         info@vojtaoliva.cz
                                     </Link>
                                 </Fragment>
@@ -188,7 +188,7 @@ const Header = ({ ...props }: headerProps) => {
                                     <Link
                                         href="mailto:info@vojtaoliva.cz"
                                         className="hidden md:flex justify-center items-center gap-2 bg-black text-white rounded-lg px-3 py-2">
-                                        <FileText />
+                                        <Mail />
                                         info@vojtaoliva.cz
                                     </Link>
                                 </Fragment>

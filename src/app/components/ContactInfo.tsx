@@ -53,9 +53,9 @@ const ContactInfo = ({ ...props }: contactInfoProps) => {
                         <Wrapper className="text-base text-gray-300 flex items-center gap-2">
                             <Mail />
                             <Link
-                                href={`mailto:info.modernizujme@gmail.com`}
+                                href={`mailto:info@vojtaoliva.cz`}
                                 className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
-                                info.modernizujme@gmail.com
+                                info@vojtaoliva.cz
                             </Link>
                         </Wrapper>
                         <Wrapper className="text-base text-gray-300 flex items-center gap-2">
@@ -76,7 +76,7 @@ const ContactInfo = ({ ...props }: contactInfoProps) => {
                         Zavolejte mi
                     </Link>
                     <Link
-                        href={`mailto:info.modernizujme@gmail.com`}
+                        href={`mailto:info@vojtaoliva.cz`}
                         className="w-full text-base flex items-center gap-2 bg-blue-600 px-3 py-2 rounded-md">
                         <Mail />
                         Napište mi mail

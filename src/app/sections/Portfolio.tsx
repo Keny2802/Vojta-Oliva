@@ -178,7 +178,7 @@ const Portfolio = ({ ...props }) => {
                                             </ul>
                                             <Link
                                                 href={portfolioProject.projectLink}
-                                                className={clsx(`${theme === "Dark" ? "p-4 rounded-md bg-white/5 text-gray-300" : "p-4 rounded-md bg-gray-50 shadow-md text-black/80"} flex items-center gap-3 mt-6 underline underline-offset-4 transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
+                                                className={clsx(`${theme === "Dark" ? "p-4 rounded-md bg-white/5 text-gray-300" : "p-4 rounded-md bg-white/10 shadow-md text-black/80"} flex items-center gap-3 mt-6 underline underline-offset-4 transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
                                                 <SquareArrowOutUpRight />
                                                 Zobrazit webovku
                                             </Link>

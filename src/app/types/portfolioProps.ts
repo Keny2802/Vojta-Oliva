@@ -3,5 +3,6 @@ export type portfolioProps = {
     projectName: string;
     projectDescription: string;
     portfolioTechStack: string[];
+    projectType: string;
     projectLink: string;
 };

@@ -20,6 +20,7 @@ const Footer = () => {
     const {
         theme
     } = useTheme();
+    const dynamicYear = new Date().getFullYear();
 
     return (
         <Fragment>
@@ -112,7 +113,7 @@ const Footer = () => {
                 ${theme === "Dark" ? "bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a] text-gray-300 border-t border-gray-500" : "bg-gray-50 text-black border-t border-gray-200"}
                 flex flex-col items-center gap-2 md:gap-3 lg:gap-4`)}>
                     <p className="text-sm md:text-[15px] lg:text-base">
-                        Web vývoj vojtaoliva.cz
+                        &copy; {dynamicYear} vojtaoliva.cz. Všechna práva vyhrazena.
                     </p>
                     <Year />
                 </Wrapper>

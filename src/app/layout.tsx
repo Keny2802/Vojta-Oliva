@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     "cenově dostupný webový vývoj",
     "cenově dostupné webové stránky",
     "cenově dostupné webové stránky na míru",
+    "vojta oliva"
   ],
   openGraph: {
     title: "Vojta Oliva - Kvalitní webový vývoj na míru",

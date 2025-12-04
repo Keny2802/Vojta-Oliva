@@ -58,8 +58,7 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
     }, []);
 
     const {
-        theme,
-        setTheme
+        theme
     } = useTheme();
 
     const {

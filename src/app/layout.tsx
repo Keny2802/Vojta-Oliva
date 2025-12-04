@@ -7,10 +7,45 @@ import {
 import "./globals.css";
 
 export const metadata: Metadata = {
-  // title: "New Web - Cenově dostupný webový vývoj",
-  // description: "New Web - Cenově dostupný webový vývoj",
-  title: "Vojta Oliva - Cenově dostupný webový vývoj",
-  description: "Vojta Oliva - poskytuje velmi cenově výhodný webový vývoj, který má kvalitu, udržitelnost a hlavně budoucnost.",
+  title: "Vojta Oliva - Profesionální a cenově dostupný webový vývoj",
+  description: "Vojta Oliva nabízí kvalitní a cenově dostupný webový vývoj na míru. Moderní, udržitelná řešení, která podpoří růst vašeho projektu.",
+  keywords: [
+    "webový vývoj",
+    "webový vývoj na míru",
+    "web na míru",
+    "webové stránky na míru",
+    "levný web",
+    "moderní web",
+    "moderní webové stránky",
+    "profesionální web",
+    "kvalitní web",
+    "webová prezentace",
+    "responzivní web",
+    "web pro podnikatele",
+    "webová tvorba",
+    "web na míru",
+    "web na zakázku",
+    "cenově dostupný web",
+    "cenově dostupný web na míru",
+    "cenově dostupný webový vývoj",
+    "cenově dostupné webové stránky",
+    "cenově dostupné webové stránky na míru",
+  ],
+  openGraph: {
+    title: "Vojta Oliva - Kvalitní webový vývoj na míru",
+    description: "Získejte moderní a cenově dostupný web, který podpoří růst vašeho projektu. Profesionální řešení od Vojty Olivy",
+    siteName: "Vojta Oliva",
+    images: [
+      {
+        url: "/fotky/og/og-photo.jpg",
+        alt: "Vojta Oliva - moderní a cenově dostupný webový vývoj na míru",
+        width: 1200,
+        height: 630
+      }
+    ],
+    url: "vojtaoliva.cz",
+    type: "website",
+  },
   icons: {
     icon: [
       {

@@ -108,15 +108,15 @@ const Pricing = ({ ...props }: pricingProps) => {
                                         <Wrapper className={clsx(`${theme === "Dark" ? "bg-black/30" : "bg-black/90"} p-4 w-full md:max-w-[500px] rounded-md price-wrapper`)}>
                                             <Wrapper className="upper-content-wrapper">
                                                 <Wrapper className="flex flex-col gap-3">
-                                                    <p className={clsx(`
+                                                    <h3 className={clsx(`
                                                     ${pricingCard.cardLabel === "Pro ty co spěchají" && "border-b border-[#14b8a5]"}
                                                     ${pricingCard.cardLabel === "Nejlepší" && "border-b border-[#6267f2]"}
                                                     ${pricingCard.cardLabel === "Novinka" && "border-b border-[#14b8a5]"}
-                                                    p-1 text-2xl md:text-3xl font-black uppercase
+                                                    p-1 text-xl md:text-2xl lg:text-3xl font-black uppercase
                                                     `)}>
                                                         {pricingCard.cardHeading}
-                                                    </p>
-                                                    <p className="text-4xl md:text-6xl text-center font-black price">
+                                                    </h3>
+                                                    <p className="text-4xl md:text-5xl lg:text-6xl text-center font-black price">
                                                         {pricingCard.cardPrice} Kč
                                                         {pricingCard.cardPrice === 2000 && (
                                                             <span className="text-base md:text-xl">

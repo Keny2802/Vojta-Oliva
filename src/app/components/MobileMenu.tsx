@@ -187,8 +187,11 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                         )
                     }
                 </Wrapper>
-                <Wrapper className="flex flex-col items-center text-sm text-gray-200">
-                    <Powered />
+                <Wrapper className={clsx(`${theme === "Dark" ? "text-gray-300" : "text-black"}
+                flex flex-col items-center gap-2 md:gap-3 lg:gap-4`)}>
+                    <p className="text-sm md:text-[15px] lg:text-base">
+                        Web vývoj vojtaoliva.cz
+                    </p>
                     <Year />
                 </Wrapper>
             </Wrapper>

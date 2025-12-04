@@ -109,9 +109,11 @@ const Footer = () => {
                     </Wrapper>
                 </Wrapper>
                 <Wrapper className={clsx(`
-                    flex flex-col items-center p-2
-                    ${theme === "Dark" ? "border-t border-gray-500 bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a]" : "bg-gray-50 border-t border-gray-200"}`)}>
-                    <Powered />
+                ${theme === "Dark" ? "bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a] text-gray-300 border-t border-gray-500" : "bg-gray-50 text-black border-t border-gray-200"}
+                flex flex-col items-center gap-2 md:gap-3 lg:gap-4`)}>
+                    <p className="text-sm md:text-[15px] lg:text-base">
+                        Web vývoj vojtaoliva.cz
+                    </p>
                     <Year />
                 </Wrapper>
             </Wrapper>

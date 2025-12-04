@@ -66,7 +66,7 @@ const AboutMe = () => {
                             6 O mně
                         </h2>
                         <p className="mt-4 text-base text-center">
-                            Díky této sekci, zjistíte více informací o mně.
+                            Zjistěte o mně více.
                         </p>
                         <Wrapper className="mt-4 flex justify-between items-center flex-col md:flex-row gap-8">
                             <Image

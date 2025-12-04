@@ -159,9 +159,9 @@ const Portfolio = ({ ...props }) => {
                                         decoding="async"
                                         className="w-auto h-auto" />
                                         <Wrapper className="p-4 flex flex-col gap-2">
-                                            <p className={clsx(`${theme === "Dark" ? "text-white" : "text-black/90"} text-2xl font-black uppercase`)}>
+                                            <h3 className={clsx(`${theme === "Dark" ? "text-white" : "text-black/90"} text-xl md:text-2xl lg:text-3xl font-black uppercase`)}>
                                                 {portfolioProject.projectName}
-                                            </p>
+                                            </h3>
                                             <p className={clsx(`${theme === "Dark" ? "text-gray-300" : "text-black/80"}`)}>
                                                 {portfolioProject.projectDescription}
                                             </p>

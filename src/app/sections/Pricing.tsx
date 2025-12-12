@@ -88,13 +88,13 @@ const Pricing = ({ ...props }: pricingProps) => {
                             Ceník, který je dostupný opravdu pro všechny, jak pro jednotlivce tak pro malé firmy.
                         </p>
                     </Wrapper>
-                    <Wrapper className="mt-6 flex justify-center gap-4 flex-col md:flex-row pricing-wrapper">
+                    <Wrapper className="mt-6 flex justify-center gap-4 flex-col md:flex-row flex-wrap w-full pricing-wrapper">
                         {
                             pricingCardsSet.map((pricingCard, pricingCardIndex) => (
                                 <Fragment key={pricingCardIndex}>
                                     <Wrapper className={clsx(`
                                         ${theme === "Dark" ? "border border-gray-500" : "border border-gray-200"}
-                                        flex flex-col justify-center p-2 rounded-md pricing-card-wrapper`)}>
+                                        flex flex-col justify-center p-2 rounded-md w-full md:w-max pricing-card-wrapper`)}>
                                         <Wrapper className={clsx(`
                                         ${pricingCard.cardLabel === "Pro ty co spěchají" && "bg-[#14b8a5]"}
                                         ${pricingCard.cardLabel === "Nejlepší" && "bg-[#6267f2]"}

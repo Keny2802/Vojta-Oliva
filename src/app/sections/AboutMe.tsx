@@ -68,7 +68,7 @@ const AboutMe = () => {
                         <p className="mt-4 text-base text-center">
                             Zjistěte o mně více.
                         </p>
-                        <Wrapper className="mt-4 flex justify-between items-center flex-col md:flex-row gap-8">
+                        <Wrapper className="mt-4 flex justify-between items-center flex-col md:flex-row flex-wrap gap-8">
                             <Image
                                 height={400}
                                 width={400}

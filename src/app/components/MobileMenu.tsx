@@ -72,7 +72,7 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
     return (
         <Fragment>
             <Wrapper className={clsx(`
-            ${className || ""} ${isMobileMenuHidden ? "translate-x-0" : "-translate-x-full"}
+            ${className || ""} ${isMobileMenuHidden ? "translate-x-0 md:-translate-x-full" : "-translate-x-full"}
             ${theme === "Dark" ? "bg-gray-800 text-white" : "bg-gray-50 shadow-md"}
             flex flex-col justify-between p-4 fixed top-0 w-64 h-screen transition-transform duration-300 ease-in-out z-50 mobile-menu-wrapper`)}>
                 <Wrapper>

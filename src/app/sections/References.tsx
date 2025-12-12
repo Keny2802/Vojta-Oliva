@@ -84,7 +84,7 @@ const References = () => {
                             {/* <p className={clsx(`${theme === "Dark" ? "text-gray-500" : "text-black/90"}`)}>
                                 🤷🏼 Zatím žádné recenze nemám.
                             </p> */}
-                            <Wrapper className="p-4 md:p-5 lg:p-6 bg-black/30 rounded-md border border-white/25 w-full md:max-w-[450px] lg:max-w-[650px] cursor-pointer">
+                            <Wrapper className={clsx((`p-4 md:p-5 lg:p-6 ${theme === "Dark" ? "bg-black/30" : "bg-white"} rounded-md border border-white/25 w-full md:max-w-[450px] lg:max-w-[650px] cursor-pointer`))}>
                                 <Wrapper className="pb-2 flex justify-center items-center gap-2 md:gap-3 lg:gap-4 border-b border-white/25">
                                     <Image
                                     height={50}
@@ -98,7 +98,7 @@ const References = () => {
                                     {/* <h3 className="text-xl md:text-[22px] lg:text-2xl font-bold">
                                         Tereza Gréňová
                                     </h3> */}
-                                    <ul className="flex justify-center items-center gap-2 md:gap-3 lg:gap-4">
+                                    <ul className={clsx(`flex justify-center items-center gap-2 md:gap-3 lg:gap-4 ${theme === "Dark" ? "text-white" : "text-black/90"}`)}>
                                         <li className="text-xl md:text-[22px] lg:text-2xl font-bold">
                                             Tereza Gréňová
                                         </li>

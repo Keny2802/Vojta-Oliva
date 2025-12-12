@@ -38,7 +38,7 @@ const LoadingScreen = () => {
                                 initial={{ y: 40, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.2, duration: 0.6 }}
-                                className="p-2 md:p-3 lg:p-4 mt-4 md:mt-6 lg:mt-8 bg-black text-white w-full md:w-[250px] h-[55px] md:h-[70px] rounded-xl cursor-pointer transition-colors duration-300 ease-in-out hover:bg-white hover:text-black"
+                                className="p-2 md:p-3 lg:p-4 mt-4 md:mt-6 lg:mt-8 bg-white text-black w-full md:w-[250px] h-[55px] md:h-[70px] rounded-xl cursor-pointer transition-colors duration-300 ease-in-out hover:bg-black hover:text-white"
                                 onClick={(e) => {
                                     setLoadingButtonClicked(true);
                                 }}>

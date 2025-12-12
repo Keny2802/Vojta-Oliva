@@ -114,14 +114,14 @@ const References = () => {
                                 <Wrapper>
                                     <ul className="mt-2 md:mt-3 lg:mt-4 flex justify-center items-center gap-6 md:gap-8 lg:gap-10">
                                         <li
-                                        className={clsx(`${referenceActiveTab === "Klient" && "p-1.5 md:p-2 lg:p-2.5 bg-white text-black"} rounded-md`)}
+                                        className={clsx(`${referenceActiveTab === "Klient" && theme === "Dark" && "p-1.5 md:p-2 lg:p-2.5 bg-white text-black" || theme === "Light" && "p-1.5 md:p-2 lg:p-2.5 bg-black/90 text-white"} rounded-md`)}
                                         onClick={(e) => {
                                             setReferenceActiveTab("Klient");
                                         }}>
                                             Klient
                                         </li>
                                         <li
-                                        className={clsx(`${referenceActiveTab === "Vývojář" && "p-1.5 md:p-2 lg:p-2.5 bg-white text-black"} list-disc rounded-md`)}
+                                        className={clsx(`${referenceActiveTab === "Vývojář" && theme === "Dark" && "p-1.5 md:p-2 lg:p-2.5 bg-white text-black" || theme === "Light" && "p-1.5 md:p-2 lg:p-2.5 bg-black/90 text-white"} list-disc rounded-md`)}
                                         onClick={(e) => {
                                             setReferenceActiveTab("Vývojář");
                                         }}>
@@ -132,7 +132,7 @@ const References = () => {
                                 {
                                     referenceActiveTab === "Klient" ? (
                                         <Fragment>
-                                            <p className="mt-2 md:mt-3 lg:mt-4 text-sm md:text-[15px] lg:text-[15.5px] text-center line-clamp-6">
+                                            <p className={clsx(`${theme === "Dark" ? "text-white" : "text-black/90"} mt-2 md:mt-3 lg:mt-4 text-sm md:text-[15px] lg:text-[15.5px] text-center line-clamp-6`)}>
                                                 Spolupráce s Vojtou byla naprosto skvělá! Od začátku do konce pracoval profesionálně, rychle a s obrovským přehledem. Všechny mé požadavky dokonale pochopil, navrhl ještě lepší řešení a dokázal proměnit moje představy v krásný, moderní a funkční web.
 
                                                 Komunikace byla rychlá, příjemná a vždy s ochotou vysvětlit každý detail. Web běží perfektně, načítá se rychle a přesně vystihuje styl, který jsem chtěla.
@@ -143,7 +143,7 @@ const References = () => {
                                         </Fragment>
                                     ) : (
                                         <Fragment>
-                                            <p className="mt-2 md:mt-3 lg:mt-4 text-sm md:text-[15px] lg:text-[15.5px] text-center line-clamp-6">
+                                            <p className={clsx(`${theme === "Dark" ? "text-white" : "text-black/90"} mt-2 md:mt-3 lg:mt-4 text-sm md:text-[15px] lg:text-[15.5px] text-center line-clamp-6`)}>
                                                 Paní Gréňová mě oslovila s tím, že potřebuje modernizovat její web, oceňuji rychlou komunikaci,
                                                 ještě během modernizování jejího webu jsem komunikoval s její kamarádkou paní Varryšovou, která měla na starosti designovou stránku.
 

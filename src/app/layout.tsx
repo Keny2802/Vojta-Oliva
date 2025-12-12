@@ -6,6 +6,8 @@ import {
 } from "./context/ThemeContext";
 import "./globals.css";
 
+import LoadingScreen from "./components/LoadingScreen";
+
 export const metadata: Metadata = {
   title: "Vojta Oliva - Profesionální a cenově dostupný webový vývoj",
   description: "Vojta Oliva nabízí kvalitní a cenově dostupný webový vývoj na míru. Moderní, udržitelná řešení, která podpoří růst vašeho projektu.",
@@ -68,6 +70,7 @@ export default function RootLayout({
         className="body"
       >
         <ThemeProvider>
+            <LoadingScreen />
             {children}
         </ThemeProvider>
       </body>

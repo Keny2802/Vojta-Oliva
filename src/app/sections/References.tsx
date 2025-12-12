@@ -70,7 +70,7 @@ const References = () => {
                         <Wrapper className={clsx(`${theme === "Dark" ? "text-white" : "text-black/90"} flex flex-col justify-center items-center`)}>
                             <PageLabel
                                 pageLabelAdditContent={<Sparkle className="text-fuchsia-300" />}
-                                pageLabelText="References"
+                                pageLabelText="Reference"
                                 className="text-white"
                             />
                             <h2 className="text-3xl md:text-5xl font-black uppercase">

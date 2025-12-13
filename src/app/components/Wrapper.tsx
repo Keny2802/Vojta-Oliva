@@ -10,6 +10,7 @@ type wrapperProps = {
     className?: string;
     id?: string;
     ref?: React.Ref<HTMLDivElement>;
+    onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
     onMouseMove?: React.MouseEventHandler<HTMLDivElement>;
     OnMouseEnter?: React.MouseEventHandler<HTMLDivElement>;
     onMouseLeave?: React.MouseEventHandler<HTMLDivElement>;

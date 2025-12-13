@@ -28,6 +28,7 @@ import setLinkWithoutHash from "../functions/setLinkWithoutHash";
 import Wrapper from "../components/Wrapper";
 import HeroOverlayWrapper from "../components/HeroOverlayWrapper";
 import PageLabel from "../components/PageLabel";
+import TypingEffect from "../components/TypingEffect";
 
 type heroProps = {
     className?: string;
@@ -87,7 +88,11 @@ const Hero = ({ ...props }: heroProps) => {
                                 {" "}
                                 cenově dostupný webový vývoj.
                             </h1>
-                            <p className="mt-4 p-4 text-lg md:text-2xl max-w-3xl">
+                            <TypingEffect
+                            typingText="Moderní weby s nápadem za přijatelné ceny."
+                            typingSpeed={60}
+                            />
+                            <p className="mt-2 md:mt-3 lg:mt-4 p-4 text-lg md:text-2xl max-w-3xl">
                                 Ahoj, jmenuju se Vojta Oliva, poskytuji webový vývoj živnostníkům a malým podnikům, za opravdu dostupné ceny.
                             </p>
                         </Wrapper>

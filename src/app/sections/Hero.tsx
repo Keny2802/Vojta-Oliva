@@ -86,8 +86,14 @@ const Hero = ({ ...props }: heroProps) => {
                                     Vojtou Olivou
                                 </span>,
                                 {" "}
-                                cenově dostupný webový vývoj. */}ˇ
-                                Tvořím moderní weby, které vyčnívají
+                                cenově dostupný webový vývoj. */}
+                                Tvořím
+                                {" "}
+                                <span className="text-[#14b8a5]">
+                                    moderní weby
+                                </span>,
+                                {" "}
+                                které vyčnívají
                             </h1>
                             <TypingEffect
                             // typingText="Moderní weby s nápadem za přijatelné ceny."

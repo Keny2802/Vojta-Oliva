@@ -80,16 +80,18 @@ const Hero = ({ ...props }: heroProps) => {
                         />
                         <Wrapper className={clsx(`${theme === "Light" && "text-black/90"} flex flex-col items-center`)}>
                             <h1 className="text-3xl md:text-6xl font-black hero-text">
-                                Nakopni svůj web jen a pouze s
+                                {/* Nakopni svůj web jen a pouze s
                                 {" "}
                                 <span className="text-[#14b8a5]">
                                     Vojtou Olivou
                                 </span>,
                                 {" "}
-                                cenově dostupný webový vývoj.
+                                cenově dostupný webový vývoj. */}ˇ
+                                Tvořím moderní weby, které vyčnívají
                             </h1>
                             <TypingEffect
-                            typingText="Moderní weby s nápadem za přijatelné ceny."
+                            // typingText="Moderní weby s nápadem za přijatelné ceny."
+                            typingText="Nahraďte svůj starý web mým řešením."
                             typingSpeed={60}
                             />
                             <p className="mt-2 md:mt-3 lg:mt-4 p-4 text-lg md:text-2xl max-w-3xl">

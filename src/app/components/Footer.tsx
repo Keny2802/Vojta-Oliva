@@ -44,7 +44,7 @@ const Footer = () => {
                             <Wrapper className="mt-2 flex flex-col gap-2">
                                 <Link
                                     href={`#portfolio`}
-                                    className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]"
+                                    className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]"
                                     onClick={(e) => {
                                         setLinkWithoutHash(e, "portfolio");
                                     }}>
@@ -52,7 +52,7 @@ const Footer = () => {
                                 </Link>
                                 <Link
                                     href={`#reference`}
-                                    className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]"
+                                    className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]"
                                     onClick={(e) => {
                                         setLinkWithoutHash(e, "reference");
                                     }}>
@@ -60,7 +60,7 @@ const Footer = () => {
                                 </Link>
                                 <Link
                                     href={`#cenik`}
-                                    className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]"
+                                    className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]"
                                     onClick={(e) => {
                                         setLinkWithoutHash(e, "cenik");
                                     }}>
@@ -71,12 +71,12 @@ const Footer = () => {
                                     onClick={(e) => {
                                         setLinkWithoutHash(e, "faq");
                                     }}
-                                    className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                                    className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
                                     FAQ
                                 </Link>
                                 <Link
                                     href={`#o-mne`}
-                                    className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]"
+                                    className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]"
                                     onClick={(e) => {
                                         setLinkWithoutHash(e, "o-mne");
                                     }}>
@@ -84,7 +84,7 @@ const Footer = () => {
                                 </Link>
                                 <Link
                                     href={`/#kontakt`}
-                                    className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]"
+                                    className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]"
                                     onClick={(e) => {
                                         setLinkWithoutHash(e, "kontakt");
                                     }}>
@@ -99,7 +99,7 @@ const Footer = () => {
                             <Wrapper className="mt-2 flex flex-col gap-2">
                                 <Link
                                     href={`/nabidka`}
-                                    className="transition-colors duration-300 ease-in-out hover:text-[#f8aa0e]">
+                                    className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
                                     Nabídka
                                 </Link>
                             </Wrapper>

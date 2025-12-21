@@ -68,7 +68,7 @@ const AboutMe = () => {
                         <p className="mt-4 text-base text-center">
                             Zjistěte o mně více.
                         </p>
-                        <Wrapper className="mt-4 flex justify-between items-center flex-col md:flex-row flex-wrap gap-8">
+                        <Wrapper className="mt-4 flex justify-between items-center flex-col md:flex-row gap-8">
                             <Image
                                 height={400}
                                 width={400}
@@ -76,7 +76,7 @@ const AboutMe = () => {
                                 alt="Fotka o mě, který je i zárověň jako inzerát."
                                 loading="lazy"
                                 decoding="async"
-                                className=" w-full md:h-[600px] md:w-[600px] rounded-md"
+                                className="w-full md:h-[600px] md:w-[600px] rounded-md"
                             />
                             <Wrapper className={clsx(`
                                 ${theme === "Dark" ? "border border-gray-500 bg-black/30" : "border border-gray-200 bg-black/5"}

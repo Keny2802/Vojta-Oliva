@@ -78,72 +78,84 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                 <Wrapper>
                     <Logo className="text-white" />
                     <ul className="mt-4 flex flex-col gap-2 mobile-menu-items-list-wrapper">
-                        <Link
-                        href={`#portfolio`}
-                        onClick={(e) => {
-                            setLinkWithoutHash(e, "portfolio");
-                            setMobileMenuHidden(false);
-                        }}
-                        className={clsx(`
-                        ${activeLink === "portfolio" && "bg-[#171717] text-white px-3 py-2 rounded-md"}
-                        transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
-                            Portfolio
-                        </Link>
-                        <Link
-                        href={`#reference`}
-                        onClick={(e) => {
-                            setLinkWithoutHash(e, "reference");
-                            setMobileMenuHidden(false);
-                        }}
-                        className={clsx(`
-                        ${activeLink === "reference" && "bg-[#171717] text-white px-3 py-2 rounded-md"}
-                        transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
-                            Reference
-                        </Link>
-                        <Link
-                        href={`#cenik`}
-                        onClick={(e) => {
-                            setLinkWithoutHash(e, "cenik");
-                            setMobileMenuHidden(false);
-                        }}
-                        className={clsx(`
-                        ${activeLink === "cenik" && "bg-[#171717] text-white px-3 py-2 rounded-md"}
-                        transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
-                            Ceník
-                        </Link>
-                        <Link
-                        href={`#faq`}
-                        onClick={(e) => {
-                            setLinkWithoutHash(e, "faq");
-                            setMobileMenuHidden(false);
-                        }}
-                        className={clsx(`
-                        ${activeLink === "faq" && "bg-[#171717] text-white px-3 py-2 rounded-md"}
-                        transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
-                            FAQ
-                        </Link>
-                        <Link
-                        href={`#o-mne`}
-                        onClick={(e) => {
-                            setLinkWithoutHash(e, "o-mne");
-                            setMobileMenuHidden(false);
-                        }}
-                        className={clsx(`
-                        ${activeLink === "o-mne" && "bg-[#171717] text-white px-3 py-2 rounded-md"}
-                        transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
-                            O mně
-                        </Link>
-                        <Link
-                        href={`#kontakt`}
-                        onClick={(e) => {
-                            setLinkWithoutHash(e, "kontakt");
-                            setMobileMenuHidden(false);
-                        }}
-                        className={clsx(`
-                        ${activeLink === "kontakt" && "bg-[#171717] text-white px-3 py-2 rounded-md"}
-                        transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
-                            Kontakt
-                        </Link>
+                        <li className="mobile-menu-item">
+                            <Link
+                            href={`#portfolio`}
+                            onClick={(e) => {
+                                setLinkWithoutHash(e, "portfolio");
+                                setMobileMenuHidden(false);
+                            }}
+                            className={clsx(`
+                            ${activeLink === "portfolio" && "bg-[#171717] text-white px-3 py-2 rounded-md"}
+                            transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
+                                Portfolio
+                            </Link>
+                        </li>
+                        <li className="mobile-menu-item">
+                            <Link
+                            href={`#reference`}
+                            onClick={(e) => {
+                                setLinkWithoutHash(e, "reference");
+                                setMobileMenuHidden(false);
+                            }}
+                            className={clsx(`
+                            ${activeLink === "reference" && "bg-[#171717] text-white px-3 py-2 rounded-md"}
+                            transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
+                                Reference
+                            </Link>
+                        </li>
+                        <li className="mobile-menu-item">
+                            <Link
+                            href={`#cenik`}
+                            onClick={(e) => {
+                                setLinkWithoutHash(e, "cenik");
+                                setMobileMenuHidden(false);
+                            }}
+                            className={clsx(`
+                            ${activeLink === "cenik" && "bg-[#171717] text-white px-3 py-2 rounded-md"}
+                            transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
+                                Ceník
+                            </Link>
+                        </li>
+                        <li className="mobile-menu-item">
+                            <Link
+                            href={`#faq`}
+                            onClick={(e) => {
+                                setLinkWithoutHash(e, "faq");
+                                setMobileMenuHidden(false);
+                            }}
+                            className={clsx(`
+                            ${activeLink === "faq" && "bg-[#171717] text-white px-3 py-2 rounded-md"}
+                            transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
+                                FAQ
+                            </Link>
+                        </li>
+                        {/* <li className="mobile-menu-item">
+                            <Link
+                            href={`#o-mne`}
+                            onClick={(e) => {
+                                setLinkWithoutHash(e, "o-mne");
+                                setMobileMenuHidden(false);
+                            }}
+                            className={clsx(`
+                            ${activeLink === "o-mne" && "bg-[#171717] text-white px-3 py-2 rounded-md"}
+                            transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
+                                O mně
+                            </Link>
+                        </li> */}
+                        <li className="mobile-menu-item">
+                            <Link
+                            href={`#kontakt`}
+                            onClick={(e) => {
+                                setLinkWithoutHash(e, "kontakt");
+                                setMobileMenuHidden(false);
+                            }}
+                            className={clsx(`
+                            ${activeLink === "kontakt" && "bg-[#171717] text-white px-3 py-2 rounded-md"}
+                            transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
+                                Kontakt
+                            </Link>
+                        </li>
                     </ul>
                     {
                         theme === "Dark" ? (

@@ -126,7 +126,7 @@ const Header = ({ ...props }: headerProps) => {
                                 FAQ
                             </Link>
                         </li>
-                        <li className="header-list-item">
+                        {/* <li className="header-list-item">
                             <Link
                                 href={`#o-mne`}
                                 onClick={(e) => {
@@ -137,7 +137,7 @@ const Header = ({ ...props }: headerProps) => {
                                 transition-colors duration-300 ease-in-out hover:text-[#14b8a5]`)}>
                                 O mně
                             </Link>
-                        </li>
+                        </li> */}
                         <li className="header-list-item">
                             <Link
                                 href={`#kontakt`}

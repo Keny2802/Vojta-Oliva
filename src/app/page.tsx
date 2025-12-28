@@ -23,7 +23,7 @@ const HomePage = () => {
       <Pricing />
       <Faq />
       <WhyMe />
-      <AboutMe />
+      {/* <AboutMe /> */}
       <Contact />
       <Footer />
     </Fragment>

@@ -177,19 +177,21 @@ const Header = ({ ...props }: headerProps) => {
                             theme === "Dark" ? (
                                 <Fragment>
                                     <Link
-                                        href="mailto:info@vojtaoliva.cz"
+                                        href="mailto:info.modernizujme@gmail.com"
                                         className="hidden md:flex justify-center items-center gap-2 bg-white text-black rounded-lg px-3 py-2">
                                         <Mail />
-                                        info@vojtaoliva.cz
+                                        {/* info@vojtaoliva.cz */}
+                                        info.modernizujme@gmail.com
                                     </Link>
                                 </Fragment>
                             ) : (
                                 <Fragment>
                                     <Link
-                                        href="mailto:info@vojtaoliva.cz"
+                                        href="mailto:info.modernizujme@gmail.com"
                                         className="hidden md:flex justify-center items-center gap-2 bg-black text-white rounded-lg px-3 py-2">
                                         <Mail />
-                                        info@vojtaoliva.cz
+                                        {/* info@vojtaoliva.cz */}
+                                        info.modernizujme@gmail.com
                                     </Link>
                                 </Fragment>
                             )

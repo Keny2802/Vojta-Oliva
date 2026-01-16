@@ -3,7 +3,6 @@
 import {
     useRef,
     useEffect,
-    useState,
     Fragment,
     ReactNode
 } from "react";
@@ -18,9 +17,7 @@ import {
     contactFormProps
 } from "../lib/validation";
 import {
-    Sparkle,
-    Mail,
-    Phone
+    Sparkle
 } from "lucide-react";
 import {
     ScrollTrigger
@@ -64,8 +61,7 @@ const Contact = ({ ...props }: contactProps) => {
     }, []);
 
     const {
-        className,
-        children
+        className
     } = props;
 
     const {

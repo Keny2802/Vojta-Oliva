@@ -25,7 +25,7 @@ export async function POST(req: Request) {
         <div class="bg-black/30">
             <p>Jméno: ${name}</p>
             <p>Email: ${email}</p>
-            <p>Telefon: ${phone || "-"}</p>
+            <p>Telefon: ${phone?.trim() || "-"}</p>
             <p>Zpráva: ${emailMessage}</p>
         </div>
       `

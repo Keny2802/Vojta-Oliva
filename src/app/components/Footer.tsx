@@ -98,7 +98,7 @@ const Footer = () => {
                         &copy; vojtaoliva.cz. Všechna práva vyhrazena.
                     </p>
                     <p className="text-sm md:text-[15px] lg:text-base">
-                        IČO 21079820, Filip Oliva
+                        IČO 21 07 98 20, Filip Oliva
                     </p>
                     <Year />
                 </Wrapper>

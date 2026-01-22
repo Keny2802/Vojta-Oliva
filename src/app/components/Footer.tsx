@@ -28,7 +28,7 @@ const Footer = () => {
                 className="flex flex-col justify-between"
                 id="footer">
                 <Wrapper
-                className={clsx(`px-4 md:px-24 py-4 md:py-16 ${theme === "Dark" ? "border-t border-gray-500 bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a] text-gray-300" : "bg-gray-50 border-t border-gray-200"}`)}>
+                    className={clsx(`px-4 md:px-24 py-4 md:py-16 ${theme === "Dark" ? "border-t border-gray-500 bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a] text-gray-300" : "bg-gray-50 border-t border-gray-200"}`)}>
                     <Wrapper className="flex justify-between items-center flex-col md:flex-row gap-4 pb-2 border-b border-gray-500">
                         <Logo />
                         <p className="text-sm md:text-base">
@@ -43,51 +43,33 @@ const Footer = () => {
                             </p>
                             <Wrapper className="mt-2 flex flex-col gap-2">
                                 <Link
-                                    href={`#portfolio`}
-                                    className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]"
-                                    onClick={(e) => {
-                                        setLinkWithoutHash(e, "portfolio");
-                                    }}>
+                                    href={`/#portfolio`}
+                                    className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
                                     Portfolio
                                 </Link>
                                 <Link
-                                    href={`#reference`}
-                                    className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]"
-                                    onClick={(e) => {
-                                        setLinkWithoutHash(e, "reference");
-                                    }}>
+                                    href={`/#reference`}
+                                    className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
                                     Reference
                                 </Link>
                                 <Link
-                                    href={`#cenik`}
-                                    className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]"
-                                    onClick={(e) => {
-                                        setLinkWithoutHash(e, "cenik");
-                                    }}>
+                                    href={`/#cenik`}
+                                    className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
                                     Ceník
                                 </Link>
                                 <Link
-                                    href={`#faq`}
-                                    onClick={(e) => {
-                                        setLinkWithoutHash(e, "faq");
-                                    }}
+                                    href={`/#faq`}
                                     className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
                                     FAQ
                                 </Link>
                                 <Link
-                                    href={`#o-mne`}
-                                    className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]"
-                                    onClick={(e) => {
-                                        setLinkWithoutHash(e, "o-mne");
-                                    }}>
-                                    O mně
+                                    href={`/#o-mne`}
+                                    className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
+                                    o mně
                                 </Link>
                                 <Link
                                     href={`/#kontakt`}
-                                    className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]"
-                                    onClick={(e) => {
-                                        setLinkWithoutHash(e, "kontakt");
-                                    }}>
+                                    className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
                                     Kontakt
                                 </Link>
                             </Wrapper>
@@ -105,9 +87,9 @@ const Footer = () => {
                             </Wrapper>
                         </Wrapper>
                     </Wrapper>
-                    <Wrapper className="flex justify-start ">
+                    {/* <Wrapper className="flex justify-start ">
                         <ContactInfo className="mt-4" isFooter={true} />
-                    </Wrapper>
+                    </Wrapper> */}
                 </Wrapper>
                 <Wrapper className={clsx(`
                 ${theme === "Dark" ? "p-2 md:p-3 lg:p-4 bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a] text-gray-300 border-t border-gray-500" : "bg-gray-50 text-black border-t border-gray-200"}

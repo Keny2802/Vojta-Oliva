@@ -93,9 +93,12 @@ const Footer = () => {
                 </Wrapper>
                 <Wrapper className={clsx(`
                 ${theme === "Dark" ? "p-2 md:p-3 lg:p-4 bg-linear-to-tr from-[#050b1a] via-[#0b1f3b] to-[#12345a] text-gray-300 border-t border-gray-500" : "bg-gray-50 text-black border-t border-gray-200"}
-                flex flex-col items-center gap-2 md:gap-3 lg:gap-4`)}>
+                flex flex-col items-center gap-2 md:gap-2.5`)}>
                     <p className="text-sm md:text-[15px] lg:text-base">
-                        &copy; {dynamicYear} vojtaoliva.cz. Všechna práva vyhrazena.
+                        &copy; vojtaoliva.cz. Všechna práva vyhrazena.
+                    </p>
+                    <p className="text-sm md:text-[15px] lg:text-base">
+                        IČO 21079820, Filip Oliva
                     </p>
                     <Year />
                 </Wrapper>

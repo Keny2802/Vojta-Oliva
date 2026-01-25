@@ -51,29 +51,29 @@ const portfolioSet:portfolioProps[] = [
         ],
         projectLink: "https://modernizujme.cz/4/index.html",
     },
-    {
-        projectImage: "/fotky/projekty/Projekt Byty Freyova (5).png",
-        projectName: "Byty Freyova",
-        projectDescription: "Moderní webová prezentace nabízející byty k pronájmu v činžovních domech na ulici Freyova. Přehledné informace o bytech, fotografie a kontaktní formulář pro zájemce.",
-        projectType: "Pronájem bytů",
-        portfolioTechStack: [
-            "HTML",
-            "CSS",
-            "JS",
-        ],
-        projectLink: "https://freyova.cz/",
-    },
-    {
-        projectImage: "/fotky/projekty/Projekt Truhlářství Král (6).png",
-        projectName: "Truhlářství Král",
-        projectDescription: "Moderní webová stránka, prezentující Truhlářství Král, která poskytuje kvalitní a precizní truhlářské práce.",
-        projectType: "Řemeslník / Truhlář",
-        portfolioTechStack: [
-            "React",
-            "Tailwind CSS"
-        ],
-        projectLink: "",
-    }
+    // {
+    //     projectImage: "/fotky/projekty/Projekt Byty Freyova (5).png",
+    //     projectName: "Byty Freyova",
+    //     projectDescription: "Moderní webová prezentace nabízející byty k pronájmu v činžovních domech na ulici Freyova. Přehledné informace o bytech, fotografie a kontaktní formulář pro zájemce.",
+    //     projectType: "Pronájem bytů",
+    //     portfolioTechStack: [
+    //         "HTML",
+    //         "CSS",
+    //         "JS",
+    //     ],
+    //     projectLink: "https://freyova.cz/",
+    // },
+    // {
+    //     projectImage: "/fotky/projekty/Projekt Truhlářství Král (6).png",
+    //     projectName: "Truhlářství Král",
+    //     projectDescription: "Moderní webová stránka, prezentující Truhlářství Král, která poskytuje kvalitní a precizní truhlářské práce.",
+    //     projectType: "Řemeslník / Truhlář",
+    //     portfolioTechStack: [
+    //         "React",
+    //         "Tailwind CSS"
+    //     ],
+    //     projectLink: "",
+    // }
 ];
 
 export default portfolioSet;

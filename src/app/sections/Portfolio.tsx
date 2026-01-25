@@ -33,7 +33,7 @@ type portfolioProps = {
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Portfolio = ({ ...props }) => {
+const Portfolio = ({ ...props }: portfolioProps) => {
     const portfolioProjectRef = useRef<HTMLDivElement>(null);
     const sectionTextRef = useRef<HTMLHeadingElement>(null);
     const [tilt, setTilt] = useState({
@@ -121,10 +121,10 @@ const Portfolio = ({ ...props }) => {
                             className="text-white"
                         />
                         <h2 className="text-3xl md:text-5xl font-black uppercase">
-                            1 Moje portfolio
+                            1 Moje portfolio ukázky
                         </h2>
                         <p className="mt-4 text-base">
-                            Moje portfolio je důkazem důvěryhodnosti.
+                            Zde najdete, představu jak by Váš budoucí web mohl vypadat.
                         </p>
                     </Wrapper>
                     <Wrapper className="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">

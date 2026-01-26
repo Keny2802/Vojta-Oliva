@@ -18,7 +18,7 @@ export async function POST(req: Request) {
     await resend.emails.send({
       from: "onboarding@resend.dev", // nebo 'No reply - vojtaoliva.cz'
     //   to: process.env.MY_EMAIL,
-      to: "oliva.vojta@gmail.com",
+      to: "info.modernizujme@gmail.com",
       subject: emailSubject || "Vojto, zpráva od klienta",
       html: `
         <div class="bg-black/30">

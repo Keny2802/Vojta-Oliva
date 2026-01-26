@@ -16,11 +16,11 @@ export async function POST(req: Request) {
     const { name, email, phone, emailSubject, emailMessage } = parsed.data;
 
     await resend.emails.send({
-      from: email, // nebo 'No reply - vojtaoliva.cz'
+      from: "onboarding@resend.dev", // nebo 'No reply - vojtaoliva.cz'
       // onboarding@resend.dev
     //   to: process.env.MY_EMAIL,
-      to: "info.modernizujme@gmail.com",
-      subject: emailSubject || "Vojto, zpráva od klienta",
+      to: `${process.env.MY_EMAIL}`,
+      subject: emailSubject || "Vojto, zpráva z webu | POPTÁVKA",
       html: `
         <div class="bg-black/30">
             <p>Jméno: ${name}</p>

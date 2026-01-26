@@ -16,7 +16,8 @@ export async function POST(req: Request) {
     const { name, email, phone, emailSubject, emailMessage } = parsed.data;
 
     await resend.emails.send({
-      from: "onboarding@resend.dev", // nebo 'No reply - vojtaoliva.cz'
+      from: email, // nebo 'No reply - vojtaoliva.cz'
+      // onboarding@resend.dev
     //   to: process.env.MY_EMAIL,
       to: "info.modernizujme@gmail.com",
       subject: emailSubject || "Vojto, zpráva od klienta",

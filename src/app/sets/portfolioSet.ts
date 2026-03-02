@@ -5,7 +5,7 @@ import {
 const portfolioSet:portfolioProps[] = [
     {
         projectImage: "/fotky/projekty/Projekt MALÍŘI PROFI (1).png",
-        projectName: "Malíři Profi",
+        projectName: "Malířství Praha",
         projectDescription: "Profesionální malířské a natěračské služby pro byty, domy a komerční prostory. Moderní web s přehlednou nabídkou a jednoduchým objednávkovým formulářem.",
         projectType: "Řemeslník / Malíř",
         portfolioTechStack: [
@@ -41,7 +41,7 @@ const portfolioSet:portfolioProps[] = [
     },
     {
         projectImage: "/fotky/projekty/Projekt Nic Nedlužím (4).png",
-        projectName: "Nic Nedlužím",
+        projectName: "Dluhové oddlužení",
         projectDescription: "Web pro služby oddlužení a poradenství. Přehledně zobrazuje možnosti řešení dluhů, kontaktní formulář a informace pro klienty, kteří hledají bezpečně a rychlé řešení svých závazků.",
         projectType: "Právnické služby",
         portfolioTechStack: [
@@ -51,18 +51,18 @@ const portfolioSet:portfolioProps[] = [
         ],
         projectLink: "https://modernizujme.cz/4/index.html",
     },
-    // {
-    //     projectImage: "/fotky/projekty/Projekt Byty Freyova (5).png",
-    //     projectName: "Byty Freyova",
-    //     projectDescription: "Moderní webová prezentace nabízející byty k pronájmu v činžovních domech na ulici Freyova. Přehledné informace o bytech, fotografie a kontaktní formulář pro zájemce.",
-    //     projectType: "Pronájem bytů",
-    //     portfolioTechStack: [
-    //         "HTML",
-    //         "CSS",
-    //         "JS",
-    //     ],
-    //     projectLink: "https://freyova.cz/",
-    // },
+    {
+        projectImage: "/fotky/projekty/Projekt Byty Freyova (5).png",
+        projectName: "Byty Freyova",
+        projectDescription: "Moderní webová prezentace nabízející byty k pronájmu v činžovních domech na ulici Freyova. Přehledné informace o bytech, fotografie a kontaktní formulář pro zájemce.",
+        projectType: "Pronájem bytů",
+        portfolioTechStack: [
+            "HTML",
+            "CSS",
+            "JS",
+        ],
+        projectLink: "https://freyova.cz/",
+    },
     // {
     //     projectImage: "/fotky/projekty/Projekt Truhlářství Král (6).png",
     //     projectName: "Truhlářství Král",

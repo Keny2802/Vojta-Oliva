@@ -65,13 +65,30 @@ const Footer = () => {
                                 <Link
                                     href={`/#o-mne`}
                                     className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
-                                    o mně
+                                    O mně
                                 </Link>
                                 <Link
                                     href={`/#kontakt`}
                                     className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
                                     Kontakt
                                 </Link>
+                                <Wrapper className="mt-2 flex flex-col gap-2">
+                                    <Link
+                                    href={`/obchodni-podminky`}
+                                    className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
+                                        Obchodní podmínky
+                                    </Link>
+                                    <Link
+                                    href={`/ochrana-osobnich-udaju`}
+                                    className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
+                                        Ochrana osobních údajů
+                                    </Link>
+                                    <Link
+                                    href={`/nastaveni-cookies`}
+                                    className="transition-colors duration-300 ease-in-out hover:text-[#14b8a5]">
+                                        Soubory cookies
+                                    </Link>
+                                </Wrapper>
                             </Wrapper>
                         </Wrapper>
                         <Wrapper>

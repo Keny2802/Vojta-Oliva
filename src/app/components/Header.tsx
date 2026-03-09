@@ -32,6 +32,23 @@ type headerProps = {
 const Header = ({ ...props }: headerProps) => {
     const [isMobileMenuHidden, setMobileMenuHidden] = useState<boolean>(false);
     const [activeLink, setActiveLink] = useState<string>("");
+    const [isHeaderScrolling, setHeaderScrolling] = useState<boolean>(false);
+
+    useEffect(() => {
+        const setHeaderScrolled = () => {
+            if (window.scrollY > 0) {
+                setHeaderScrolling(true);
+            } else {
+                setHeaderScrolling(false);
+            };
+        };
+
+        window.addEventListener("scroll", setHeaderScrolled);
+
+        return () => {
+            window.removeEventListener("scroll", setHeaderScrolled);
+        };
+    }, [isHeaderScrolling]);
 
     useEffect(() => {
         const sections = document.querySelectorAll(".section");
@@ -71,10 +88,10 @@ const Header = ({ ...props }: headerProps) => {
 
     return (
         <Fragment>
-            <Wrapper className={clsx(`
+            <Wrapper className={clsx(isHeaderScrolling ? "fixed z-50" : "static", `
                 ${className || ""}
                 ${theme === "Dark" ? "bg-gray-800 text-white px-2" : "bg-gray-50 shadow-md text-black pl-0 pr-2"}
-                w-full fixed z-50 header-wrapper`)}>
+                w-full header-wrapper`)}>
                 <Wrapper className="flex justify-between items-center gap-4 md:gap-2">
                     <Logo imageClassName="rounded-none" />
                     <ul className="hidden md:flex items-center gap-4 header-item-list-wrapper">

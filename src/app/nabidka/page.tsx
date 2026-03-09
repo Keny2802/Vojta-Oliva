@@ -27,7 +27,7 @@ import {
 import clsx from "clsx";
 import Link from "next/link";
 
-import Wrapper from "@/app/components/Wrapper";
+import Wrapper from "../components/Wrapper";
 import Logo from "../components/Logo";
 import PageLabel from "../components/PageLabel";
 import Footer from "../components/Footer";
